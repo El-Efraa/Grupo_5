@@ -3,9 +3,55 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <link rel="stylesheet" href="/css/styles_producto.css">
+    <title> Detalle del Producto </title>
 </head>
 <body>
-    Probando
+    <header>
+        HEADER
+    </header>
+
+    <main>
+            <div class="navegacion">
+                <p> <a href="/"> Inicio </a> </p>
+                <p class="flecha"> > </p>
+                <p> <a href="#"> Comidas Regionales </a> </p>
+                <p class="flecha"> > </p>
+                <p> <a href="#"> Locro </a> </p>
+            </div>
+
+            <section class="producto">
+                <img src="/img/Locro.jpg" alt="img-del-producto">
+
+                <div class="detalle-de-compra">
+                    <h2> Locro </h2>
+                    <p class="precio"> $2000 </p>
+                    <p class="promo"> Llevando 7 platos: $12345</p>
+                    
+                    <div class="contenedor">
+                        <form action="/" method="GET" class="bloque-de-cantidad">
+                            <p> Cantidad</p>
+                            <p class="formulario-de-cantidad">
+                                <label for="cantidad">
+                                    <input type="number" name="cantidad" id="cantidad" placeholder="1">
+                                </label>
+                            </p>
+                            <button type="button"> + </button>
+                            <button type="button"> - </button>
+                        </form>
+                        <a href="#"><button type="button"> AGREGAR AL CARRITO</button></a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="seccion2">
+                <h3> Ingredientes </h3>
+                <p> Porotos blancos, Maíz blanco, Chorizo colorado, Chorizo criollo, Cuerito de cerdo, Pechito de cerdo, Falda,Panceta, Cebollas, Cebollas de verdeo, Puerro, Calabaza, Morrón rojo, Condimentos: sal, pimienta, comino, pimentón, ají molido, orégano </p>
+
+                <p> Tiempo de Preparación: 3hs 1/2 a 4hs</p>
+            </section>
+    </main>
+
 </body>
 </html>
