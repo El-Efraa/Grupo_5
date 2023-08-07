@@ -1,0 +1,92 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+header {
+    background-color: aqua;
+    padding: 5% 5%;
+}
+
+main {
+    background-color: #e0e0e0;
+    padding: 15px;
+}
+
+.navegacion {
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 10px;
+   
+}
+
+.navegacion p {
+    font-size: 15px;
+    padding-right: 2%;
+}
+
+.producto img {
+    width: 100%;
+}
+
+.detalle-de-compra {
+    margin: 5px 0px 20px;
+}
+
+.precio {
+    margin: 12px 2% 3px;
+}
+
+.promo {
+    margin: 0px 2% 15px;
+}
+
+.bloque-de-cantidad {
+    border: solid 1px black;
+    display: flex;
+    flex-wrap: wrap;
+    margin-bottom: 2%;
+    margin-right: 12px;
+    padding: 7px 10px;
+    width: 180px;
+    border-radius: 10px;
+    justify-content: space-between;
+    align-items: center;
+
+
+}
+
+.bloque-de-cantidad input{
+    border: 0;
+    width: 100%;
+    height: 100%;
+}
+
+/* .bloque-de-cantidad button {
+    background-color: yellow;
+} */
+
+.formulario-de-cantidad {
+    width: 30%;
+}
+
+.contenedor {
+    display: flex;
+    flex-wrap: wrap;
+    margin-left: 2%;
+}
+
+.contenedor a button {
+    width: 165px;
+    height: 36px;
+    background-color: rgb(255, 123, 0);
+    color: white;
+}
+
+.seccion2 h3 {
+    margin-bottom: 15px;
+}
+
+.seccion2 p {
+    margin-bottom: 15px;
+}
