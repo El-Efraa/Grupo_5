@@ -1,3 +1,90 @@
-body{
+*{
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;   
+}
+header{
+    background-color: #ebebeb;
+    margin-bottom: 10px;
+}
+.contenedor{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+.burguer-menu{
+    margin:5px;
+    width: 20% ;
+}
+#logo{
+    margin:5px;
+    width: 20%;
+}
+.searchBar{
+    margin:5px;
+    width: auto;
+    display: flex;
+}
+.carrito{
+    margin:5px;
+    width: 30%;
+}
+.mensaje{
+    background-color: #679b9b;
+    color:white;
+    text-align: center;
+    padding: 5px;
+}
+.sign-in{
+    display: none;
+}
+main{
+    background-color:#ebebeb;
+}
+.sec-info{
+    text-align: center;
+    padding: 10px;
+}
+.info1,.info2,.info3{
+    padding: 10px;
+}
+.secInfoTitle{
+    display: flex;
+}
+section div b{
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 2px;
+    opacity: .1;
+    background-color: currentColor;
+}
+.iconos-info{
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 50px;
+}
+.boton-menu{
+    text-align: center;
+    padding: 10px;
+}
+.secTitulo-elegidos{
+    text-align: center;
+    display: flex;
+}
+main section article{
+    margin:0 auto 10px;
+    width: 90%;
+    background-color: white;
+    flex-basis: 40%;
     
+}
+.content{
+    display: flex;
+    flex-wrap: wrap;
 }
