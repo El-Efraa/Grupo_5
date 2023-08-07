@@ -1,0 +1,139 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro</title>
+    <link href="/css/registro.css" rel="stylesheet" >
+</head>
+<body>
+    <header>
+        <div class="mensaje">
+            <p>Descuento de un 30% en productos seleccionados</p>
+        </div>
+        <section class="contenedor">
+                <div class="burger-menu">
+                    <button><i class="fas fa-bars"></i></button>
+                </div> 
+                <div id="logo">
+                    <img src="/img/logo.png" alt="logo-comercio">
+                </div>
+                <div class="searchBar"> 
+                    <input type="text" id="fname" name="fname" placeholder="Buscar platos">    
+                    <button> <i class="fas fa-search"></i></i></button>
+                </div>
+                <div class="header-full">
+                    <div clase="carrito">
+                        <button><a href="./carrito"> <i class="fas fa-shopping-cart"></i></a></button>
+                    </div>
+                    <div class="location">
+                            <i class="fas fa-map-marker-alt"> Ubicacion</i>
+                    </div>
+                    <div class="sign-in">
+                            <a href="./registro"><i class="fas fa-sign-in-alt"> Inicio de Sesion</i> </a>
+                     </div>
+                </div>
+                    
+        </section>
+           
+        <nav class="navBar">
+            <div class="nav1">
+                <ul class="enlaces-1" type="none" > 
+                    <li><a href="">Congelados </a></li>
+                    <li><a href="">Frescos </a></li>
+                    <li><a href="./producto">Regionales</a></li>
+                    <li><a href="">Recetas </a></li>
+                </ul>
+            </div>
+           <div class="nav2">
+                <ul type="none">
+                    <li><button>Promos</button> </li>
+                    <li><button>Combos</button> </li>
+                    <li><button>Zonas de Envio</button></li>
+                </ul>
+            </div>
+        </nav>
+    </header>
+    <main>
+        <h1>Registro de Usuario</h1>
+    <form class="forn" action="/submit" method="post">
+        <label for="nombre">Nombre:</label>
+        <input type="text" id="nombre" name="nombre" required><br>
+
+        <label for="apellido">Apellido:</label>
+        <input type="text" id="apellido" name="apellido" required><br>
+
+        <label for="nombre_usuario">Nombre de usuario:</label>
+        <input type="text" id="nombre_usuario" name="nombre_usuario" required><br>
+
+        <label for="fecha_nacimiento">Fecha de nacimiento:</label>
+        <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
+
+        <label for="domicilio">Domicilio:</label>
+        <input type="text" id="domicilio" name="domicilio" required><br>
+
+        <label for="foto_usuario">Foto de usuario:</label>
+        <input type="file" id="foto_usuario" name="foto_usuario" accept="image/*" required><br>
+
+        <label for="contrasenia">Contraseña:</label>
+        <input type="password" id="contrasenia" name="contrasenia" required><br>
+
+        <label for="confirmar_contrasenia">Confirmar contraseña:</label>
+        <input type="password" id="confirmar_contrasenia" name="confirmar_contrasenia" required><br>
+
+        <button class="boton" type="submit">Enviar</button>
+        <button class="boton" type="reset">Borrar</button>
+    </form>
+    </main>
+    <footer>
+        <section class="sec1-footer">
+            <div class="sec1-desc-footer">
+                <h4>¡CONOCENOS!</h4>
+                <div class="is-divider small"></div>
+                <div>
+                    <ul type="none">
+                        <li>Vende nuestros productos</li>
+                        <li>Vendedores oficiales</li>
+                        <li>Quienes somos</li>
+                    </ul>
+                </div>
+              
+            </div>
+        </section>
+        <section class="sec2-footer">       
+            <div class="sec2-desc-footer">
+                <h4>ATENCION AL CLIENTE</h4>
+                <div class="is-divider small"></div>
+                <br>
+                <div>
+                    <ul type="none">
+                        <li>Terminos y condiciones</li>
+                        <li>Preguntas Frecuentes</li>
+                        <li>Contactanos</li>
+                    </ul>
+                </div>
+              
+            </div>
+        </section>   
+        <section class="sec3-footer">    
+            <div class="sec3-desc-footer">
+                <h4>COMUNICATE CON NOSOTROS</h4>
+                <div class="is-divider small"></div>
+            </div>
+            <div class="location">
+                <a><i class="fas fa-map-marker-alt"> Ramirez de Velazco 562 San Salvador de Jujuy - Argentina</i> </a>
+            </div>
+            <div class="redes-sociales">
+                <a><i class="fab fa-facebook"></i> </a>
+                <a><i class="fab fa-instagram"></i> </a>
+                <a><i class="fas fa-envelope-square"></i></a>
+            </div>
+        </section>
+        <section class="sec4-footer">    
+                <div class="copyrgight">
+                    <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+                </div>
+        </section>
+    </footer>
+</body>
+</html>

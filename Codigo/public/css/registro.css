@@ -1,0 +1,278 @@
+*{
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;   
+}
+header{
+    background-color: #ebebeb;
+    margin-bottom: 10px;
+}
+.contenedor{
+    background-color: white;
+    padding: 10px;
+    display: flex;
+    justify-items: center;
+    align-items: center;
+    width: 100%;
+}
+.burguer-menu{
+    margin:5px;
+    width: 20% ;
+}
+#logo{
+    margin:5px;
+    width: 20%;
+}
+header section div img{
+    width: 100%;
+    justify-self: center;
+}
+.searchBar{
+    margin:5px;
+    width: auto;
+    display: flex;
+}
+.carrito{
+    margin:5px;
+    width: 30%;
+}
+.mensaje{
+    background-color: #679b9b;
+    color:white;
+    text-align: center;
+    padding: 5px;
+}
+.header-full{
+    display: flex;
+}
+main{
+    background-color:#ebebeb;
+    
+}
+.sec-info{
+    text-align: center;
+    padding: 10px;
+}
+.info1,.info2,.info3{
+    padding: 10px;
+}
+
+section div b{
+    display: flex;
+    -webkit-box-flex: 1;
+    -ms-flex: 1;
+    flex: 1;
+    height: 2px;
+    opacity: .1;
+    background-color: currentColor;
+}
+
+.iconos-info{
+    width: 100%;
+    display: block;
+    text-align: center;
+    font-size: 50px;
+}
+.boton-menu{
+    text-align: center;
+    padding: 10px;
+}
+a{
+    color:black;
+    text-decoration: none;
+}
+button a {
+    color:black;
+    text-decoration: none;  
+}
+main section article{
+    margin:0 auto 10px;
+    width: 90%;
+    background-color: white;
+    flex-basis: 40%;
+    padding: 5px;
+}
+article div img{
+    width: 100%;
+}
+ /*registro*/
+
+
+ h1 {
+    text-align: center;
+    margin-bottom: 30px;
+    color: #041b34;
+}
+
+.forn {
+    max-width: 500px;
+    margin: 0 auto;
+    background-color: #679b9b;
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+    font-family: Arial, Helvetica, sans-serif;
+    color: black;
+}
+
+label {
+    display: block;
+    font-weight: bold;
+    margin-bottom: 5px;
+}
+
+input[type="text"],
+input[type="date"],
+input[type="password"],
+input[type="file"] {
+    width: 100%;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input[type="radio"],
+input[type="checkbox"] {
+    margin-right: 5px;
+}
+
+.categories-label {
+    font-weight: bold;
+    margin-bottom: 10px;
+}
+
+.boton {
+    background-color: #007bff;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.boton[type="reset"] {
+    background-color: #007bff;
+    margin-left: 10px;
+}
+
+.form-group {
+    margin-bottom: 20px;
+}
+
+.form-group:last-child {
+    margin-bottom: 0;
+}
+/*footer*/
+footer{
+    padding: 10px;
+}
+.sec1-footer,.sec2-footer,.sec3-footer{
+    padding:10px;
+}
+.is-divider {
+    height: 3px;
+    display: block;
+    background-color: rgba(0,0,0,.1);
+    margin: 1em 0 1em;
+    width: 100%;
+    max-width: 30px;
+}
+.redes-sociales{
+    padding: 10px;
+}
+.redes-sociales div i{
+    width: 50%;
+}
+.location{
+    display: flex;
+    order:-2;
+}
+.sign-in{
+    display: flex;
+    order:-1;
+}
+.carrito{
+    display: flex;
+    order:2;
+}
+.navBar{
+    display:none;
+}
+.sign-in{
+    display: none;
+}
+/*responsiv*/
+@media(min-width:376px){
+    .burger-menu button{
+        display:none;
+    }
+    .navBar{
+        display:flex;
+        justify-content: space-between;
+    }
+    header nav .nav1{
+        display: flex;
+        justify-content: flex-start;
+        
+    }
+    header nav .nav2{
+        display: flex;
+        justify-content: flex-end;
+        
+    }
+    header nav ul {
+        display: flex;
+        justify-content: space-around;
+        flex-wrap: wrap;
+    }
+    header nav ul li{
+        margin:5px;
+     }
+    .sign-in{
+        display: flex;
+    }
+}
+@media(min-width:768px){
+    .searchBar{
+        width: 80%;
+    }
+    .buscador{
+        align-self: center;
+        margin: auto;
+    }
+    .ui-header{
+        display: flex;
+        justify-content: flex-end;
+        width: 20%;
+    }
+    .header-full{
+        display: flex;
+    }
+    main section article {
+        flex-basis: 20%;
+    }
+    main article{
+        box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    .content{
+        display: flex; 
+        justify-content:space-around; 
+        display: 10px;
+    }
+    footer{
+        display: flex;
+        flex-wrap: wrap;
+        align-items: center;
+        justify-content: center;
+        padding:50px 50px 0px 50px;
+    }
+    footer section {
+        flex-basis: 33%;
+    }
+    .copyrgight{
+        flex-basis: 100%;
+        justify-self: flex-start;
+    }
+}
