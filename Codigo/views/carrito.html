@@ -5,6 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Carrito de Compras</title>
     <link rel="stylesheet" href="/css/styles-carrito.css">
+    <link href="/css/styles_home.css" rel="stylesheet" >
     <script src="https://kit.fontawesome.com/77caedd56f.js" crossorigin="anonymous"></script>
 </head>
 <body>
@@ -17,25 +18,42 @@
                 <div class="burger-menu">
                     <button><i class="fas fa-bars"></i></button>
                 </div> 
-                <div id="logo">
-                    <img src="/public/img/logo.png" alt="logo-comercio">
+                <div class="content-img" >
+                    <a href="/"><img src="/img/logo.jpeg" alt="logo-comercio"id="logo"> </a>        
                 </div>
                 <div class="searchBar"> 
                     <input type="text" id="fname" name="fname" placeholder="Buscar platos">    
-                    <button> <i class="fas fa-search"></i></i></button>
+                    <button id="boton-buscador"> <i class="fas fa-search"></i></i></button>
                 </div>
-                <div clase="carrito">
-                    <button><a href="carrito"><i class="fas fa-shopping-cart"></i></a> </button>
-                </div>
-        </section>
-        <div class="ui-header">
-            <div class="location">
-                <i class="fas fa-map-marker-alt"> Ubicacion</i>
+                <div class="header-full">
+                    <div clase="carrito">
+                        <a href="./carrito"> <i class="fas fa-shopping-cart"></i></a>
+                    </div>
+                    <div class="location">
+                            <i class="fas fa-map-marker-alt"> Ubicacion</i>
+                    </div>
+                    <div class="sign-in">
+                            <a href="./registro"><i class="fas fa-sign-in-alt"> Inicio de Sesion</i> </a>
+                    </div>
+                </div>          
+        </section> 
+        <nav class="navBar">
+            <div class="nav1">
+                <ul class="enlaces-1" type="none" > 
+                    <li><a href="">Congelados </a></li>
+                    <li><a href="">Frescos </a></li>
+                    <li><a href="./producto">Regionales</a></li>
+                    <li><a href="">Recetas </a></li>
+                </ul>
             </div>
-            <div class="sign-in">
-                <i class="fas fa-sign-in-alt"> Inicio de Sesion</i>
+           <div class="nav2">
+                <ul type="none" clase="botones-redireccionables">
+                    <li><button id="promo">Promos</button> </li>
+                    <li><button>Combos</button> </li>
+                    <li><button>Zonas de Envio</button></li>
+                </ul>
             </div>
-        </div>
+        </nav>
     </header>
 
 
@@ -62,12 +80,12 @@
                 <h2 class="tot">TOTAL</h2>
             </div>
             <section class="productos">
-                <article>
+                <article class="articulo">
                     <i class="fa-solid fa-circle-xmark borrar-producto"></i>
-                    <img src="" alt="Imagen del producto">
+                    <div class="img"><img src="/img/bunuelos.jpg" alt="Imagen del producto"></div>
+                    <h3 class="descripcion">Buñuelos con api</h3>
                     <div class="caja">
-                    <h3 class="descripcion">Descripción del producto</h3>
-                    <h3 class="precios">$</h3>
+                    <h3 class="precios">$2000</h3>
                     <div class="cantidades">
                         <button><i class="fas fa-minus restar-cantidad"></i></button>
                         <input type="text" value="1" class="item-cantidad" disabled>
@@ -82,14 +100,14 @@
                         <option value="6">6 unidades</option>
                         <option value="">Más de 6 unidades</option>
                     </select></div>   
-                    <h3 class="total-producto">$</h3></div>
+                    <h3 class="total-producto">$2000</h3></div>
                 </article>
-                <article>
+                <article class="articulo">
                     <i class="fa-solid fa-circle-xmark borrar-producto"></i>
-                    <img src="" alt="Imagen del producto">
+                    <div class="img"><img src="/img/Humitas-en-chala.jpg" alt="Imagen del producto"></div>
+                    <h3 class="descripcion">Humitas</h3>
                     <div class="caja">
-                    <h3 class="descripcion">Descripción del producto</h3>
-                    <h3 class="precios">$</h3>
+                    <h3 class="precios">$1500</h3>
                     <div class="cantidades">
                         <button><i class="fas fa-minus restar-cantidad"></i></button>
                         <input type="text" value="1" class="item-cantidad" disabled>
@@ -104,14 +122,14 @@
                         <option value="6">6 unidades</option>
                         <option value="">Más de 6 unidades</option>
                     </select></div>   
-                    <h3 class="total-producto">$</h3></div>
+                    <h3 class="total-producto">$1500</h3></div>
                 </article>
-                <article>
+                <article class="articulo">
                     <i class="fa-solid fa-circle-xmark borrar-producto"></i>
-                    <img src="" alt="Imagen del producto">
+                    <div class="img"><img src="/img/Locro.jpg" alt="Imagen del producto"></div>
+                    <h3 class="descripcion">Locro</h3>
                     <div class="caja">
-                    <h3 class="descripcion">Descripción del producto</h3>
-                    <h3 class="precios">$</h3>
+                    <h3 class="precios">$2000</h3>
                     <div class="cantidades">
                         <button><i class="fas fa-minus restar-cantidad"></i></button>
                         <input type="text" value="1" class="item-cantidad" disabled>
@@ -126,10 +144,10 @@
                         <option value="6">6 unidades</option>
                         <option value="">Más de 6 unidades</option>
                     </select></div>  
-                    <h3 class="total-producto">$</h3></div>
+                    <h3 class="total-producto">$2000</h3></div>
                 </article>
             </section>
-            <section>
+            <section class="total-cuenta">
                 <section class="montos">
                     <h2 class="titular">TOTAL DEL CARRITO</h2>
                     <div class="montos-adicionales">
@@ -139,7 +157,7 @@
                     <div class="montos-adicionales">
                         <h3 class="tipo-de-monto">Envío</h3>
                         <h3 class="monto">$</h3>
-                        <input type="text" class="codigo-postal" placeholder="Introduzca sus código postal">
+                        <input type="text" class="codigo-postal" placeholder="Introduzca su código postal">
                         <button class="calcular-envio">Calcular envío</button>
                     </div>
                 </section>
@@ -168,9 +186,56 @@
         </section>
     </main>
 
+
     <footer>
-        
+        <section class="sec1-footer">
+            <div class="sec1-desc-footer">
+                <h4>¡CONOCENOS!</h4>
+                <div class="is-divider small"></div>
+                <div >
+                    <ul type="none" class="li-footer">
+                        <li>Vende nuestros productos</li>
+                        <li>Vendedores oficiales</li>
+                        <li>Quienes somos</li>
+                    </ul>
+                </div>
+              
+            </div>
+        </section>
+        <section class="sec2-footer">       
+            <div class="sec2-desc-footer">
+                <h4>ATENCION AL CLIENTE</h4>
+                <div class="is-divider small"></div>
+                <div >
+                    <ul type="none" class="li-footer">
+                        <li>Terminos y condiciones</li>
+                        <li>Preguntas Frecuentes</li>
+                        <li>Contactanos</li>
+                    </ul>
+                </div>
+              
+            </div>
+        </section>   
+        <section class="sec3-footer">    
+            <div class="sec3-desc-footer">
+                <h4>COMUNICATE CON NOSOTROS</h4>
+                <div class="is-divider small"></div>
+            </div>
+            <div class="location">
+                <a><i class="fas fa-map-marker-alt"> Ramirez de Velazco 562 San Salvador de Jujuy - Argentina</i> </a>
+            </div>
+            <div class="redes-sociales">
+                <a><i class="fab fa-facebook"></i> </a>
+                <a><i class="fab fa-instagram"></i> </a>
+                <a><i class="fas fa-envelope-square"></i></a>
+            </div>
+        </section>
     </footer>
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>
 
 </body>
 </html>
