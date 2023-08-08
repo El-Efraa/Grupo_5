@@ -1,40 +1,51 @@
 *{
     box-sizing: border-box; 
     margin:0;
-    padding:0;   
+    padding:0;  
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif; 
 }
 header{
     background-color: #ebebeb;
-    margin-bottom: 10px;
+    
 }
-.contenedor{
+section.contenedor{
     background-color: white;
     padding: 10px;
     display: flex;
-    justify-items: center;
     align-items: center;
     width: 100%;
+    min-height: 50px;
+    justify-content: space-around;
 }
 .burguer-menu{
     margin:5px;
-    width: 20% ;
+    width: 0% ;
 }
-#logo{
-    margin:5px;
+.content-img{
     width: 20%;
+    margin:5px;
 }
-header section div img{
+header section div a img{
     width: 100%;
     justify-self: center;
 }
 .searchBar{
     margin:5px;
-    width: auto;
     display: flex;
+    width: 30%;
+}
+.searchBar input{
+    width: 80%;
 }
 .carrito{
     margin:5px;
-    width: 30%;
+    width: 100%;
+}
+.header-full{
+    display: flex;
+    justify-content: space-between;
+    width: auto;
 }
 .mensaje{
     background-color: #679b9b;
@@ -42,21 +53,18 @@ header section div img{
     text-align: center;
     padding: 5px;
 }
-.header-full{
-    display: flex;
-}
+
 main{
     background-color:#ebebeb;
     
 }
-.sec-info{
+.sec-info,.masElegidos{
     text-align: center;
     padding: 10px;
 }
 .info1,.info2,.info3{
     padding: 10px;
 }
-
 section div b{
     display: flex;
     -webkit-box-flex: 1;
@@ -66,7 +74,6 @@ section div b{
     opacity: .1;
     background-color: currentColor;
 }
-
 .iconos-info{
     width: 100%;
     display: block;
@@ -77,11 +84,15 @@ section div b{
     text-align: center;
     padding: 10px;
 }
+#boton-menu{
+    font-size: 15px;
+    border-radius: 5px;
+}
 a{
     color:black;
     text-decoration: none;
 }
-button a {
+button a{
     color:black;
     text-decoration: none;  
 }
@@ -95,7 +106,6 @@ main section article{
 article div img{
     width: 100%;
 }
-
 .carrusel{
     display: flex;
     justify-content: center;
@@ -107,13 +117,14 @@ main section div img{
 .content{
     display: flex;
     flex-wrap: wrap;
-    padding: 5px;
+    text-align: justify;
+    padding: 10px;
 }
 .secInfoTitle{
     text-align: center;
     display: flex;
 }
-.suscribite{
+section.suscribite{
     background-image: url(/img/gastro-sus.jpeg);
     background-color: transparent;
     width: 100%;
@@ -136,11 +147,15 @@ footer{
     width: 100%;
     max-width: 30px;
 }
+.li-footer li{
+    margin: 15px;
+}
 .redes-sociales{
     padding: 10px;
 }
-.redes-sociales div i{
-    width: 50%;
+div.redes-sociales a i{
+    font-size: 40px;
+    justify-items: space-between;
 }
 .location{
     display: flex;
@@ -160,13 +175,32 @@ footer{
 .sign-in{
     display: none;
 }
+/*CELULARES */
 @media(min-width:376px){
     .burger-menu button{
         display:none;
     }
+    .searchBar{
+        width: 50%;
+        height: 30px;
+    }
+    #boton-buscador{
+        width: 10%;
+    }
     .navBar{
         display:flex;
         justify-content: space-between;
+        padding: 5px;
+    } 
+    div ul li button{
+        font-size: 15px;
+        border-radius: 5px;
+
+    }
+    #promo{
+        background-color: red;
+        color: white;
+        
     }
     header nav .nav1{
         display: flex;
@@ -185,26 +219,42 @@ footer{
     }
     header nav ul li{
         margin:5px;
-     }
+    }
+    section.contenedor{
+        display: flex;
+        justify-content: space-around;
+    }
+    .header-full{
+        padding: 5px;
+    }
     .sign-in{
         display: flex;
     }
 }
+/*TABLETS-DESKTOP*/
 @media(min-width:768px){
     .searchBar{
-        width: 80%;
+        width: 60%;
+        height: 40px;
     }
-    .buscador{
-        align-self: center;
-        margin: auto;
+    #boton-buscador{
+        width: 10%;
     }
-    .ui-header{
-        display: flex;
-        justify-content: flex-end;
-        width: 20%;
-    }
+    
     .header-full{
         display: flex;
+       justify-content: space-between;
+        width: 30%;
+        font-size: 20px;
+    }
+    .content-img{
+        width: 10%;
+    }
+    .navBar{
+        padding: 10px;
+    }
+    div ul li button{
+        font-size: 20px;
     }
     main section article {
         flex-basis: 20%;
@@ -217,6 +267,24 @@ footer{
         justify-content:space-around; 
         display: 10px;
     }
+    .sec-info{
+        padding: 10px;
+    }
+    .info{
+        display: flex;
+        margin:5px;
+    }
+    .logo-msje{
+        font-size: 80px;
+    }
+    #input-correo{
+        width: 50%;  
+        height: 30px;
+    }
+    #boton-suscribite{
+        border-radius: 5px;
+        height: 30px;
+    }
     footer{
         display: flex;
         flex-wrap: wrap;
@@ -226,9 +294,12 @@ footer{
     }
     footer section {
         flex-basis: 33%;
+    
     }
-    .copyrgight{
-        flex-basis: 100%;
-        justify-self: flex-start;
+    .sec4-footer{
+        position: relative;
+        text-align: left;
+        margin-left: 10px;
+        padding: 10px;
     }
 }
