@@ -145,7 +145,13 @@ section.suscribite{
     text-align: center;
     padding: 5px;
 }
-
+#input-correo{
+    transition: all 1s;
+}
+#input-correo:hover{
+    border-radius: 10px;
+    box-shadow: 1px 5px 5px 1px rgba(105, 14, 14, 0.5);
+}
 footer, .sec4-footer{
     padding: 10px;
     background-color: #FCAF67;
@@ -164,8 +170,12 @@ footer, .sec4-footer{
 .li-footer li{
     margin: 15px;
 }
-.redes-sociales{
+.redes-sociales i{
     padding: 10px;
+    transition:all 0.5s;
+}
+.redes-sociales i:hover{
+    color:#D53E0F;
 }
 div.redes-sociales a i{
     font-size: 40px;
@@ -271,6 +281,10 @@ div.redes-sociales a i{
     main article{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
     }
+    header{
+        position:fixed;
+        width: 100%;
+    }
     .content{
         display: flex; 
         justify-content:space-around; 
@@ -290,6 +304,7 @@ div.redes-sociales a i{
         width: 50%;  
         height: 30px;
     }
+
     #boton-suscribite{
         border-radius: 5px;
         height: 30px;
