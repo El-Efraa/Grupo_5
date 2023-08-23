@@ -4,20 +4,20 @@
 }
 
 header {
-    background-color: aqua;
-    padding: 5% 5%;
+    background-color: aquamarine;
+    padding: 15px 0;
 }
 
 main {
     background-color: #e0e0e0;
     padding: 15px;
+    font-family: "Montserrat", sans-serif;
 }
 
 .navegacion {
     display: flex;
     flex-wrap: wrap;
     margin-bottom: 10px;
-   
 }
 
 .navegacion p {
@@ -25,12 +25,17 @@ main {
     padding-right: 2%;
 }
 
-.producto img {
+.navegacion p a {
+    text-decoration: none;
+    color: black;
+}
+
+.caja-grande img {
     width: 100%;
 }
 
 .detalle-de-compra {
-    margin: 5px 0px 20px;
+    margin: 12px 0px 20px;
 }
 
 .precio {
@@ -41,52 +46,128 @@ main {
     margin: 0px 2% 15px;
 }
 
+/* BLOQUE PARA ELEGIR CANTIDAD */
+.contenedor1 {
+    display: flex;
+    flex-wrap: wrap;
+}
+
 .bloque-de-cantidad {
-    border: solid 1px black;
     display: flex;
-    flex-wrap: wrap;
-    margin-bottom: 2%;
-    margin-right: 12px;
-    padding: 7px 10px;
-    width: 180px;
-    border-radius: 10px;
     justify-content: space-between;
-    align-items: center;
-
-
-}
-
-.bloque-de-cantidad input{
-    border: 0;
-    width: 100%;
-    height: 100%;
-}
-
-/* .bloque-de-cantidad button {
-    background-color: yellow;
-} */
-
-.formulario-de-cantidad {
-    width: 30%;
-}
-
-.contenedor {
-    display: flex;
-    flex-wrap: wrap;
+    border: solid 1px black;
+    border-radius: 10px;
+    width: 200px;
+    background-color: #3a383847;
     margin-left: 2%;
+    margin-bottom: 12px;
+
 }
 
-.contenedor a button {
+.seleccion {
+    display: flex;
+    padding: 10px 0px;
+    padding-left: 10px;
+    align-items: center;
+}
+
+
+.botones-1 button{
+    width: 30px;
+    height: 100%;
+    background-color: #e0e0e0;
+    font-size: 25px;
+}
+
+.signo-menos {
+    border-radius: 0 8px 8px 0;
+
+}
+
+.signo-mas {
+    border-radius: 8px 0 0 8px;
+}
+
+ .formulario-de-cantidad input{
+    /* border: 0; */
+    width: 45px;
+    height: 100%;
+    margin-left: 8px ;
+    text-align: center;
+}
+
+.contenedor1 a button {
     width: 165px;
-    height: 36px;
+    height: 42px;
     background-color: rgb(255, 123, 0);
     color: white;
+    margin-left: 7%;
 }
 
+/* DESCRIPCION DEL PRODUCTO */
 .seccion2 h3 {
     margin-bottom: 15px;
 }
 
 .seccion2 p {
     margin-bottom: 15px;
+}
+
+@media (min-width: 390px){
+    .caja-grande img {
+        padding: 0 8%;
+    }
+
+
+}
+
+@media (min-width: 769px) {
+    .caja-grande {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+        margin-bottom: 2%;
+    }
+
+    .caja-grande img {
+        width: 50%;
+        padding: 0 0 0 0 ;
+        margin-right: 4%;
+    }
+    .detalle-de-compra h2 {
+        font-size: 29px;
+    }
+    .precio, .promo {
+        font-size: 17px;
+    }
+    .detalle-de-compra {
+        margin: 5% 0 3.5%;
+        width: 29%;
+        position: relative;
+    }
+    
+    /* BLOQUE PARA ELEGIR CANTIDAD */
+    .bloque-de-cantidad {
+        margin-bottom: 20px;
+        width: 223px;
+    }
+    .formulario-de-cantidad input {
+        margin-left: 14px;
+    }
+    .contenedor1 {
+        /* margin-top: 60px; */
+        position: absolute;
+        bottom: 4%;
+
+    }
+    .contenedor1 a button {
+        width: 130%;
+        height: 50px;
+        margin-left: 3%;
+        font-size: 14px;
+    }
+}
+
+@media (min-width: 1100px) {
+
 }

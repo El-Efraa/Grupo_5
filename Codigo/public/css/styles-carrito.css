@@ -2,52 +2,13 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
+    font-family: 'Oswald', sans-serif;
+    font-family: 'Roboto', sans-serif; 
 }
 
 body{
     font-size: 12px;
-    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-
-header{
-    background-color: #ebebeb;
-    margin-bottom: 10px;
-}
-.contenedor{
-    background-color: white;
-    padding: 10px;
-    display: flex;
-    justify-items: center;
-    align-items: center;
-    width: 100%;
-}
-.burguer-menu{
-    margin:5px;
-    width: 20% ;
-}
-#logo{
-    margin:5px;
-    width: 20%;
-}
-.searchBar{
-    margin:5px;
-    width: auto;
-    display: flex;
-}
-.carrito{
-    margin:5px;
-    width: 30%;
-}
-.mensaje{
-    background-color: #679b9b;
-    color:white;
-    text-align: center;
-    padding: 5px;
-}
-.sign-in{
-    display: none;
-}
-
 
 
 
@@ -106,40 +67,61 @@ h1{
     display: none;
 }
 
-article{
+.articulo{
     width: 100%;
     display: flex;
     flex-wrap: wrap;
     justify-content: space-between;
     align-items: center;
-    position: relative;
     margin: 40px 0;
+    background-color: #ebebeb;
+    box-shadow: none;
+    position: relative;
 }
 
 .borrar-producto{
     width: 5%;
     height: 10px;
     margin: 5px;
+    position: relative;
+    bottom: -18px;
+    left: -5px;
 }
 
-img{
+.img{
     width: 20%;
+    background-color: #fff;
+    box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    position: absolute;
+    bottom: 10%;
+    left: 11%
+}
+
+.articulo img{
+    width: 100%;
+    border-radius: 2px;
+    ;
 }
 
 .caja{
-    width: 70%;
+    width: 100%;
     display: flex;
     flex-wrap: wrap;
-    justify-content: end;
+    justify-content: space-around;
+    align-items: center;
+    justify-content: flex-end;
+
 }
 
 .descripcion{
-    width: 95%;
+    padding: 10px;
+    width: 67%;
 }
 
 .precios{
     width: 30%;
     text-align: end;
+    order: 2;
 }
 
 .cantidades{
@@ -147,31 +129,41 @@ img{
 }
 
 .cantidades-mobile{
-    width: 45%;
-    position: absolute;
+    width: 32%;
     top: 30px;
     right: 60px;
+    order: 1;
 }
 
 
 div .cantidades-m{
+    width: 100%;
     padding: 5px;
     border-radius: 5px;
+    
 }
 
 .total-producto{
     display: none;
 }
 
-.titular{
+.montos .titular{
     font-size: 14px;
     margin: 50px 0 15px 0;
+    border-bottom: 1px solid #000;
+}
+
+.montos{
+    padding-bottom: 10px;
+    margin-bottom: 15px;
+    border-bottom: 1px solid #000;
 }
 
 .montos-adicionales{
     display: flex;
     flex-wrap: wrap;
     align-items: center;
+    
 }
 
 .tipo-de-monto{
@@ -262,6 +254,7 @@ div .cantidades-m{
         flex-wrap: wrap;
         justify-content: space-between;
         border-bottom: 1px solid #000;
+        margin-bottom: -6px;
     }
     .categorias h2{
         display: block;
@@ -282,15 +275,53 @@ div .cantidades-m{
     .tot{
         width: 18%;
         text-align: end;
+        
+    }
+    .articulo{
+        margin: 30px 0;
+        display: flex;
+        position: relative;
+    }
+    .borrar-producto{
+        width: 5%;
+        height: 10px;
+        margin: 5px;
+        position: relative;
+        bottom: 0;
+        left: 0;
+    }
+    .img{
+        position: relative;
+        bottom: 0;
+        left: 0
+    }
+    .descripcion{
+        display: block;
+        order: 3;
+        text-align: center;
+        font-size: 12px;
+        width: 29%;
+        margin-left: 4%;
+    }
+    .caja{
+        width: 70%;
+        justify-content: space-around;
+    }
+    .precios{
+        order: 0;
+        width: 17%;
+        margin-right: 5%;
+    }
+    .total-producto{
+        width: 18%;
+        text-align: end;
     }
     .cantidades{
         display: block;
-        width: 30%;
-        position: absolute;
-        top: 63%;
-        right: 15%;
+        width: 36%;
+        margin-left: 5%;
     }
-    .cantidades-m{
+    .cantidades-mobile{
         display: none;
     }
     .restar-cantidad{
@@ -302,28 +333,13 @@ div .cantidades-m{
         padding: 5px;
     }
     .item-cantidad{
-        width: 30%;
+        width: 25%;
         border: 1px solid #666;
         text-align: center;
         padding: 5px;
     }
     .total-producto{
         display: block;
-    }
-    article{
-        margin: 50px 0;
-    }
-    .descripcion{
-        font-size: 12px;
-        width: 29%;
-        position: absolute;
-        bottom: -90%;
-        left: 6%;
-    }
-    .precios{
-        position: absolute;
-        top: 20%;
-        left: 15%;
     }
 }
 
@@ -337,20 +353,33 @@ div .cantidades-m{
     .precio{
         width: 20%
     }
-    img{
+    .img{
         width: 10%;
-        position: absolute;
-        top: -40%;
-        left: 5%;
     }
     .descripcion{
         width: 20%;
-        bottom: -15%;
-        left: 15%;
+        order: 0;
+        margin-left: 0;
+    }
+    .caja{
+        width: 63%;
     }
     .cantidades{
-        top: 0;
-        right: 11%;
+        width: 30%;
+        margin-left: 0;
+        text-align: center;
+
+    }
+    .precios{
+        text-align: start;
+        width: 30%;
+        margin-right: 0;
+    }
+    .total-producto{
+        width: 30%;
+    }
+    .montos{
+        border: none;
     }
     .montos, .pago-total{
         padding: 0 30px;
@@ -376,4 +405,8 @@ div .cantidades-m{
     .finalizar-compra, .mas-productos{
         margin: auto;
     }
+    .total-cuenta{
+        padding: 0 30px;
+    }
+    
 }

@@ -2,36 +2,32 @@
     box-sizing: border-box; 
     margin:0;
     padding:0;  
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Roboto', sans-serif; 
+    font-family: "Montserrat", sans-serif;
 }
 header{
-    background-color: #ebebeb;
+    background-color: #FCAF67;
     
 }
+
 section.contenedor{
     background-color: white;
-    padding: 10px;
     display: flex;
     align-items: center;
     width: 100%;
-    min-height: 50px;
     justify-content: space-around;
 }
+
 .burguer-menu{
     margin:5px;
     width: 0% ;
 }
-.content-img{
-    width: 20%;
-    margin:5px;
-}
 header section div a img{
     width: 100%;
-    justify-self: center;
+}
+.content-img{
+    width: 10%;
 }
 .searchBar{
-    margin:5px;
     display: flex;
     width: 30%;
 }
@@ -48,14 +44,14 @@ header section div a img{
     width: auto;
 }
 .mensaje{
-    background-color: #679b9b;
+    background-color: #7E0306;
     color:white;
     text-align: center;
     padding: 5px;
 }
 
 main{
-    background-color:#ebebeb;
+    background-color: #fccc9f;
     
 }
 .sec-info,.masElegidos{
@@ -79,14 +75,26 @@ section div b{
     display: block;
     text-align: center;
     font-size: 50px;
+    transition:all 1s;
+}
+.iconos-info:hover{
+    color:#D53E0F
+
 }
 .boton-menu{
     text-align: center;
     padding: 10px;
 }
-#boton-menu{
+
+#boton-menu,.boton-nav2,#boton-suscribite{
     font-size: 15px;
     border-radius: 5px;
+    background-color: #D53E0F;
+    color:white;
+    padding: 5px;
+}
+#boton-suscribite{
+    font-size: 10px;
 }
 a{
     color:black;
@@ -102,6 +110,7 @@ main section article{
     background-color: white;
     flex-basis: 40%;
     padding: 5px;
+    transition: box-shadow 1s;
 }
 article div img{
     width: 100%;
@@ -120,6 +129,10 @@ main section div img{
     text-align: justify;
     padding: 10px;
 }
+
+main section article:hover{
+    box-shadow: 1px 10px 10px 1px rgba(0,0,0,.2);
+}
 .secInfoTitle{
     text-align: center;
     display: flex;
@@ -132,9 +145,16 @@ section.suscribite{
     text-align: center;
     padding: 5px;
 }
-
-footer{
+#input-correo{
+    transition: all 1s;
+}
+#input-correo:hover{
+    border-radius: 10px;
+    box-shadow: 1px 5px 5px 1px rgba(105, 14, 14, 0.5);
+}
+footer, .sec4-footer{
     padding: 10px;
+    background-color: #FCAF67;
 }
 .sec1-footer,.sec2-footer,.sec3-footer{
     padding:10px;
@@ -150,8 +170,12 @@ footer{
 .li-footer li{
     margin: 15px;
 }
-.redes-sociales{
+.redes-sociales i{
     padding: 10px;
+    transition:all 0.5s;
+}
+.redes-sociales i:hover{
+    color:#D53E0F;
 }
 div.redes-sociales a i{
     font-size: 40px;
@@ -181,7 +205,7 @@ div.redes-sociales a i{
         display:none;
     }
     .searchBar{
-        width: 50%;
+        width: 40%;
         height: 30px;
     }
     #boton-buscador{
@@ -191,16 +215,16 @@ div.redes-sociales a i{
         display:flex;
         justify-content: space-between;
         padding: 5px;
+        align-items: center;
     } 
     div ul li button{
         font-size: 15px;
         border-radius: 5px;
-
     }
     #promo{
         background-color: red;
         color: white;
-        
+        padding: 2px;
     }
     header nav .nav1{
         display: flex;
@@ -210,7 +234,6 @@ div.redes-sociales a i{
     header nav .nav2{
         display: flex;
         justify-content: flex-end;
-        
     }
     header nav ul {
         display: flex;
@@ -234,7 +257,6 @@ div.redes-sociales a i{
 /*TABLETS-DESKTOP*/
 @media(min-width:768px){
     .searchBar{
-        width: 60%;
         height: 40px;
     }
     #boton-buscador{
@@ -247,9 +269,6 @@ div.redes-sociales a i{
         width: 30%;
         font-size: 20px;
     }
-    .content-img{
-        width: 10%;
-    }
     .navBar{
         padding: 10px;
     }
@@ -261,6 +280,10 @@ div.redes-sociales a i{
     }
     main article{
         box-shadow: 0px 0px 10px rgb(100, 100, 100);
+    }
+    header{
+        position:fixed;
+        width: 100%;
     }
     .content{
         display: flex; 
@@ -281,6 +304,7 @@ div.redes-sociales a i{
         width: 50%;  
         height: 30px;
     }
+
     #boton-suscribite{
         border-radius: 5px;
         height: 30px;
@@ -299,7 +323,6 @@ div.redes-sociales a i{
     .sec4-footer{
         position: relative;
         text-align: left;
-        margin-left: 10px;
         padding: 10px;
     }
 }
