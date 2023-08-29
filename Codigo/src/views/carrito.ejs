@@ -1,0 +1,150 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('./partials/head')%>
+    <!--EN ESTE ARCHIVO "CSSCARRITO" SOLO USAR LO QUE VA EN EL BODY  <link rel="stylesheet" href="/css/styles-carrito.css"> > --> 
+</head>
+<body>
+    <header>
+        <%- include('./partials/header')%>
+    </header>
+    <main>
+        <h1>MI CARRITO</h1>
+
+        <div class="envio-gratis">
+            <label for="file">Alcanza el envío gratis</label>
+            <progress id="file" value="4500" max="15000" class="barra">70 %</progress>
+            <h3 class="monto">Total</h3>
+            <h3 class="monto-envio">15000</h3>
+        </div>
+        
+        <h3 class="eleccion">
+            ¡Excelente elección! Te van a encantar nuestros productos.
+        </h3>
+
+        <section>
+             <div class="categorias">
+                <h2 class="product">PRODUCTO</h2>
+                <h2 class="precio">PRECIO</h2>
+                <h2 class="cantid">CANTIDAD</h2>
+                <h2 class="tot">TOTAL</h2>
+            </div>
+            <section class="productos">
+                <article class="articulo">
+                    <i class="fa-solid fa-circle-xmark borrar-producto"></i>
+                    <div class="img"><img src="/img/bunuelos.jpg" alt="Imagen del producto"></div>
+                    <h3 class="descripcion">Buñuelos con api</h3>
+                    <div class="caja">
+                    <h3 class="precios">$2000</h3>
+                    <div class="cantidades">
+                        <button><i class="fas fa-minus restar-cantidad"></i></button>
+                        <input type="text" value="1" class="item-cantidad" disabled>
+                        <button><i class="fas fa-plus sumar-cantidad"></i></button>
+                    </div>
+                    <div class="cantidades-mobile"><select name="cantidad" class="cantidades-m">
+                        <option value="1">1 unidad</option>
+                        <option value="2">2 unidades</option>
+                        <option value="3">3 unidades</option>
+                        <option value="4">4 unidades</option>
+                        <option value="5">5 unidades</option>
+                        <option value="6">6 unidades</option>
+                        <option value="">Más de 6 unidades</option>
+                    </select></div>   
+                    <h3 class="total-producto">$2000</h3></div>
+                </article>
+                <article class="articulo">
+                    <i class="fa-solid fa-circle-xmark borrar-producto"></i>
+                    <div class="img"><img src="/img/Humitas-en-chala.jpg" alt="Imagen del producto"></div>
+                    <h3 class="descripcion">Humitas</h3>
+                    <div class="caja">
+                    <h3 class="precios">$1500</h3>
+                    <div class="cantidades">
+                        <button><i class="fas fa-minus restar-cantidad"></i></button>
+                        <input type="text" value="1" class="item-cantidad" disabled>
+                        <button><i class="fas fa-plus sumar-cantidad"></i></button>
+                    </div>
+                    <div class="cantidades-mobile"><select name="cantidad" class="cantidades-m">
+                        <option value="1">1 unidad</option>
+                        <option value="2">2 unidades</option>
+                        <option value="3">3 unidades</option>
+                        <option value="4">4 unidades</option>
+                        <option value="5">5 unidades</option>
+                        <option value="6">6 unidades</option>
+                        <option value="">Más de 6 unidades</option>
+                    </select></div>   
+                    <h3 class="total-producto">$1500</h3></div>
+                </article>
+                <article class="articulo">
+                    <i class="fa-solid fa-circle-xmark borrar-producto"></i>
+                    <div class="img"><img src="/img/Locro.jpg" alt="Imagen del producto"></div>
+                    <h3 class="descripcion">Locro</h3>
+                    <div class="caja">
+                    <h3 class="precios">$2000</h3>
+                    <div class="cantidades">
+                        <button><i class="fas fa-minus restar-cantidad"></i></button>
+                        <input type="text" value="1" class="item-cantidad" disabled>
+                        <button><i class="fas fa-plus sumar-cantidad"></i></button>
+                    </div> 
+                    <div class="cantidades-mobile"><select name="cantidad" class="cantidades-m">
+                        <option value="1">1 unidad</option>
+                        <option value="2">2 unidades</option>
+                        <option value="3">3 unidades</option>
+                        <option value="4">4 unidades</option>
+                        <option value="5">5 unidades</option>
+                        <option value="6">6 unidades</option>
+                        <option value="">Más de 6 unidades</option>
+                    </select></div>  
+                    <h3 class="total-producto">$2000</h3></div>
+                </article>
+            </section>
+            <section class="total-cuenta">
+                <section class="montos">
+                    <h2 class="titular">TOTAL DEL CARRITO</h2>
+                    <div class="montos-adicionales">
+                        <h3 class="tipo-de-monto">Subtotal</h3>
+                        <h3 class="monto">$</h3>
+                    </div>
+                    <div class="montos-adicionales">
+                        <h3 class="tipo-de-monto">Envío</h3>
+                        <h3 class="monto">$</h3>
+                        <input type="text" class="codigo-postal" placeholder="Introduzca su código postal">
+                        <button class="calcular-envio">Calcular envío</button>
+                    </div>
+                </section>
+                <section class="montos"> 
+                    <div class="montos-adicionales total-con-envio" >
+                        <h3 class="tipo-de-monto ">Total con envío</h3>
+                        <h3 class="monto">$</h3>
+                    </div>
+                    <div class="montos-adicionales">
+                        <h3 class="tipo-de-monto">Cupón de descuento</h3>
+                        <h3 class="porcentaje-descuento">%</h3>
+                        <input type="text" class="descuento" placeholder="Código de descuento">
+                    </div>
+                </section>
+                <section>
+                    <div class="pago-total">
+                    <h3 class="total">Total</h3>
+                    <h3 class="monto-total">$</h3>
+                    </div>
+                    <div class="buttons">
+                        <button class="mas-productos">Elegir más productos</button>
+                        <button class="finalizar-compra">Finalizar compra</button>
+                    </div>
+                </section>
+            </section>
+        </section>
+    </main>
+
+
+    <footer>
+        <%- include('./partials/footer')%>  
+    </footer>
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>
+
+</body>
+</html>

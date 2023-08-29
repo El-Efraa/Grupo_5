@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="/css/styles_producto.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
+    rel="stylesheet">
+    <!-- <link href="/css/styles_home.css" rel="stylesheet" > -->
+    <title> Detalle del Producto </title>
+</head>
+<body>
+    
+    <!-- TENGO Q RESOLVER EL PROBLEMA ENTRE EL CSS DEL HOME Y EL PRODUCTO  -->
+
+     <header>
+        <%- include('./partials/header')%>
+    </header>
+
+    <main>
+            <div class="navegacion">
+                <p> <a href="/"> Inicio </a> </p>
+                <p class="flecha"> > </p>
+                <p> <a href="#"> Comidas Regionales </a> </p>
+                <p class="flecha"> > </p>
+                <p> <a href="#"> Locro </a> </p>
+            </div>
+
+            <section class="caja-grande">
+                <img src="/img/Locro.jpg" alt="img-del-producto">
+
+                <div class="detalle-de-compra">
+                    <h2> LOCRO </h2>
+                    <p class="precio"> $2000 </p>
+                    <p class="promo"> Llevando 7 platos: $12345</p>
+                    
+                    <div class="contenedor1">
+                        <article class="bloque-de-cantidad">
+                            <div class="seleccion">
+                                <p> Cantidad</p>
+                                <p class="formulario-de-cantidad">
+                                    <label for="cantidad">
+                                        <input type="number" name="cantidad" id="cantidad" placeholder="1">
+                                    </label>
+                                </p>
+                            </div>
+            
+                            <div class="botones-1">
+                                <button type="button" class="signo-mas"> + </button>
+                                <button type="button" class="signo-menos"> - </button>
+                            </div>
+                    
+                        </article>
+            
+                        <a href="#"><button type="button"> AGREGAR AL CARRITO</button></a>
+                    </div>
+                </div>
+
+            </section>
+
+            <section class="seccion2">
+                <h3> Ingredientes </h3>
+                <p> Porotos blancos, Maíz blanco, Chorizo colorado, Chorizo criollo, Cuerito de cerdo, Pechito de cerdo, Falda,Panceta, Cebollas, Cebollas de verdeo, Puerro, Calabaza, Morrón rojo, Condimentos: sal, pimienta, comino, pimentón, ají molido, orégano </p>
+
+                <p> Tiempo de Preparación: 3hs 1/2 a 4hs</p>
+            </section>
+    </main>
+    <footer>
+        <%- include('./partials/footer')%>   
+    </footer>
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>  
+</body>
+</html>

@@ -1,31 +1,25 @@
 const express = require('express');
 const path = require('path');
-
 const app = express();
+let rutasUsuario= require("./routes/usuario.js")
+let rutasProducto=require("./routes/producto.js")
+let rutasMain=require("./routes/main.js")
+let rutasCarrito=require("./routes/carrito.js")
 
 const publicPath = path.resolve (__dirname, '../public')
+
+app.set('view engine','ejs');
+app.set('views','src/views')
+
 app.use(express.static(publicPath))
 
 app.listen(3000, () =>{
     console.log("Servidor corriendo en el puerto 3000")
 })
 
-app.get ('/', function(req, res){
-    res.sendFile (path.resolve(__dirname, './views/home.html'))
-})
+app.use('/',rutasMain)
+//app.use('/user',rutasUsuario)
+//LA VISTA ESTA DENTRO DE LA CARPETA /PRODUCTS
+app.use('/producto',rutasProducto)
 
-app.get ('/registro', (req, res) => {
-    res.sendFile (path.resolve (__dirname, 'views/registro.html'))
-})
-
-app.get ('/login', (req, res) => {
-    res.sendFile (path.resolve (__dirname, 'views/login.html'))
-})
-
-app.get ('/producto', (req, res) => {
-    res.sendFile (path.resolve (__dirname, './views/producto.html'))
-})
-
-app.get ('/carrito', (req, res) => {
-    res.sendFile (path.resolve (__dirname, './views/carrito.html'))
-})
+app.get ('/carrito',rutasCarrito)
