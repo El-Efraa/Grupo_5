@@ -4,7 +4,6 @@ Somos un e-commerce que permite al usuario elegir sus platos favoritos dentro de
 Nuestro objetivo es poder ofrecerles algo rico para comer con nuestros platos e incluso los regionales para aquellas personas que viven en Jujuy y los turistas que nos visitan.
 
 # Integrantes:
-- Julieta Guantay
 - Damaris Aizama
 - Efrain Gregorio 
 - Facundo Valverdi
