@@ -133,6 +133,18 @@ section.suscribite{
     padding: 5px;
 }
  /*registro*/
+ main {
+    background-image: url(/img\AJSE3EF6DZDVJIPF4KYFAJDM4A.avif);
+    background-size: cover;
+}
+
+.form {
+    float: left;
+}
+
+.required {
+    color: red;
+}
 
 
  h1 {
