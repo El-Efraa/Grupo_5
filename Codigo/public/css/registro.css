@@ -1,139 +1,14 @@
-*{
-    box-sizing: border-box; 
-    margin:0;
-    padding:0;  
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Roboto', sans-serif; 
-}
-header{
-    background-color: #ebebeb;
-    
-}
-section.contenedor{
-    background-color: white;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    min-height: 50px;
-    justify-content: space-around;
-}
-.burguer-menu{
-    margin:5px;
-    width: 0% ;
-}
-.content-img{
-    width: 20%;
-    margin:5px;
-}
-header section div a img{
-    width: 100%;
-    justify-self: center;
+ /*registro*/
+.mensaje{
+    display: none;
 }
 .searchBar{
-    margin:5px;
-    display: flex;
-    width: 30%;
+    display: none;
 }
-.searchBar input{
-    width: 80%;
+.contenedor{
+    display: none;
 }
-.carrito{
-    margin:5px;
-    width: 100%;
-}
-.header-full{
-    display: flex;
-    justify-content: space-between;
-    width: auto;
-}
-.mensaje{
-    background-color: #679b9b;
-    color:white;
-    text-align: center;
-    padding: 5px;
-}
-
-main{
-    background-color:#ebebeb;
-    
-}
-.sec-info,.masElegidos{
-    text-align: center;
-    padding: 10px;
-}
-.info1,.info2,.info3{
-    padding: 10px;
-}
-section div b{
-    display: flex;
-    -webkit-box-flex: 1;
-    -ms-flex: 1;
-    flex: 1;
-    height: 2px;
-    opacity: .1;
-    background-color: currentColor;
-}
-.iconos-info{
-    width: 100%;
-    display: block;
-    text-align: center;
-    font-size: 50px;
-}
-.boton-menu{
-    text-align: center;
-    padding: 10px;
-}
-#boton-menu{
-    font-size: 15px;
-    border-radius: 5px;
-}
-a{
-    color:black;
-    text-decoration: none;
-}
-button a{
-    color:black;
-    text-decoration: none;  
-}
-main section article{
-    margin:0 auto 10px;
-    width: 90%;
-    background-color: white;
-    flex-basis: 40%;
-    padding: 5px;
-}
-article div img{
-    width: 100%;
-}
-.carrusel{
-    display: flex;
-    justify-content: center;
-    width: 100%;
-}
-main section div img{
-    width: 100%;
-}
-.content{
-    display: flex;
-    flex-wrap: wrap;
-    text-align: justify;
-    padding: 10px;
-}
-.secInfoTitle{
-    text-align: center;
-    display: flex;
-}
-section.suscribite{
-    background-image: url(/img/gastro-sus.jpeg);
-    background-color: transparent;
-    width: 100%;
-    color: white;
-    text-align: center;
-    padding: 5px;
-}
- /*registro*/
- main {
+main {
     background-image: url(/img\AJSE3EF6DZDVJIPF4KYFAJDM4A.avif);
     background-size: cover;
 }
@@ -218,45 +93,7 @@ input[type="checkbox"] {
 .form-group:last-child {
     margin-bottom: 0;
 }
-/*footer*/
-footer{
-    padding: 10px;
-}
-.sec1-footer,.sec2-footer,.sec3-footer{
-    padding:10px;
-}
-.is-divider {
-    height: 3px;
-    display: block;
-    background-color: rgba(0,0,0,.1);
-    margin: 1em 0 1em;
-    width: 100%;
-    max-width: 30px;
-}
-.redes-sociales{
-    padding: 10px;
-}
-.redes-sociales div i{
-    width: 50%;
-}
-.location{
-    display: flex;
-    order:-2;
-}
-.sign-in{
-    display: flex;
-    order:-1;
-}
-.carrito{
-    display: flex;
-    order:2;
-}
-.navBar{
-    display:none;
-}
-.sign-in{
-    display: none;
-}
+
 /*responsiv*/
 /*CELULARES */
 @media(min-width:376px){
@@ -329,6 +166,10 @@ footer{
        justify-content: space-between;
         width: 30%;
         font-size: 20px;
+    }
+    header{
+        position:relative;
+        width: 100%;
     }
     .content-img{
         width: 10%;

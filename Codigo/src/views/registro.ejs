@@ -1,16 +1,16 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Registro</title>
+    <%- include('./partials/head')%>
+
     <link href="/css/registro.css" rel="stylesheet" >
+
 </head>
 <body>
     <%- include('./partials/header')%>
     <main>
         <h1>Registro de Usuario</h1>
-    <form class="forn" action="/submit" method="post">
+        <form class="forn" action="/submit" method="post">
         <label for="nombre">Nombre:<span class="required">*</span></label>
         <input type="text" id="nombre" name="nombre" required><br>
 

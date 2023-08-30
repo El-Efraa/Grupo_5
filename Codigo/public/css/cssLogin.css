@@ -1,75 +1,37 @@
+/*Login*/
 *{
     box-sizing: border-box; 
     margin:0;
     padding:0;  
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Roboto', sans-serif; 
+    font-family: "Montserrat", sans-serif;
 }
-header{
-    background-color: #ebebeb;
-    
-}
-section.contenedor{
-    background-color: white;
-    padding: 10px;
-    display: flex;
-    align-items: center;
-    width: 100%;
-    min-height: 50px;
-    justify-content: space-around;
-}
-.burguer-menu{
-    margin:5px;
-    width: 0% ;
-}
-.content-img{
-    width: 20%;
-    margin:5px;
-}
-header section div a img{
-    width: 100%;
-    justify-self: center;
-}
-.searchBar{
-    margin:5px;
-    display: flex;
-    width: 30%;
-}
-.searchBar input{
-    width: 80%;
-}
-.carrito{
-    margin:5px;
+body {
+    min-height: 100vh;
+    background-image: url("../img/GASTRONOMIA.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-attachment: fixed;
     width: 100%;
 }
-.header-full{
-    display: flex;
-    justify-content: space-between;
-    width: auto;
-}
-.mensaje{
-    background-color: #679b9b;
-    color:white;
-    text-align: center;
-    padding: 5px;
-}
-/*Login*/
-
 main {
     padding: 20px;
+    width: 100%;
+    position: absolute;
 }
 .login-container {
     max-width: 400px;
-    margin: 0 auto;
-    background-color: #ADD8E6;
+    margin: 75px auto;
+    background-color: #FCAF67;
     padding: 20px;
     border-radius: 10px;
     box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    text-align: center;
 }
 .logo3 {
     display: block;
     max-width: 150px;
     margin: 0 auto 20px;
+   
 }
 .in{
     margin-top: 0;
@@ -77,6 +39,7 @@ main {
 .forn {
     display: inline-block;
     text-align: left;
+    padding-top: 10px;
 }
 label {
     display: block;
@@ -101,175 +64,17 @@ input[type="submit"] {
     border: none;
     cursor:pointer
 }
-
-/*footer*/
-footer{
-    padding: 10px;
-}
-.sec1-footer,.sec2-footer,.sec3-footer{
-    padding:10px;
-}
-.is-divider {
-    height: 3px;
-    display: block;
-    background-color: rgba(0,0,0,.1);
-    margin: 1em 0 1em;
-    width: 100%;
-    max-width: 30px;
-}
-.li-footer li{
-    margin: 15px;
-}
-.redes-sociales{
-    padding: 10px;
-}
-div.redes-sociales a i{
-    font-size: 40px;
-    justify-items: space-between;
-}
-.location{
-    display: flex;
-    order:-2;
-}
-.sign-in{
-    display: flex;
-    order:-1;
-}
-.carrito{
-    display: flex;
-    order:2;
-}
-.navBar{
-    display:none;
-}
-.sign-in{
-    display: none;
+#mensaje{
+    padding: 15px;
+    text-decoration:none;
 }
 /*CELULARES */
 @media(min-width:376px){
-    .burger-menu button{
-        display:none;
-    }
-    .searchBar{
-        width: 50%;
-        height: 30px;
-    }
-    #boton-buscador{
-        width: 10%;
-    }
-    .navBar{
-        display:flex;
-        justify-content: space-between;
-        padding: 5px;
-    } 
-    div ul li button{
-        font-size: 15px;
-        border-radius: 5px;
-
-    }
-    #promo{
-        background-color: red;
-        color: white;
-        
-    }
-    header nav .nav1{
-        display: flex;
-        justify-content: flex-start;
-        
-    }
-    header nav .nav2{
-        display: flex;
-        justify-content: flex-end;
-        
-    }
-    header nav ul {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    header nav ul li{
-        margin:5px;
-    }
     section.contenedor{
         display: flex;
         justify-content: space-around;
     }
-    .header-full{
-        padding: 5px;
-    }
     .sign-in{
         display: flex;
-    }
-}
-/*TABLETS-DESKTOP*/
-@media(min-width:768px){
-    .searchBar{
-        width: 60%;
-        height: 40px;
-    }
-    #boton-buscador{
-        width: 10%;
-    }
-    
-    .header-full{
-        display: flex;
-       justify-content: space-between;
-        width: 30%;
-        font-size: 20px;
-    }
-    .content-img{
-        width: 10%;
-    }
-    .navBar{
-        padding: 10px;
-    }
-    div ul li button{
-        font-size: 20px;
-    }
-    main section article {
-        flex-basis: 20%;
-    }
-    main article{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-    .content{
-        display: flex; 
-        justify-content:space-around; 
-        display: 10px;
-    }
-    .sec-info{
-        padding: 10px;
-    }
-    .info{
-        display: flex;
-        margin:5px;
-    }
-    .logo-msje{
-        font-size: 80px;
-    }
-    #input-correo{
-        width: 50%;  
-        height: 30px;
-    }
-    #boton-suscribite{
-        border-radius: 5px;
-        height: 30px;
-    }
-    footer{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        padding:50px 50px 0px 50px;
-    }
-    footer section {
-        flex-basis: 33%;
-    
-    }
-    .sec4-footer{
-        position: relative;
-        text-align: left;
-        margin-left: 10px;
-        padding: 10px;
     }
 }
