@@ -19,7 +19,6 @@ app.listen(3000, () =>{
 
 app.use('/',rutasMain)
 //app.use('/user',rutasUsuario)
-//LA VISTA ESTA DENTRO DE LA CARPETA /PRODUCTS
 app.use('/producto',rutasProducto)
 
 app.get ('/carrito',rutasCarrito)

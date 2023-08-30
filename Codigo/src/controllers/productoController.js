@@ -1,6 +1,6 @@
 let controller={
     regionales:(req, res)=>{
-       return  res.render('producto')
+       return  res.render('products/producto')
     },
 }
 

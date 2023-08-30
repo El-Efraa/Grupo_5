@@ -1,21 +1,14 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link rel="stylesheet" href="/css/styles_producto.css">
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css"
-    rel="stylesheet">
-    <!-- <link href="/css/styles_home.css" rel="stylesheet" > -->
-    <title> Detalle del Producto </title>
+    <%- include('../partials/head')%>
 </head>
 <body>
     
     <!-- TENGO Q RESOLVER EL PROBLEMA ENTRE EL CSS DEL HOME Y EL PRODUCTO  -->
 
-     <header>
-        <%- include('./partials/header')%>
-    </header>
+    <%- include('../partials/header')%>
+
 
     <main>
             <div class="navegacion">
@@ -65,9 +58,7 @@
                 <p> Tiempo de Preparación: 3hs 1/2 a 4hs</p>
             </section>
     </main>
-    <footer>
-        <%- include('./partials/footer')%>   
-    </footer>
+        <%- include('../partials/footer')%>   
     <section class="sec4-footer">    
         <div class="copyrgight">
             <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
