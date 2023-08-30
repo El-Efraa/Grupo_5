@@ -14,7 +14,6 @@ body{
 
 
 main{
-    background-color: #ebebeb;
     padding: 20px;
 }
 
@@ -74,7 +73,7 @@ h1{
     justify-content: space-between;
     align-items: center;
     margin: 40px 0;
-    background-color: #ebebeb;
+    background-color: #fccc9f;
     box-shadow: none;
     position: relative;
 }
@@ -184,16 +183,17 @@ div .cantidades-m{
 .codigo-postal{
     width: 50%;
     margin-right: 2px;
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
     border: solid 1px #666;
 }
 
 .calcular-envio{
     margin-left: 2px;
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
-    border: solid 1px #666;
+    border: solid 1px black;
+    background-color: #ff6c3e85;
 }
 
 .porcentaje-descuento{
@@ -202,7 +202,7 @@ div .cantidades-m{
 }
 .descuento{
     margin: auto;
-    padding: 5px;
+    padding: 8px;
     border-radius: 5px;
     border: solid 1px #666;
 }
@@ -232,14 +232,18 @@ div .cantidades-m{
     margin-right: 2px;
     padding: 5px;
     border-radius: 5px;
-    border: solid 1px #666;
+    border: solid 1px black;
+    background-color: #d53e0fb8;
+    color: white;
 }
 
 .finalizar-compra{
     margin-left: 2px;
     padding: 5px;
     border-radius: 5px;
-    border: solid 1px #666;
+    border: solid 1px black;
+    background-color: #7e1f03;
+    color: white;
 }
 
 
@@ -327,16 +331,21 @@ div .cantidades-m{
     .restar-cantidad{
         text-align: center;
         padding: 5px;
+        background-color: #450305;
+        color: white;
     }
     .sumar-cantidad{
         text-align: center;
         padding: 5px;
+        background-color: #450305;
+        color: white;
     }
     .item-cantidad{
         width: 25%;
         border: 1px solid #666;
         text-align: center;
         padding: 5px;
+        background-color: white;
     }
     .total-producto{
         display: block;
@@ -344,6 +353,12 @@ div .cantidades-m{
 }
 
 @media (min-width: 769px){
+    main{
+        padding: 50px;
+        padding-top: 190px;
+        position: relative;
+        z-index: -1;
+    }
     .envio-gratis{
         width: 50%;
     }
@@ -404,6 +419,7 @@ div .cantidades-m{
     }
     .finalizar-compra, .mas-productos{
         margin: auto;
+        padding: 8px;
     }
     .total-cuenta{
         padding: 0 30px;
