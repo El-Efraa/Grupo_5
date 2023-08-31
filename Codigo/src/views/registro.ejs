@@ -1,13 +1,27 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <%- include('./partials/head')%>
-
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Oswald&family=Roboto:wght@400;500&display=swap" rel="stylesheet">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.15.3/css/all.min.css" rel="stylesheet">
+    <link rel="shortcut icon" href="/img/favicon.ico">
     <link href="/css/registro.css" rel="stylesheet" >
-
+    <title>Delicias Jujeñas</title>
 </head>
 <body>
-    <%- include('./partials/header')%>
+    <header>
+        <section class="contenedor">
+                <div class="content-img" >
+                    <a href="/"><img src="/img/logo.jpeg" alt="logo-comercio"id="logo"> </a>        
+                </div>
+                <div class="info">
+                        <i class="fas fa-info-circle" id="info-icon"></i>
+                </div>       
+        </section> 
+    </header>
     <main>
         <h1>Registro de Usuario</h1>
         <form class="forn" action="/submit" method="post">
@@ -23,7 +37,7 @@
         <label for="fecha_nacimiento">Fecha de nacimiento:</label>
         <input type="date" id="fecha_nacimiento" name="fecha_nacimiento" required><br>
 
-        <label for="domicilio">Domicilio:</label>
+        <label for="domicilio">Domicilio:<span class="required">*</span></label>
         <input type="text" id="domicilio" name="domicilio" required><br>
 
         <label for="foto_usuario">Foto de usuario:</label>
@@ -42,12 +56,5 @@
         <button class="boton" type="reset">Borrar</button>
     </form>
     </main>
-    <%- include('./partials/footer')%>  
-    <section class="sec4-footer">    
-                <div class="copyrgight">
-                    <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
-                </div>
-    </section>
- 
 </body>
 </html>
