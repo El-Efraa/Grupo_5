@@ -1,37 +1,52 @@
  /*registro*/
-.mensaje{
-    display: none;
+*{
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;  
+    font-family: "Montserrat", sans-serif;
 }
-.searchBar{
-    display: none;
+section.contenedor{
+    background-color: white;
+    display: flex;
+    align-items: center;
+    width: 100%;
+    justify-content: space-around;
 }
-.contenedor{
-    display: none;
+header section div a img{
+    width: 100%;
+}
+.content-img{
+    width: 20vw;
+}
+.info{
+    display: flex;
+    justify-content: flex-end;
+    width: auto;
+}
+#info-icon{
+    font-size: 20px;
 }
 main {
-    background-image: url(/img\AJSE3EF6DZDVJIPF4KYFAJDM4A.avif);
-    background-size: cover;
+    background-color: #fccc9f;
+    padding: 50px;
 }
 
 .form {
     float: left;
 }
-
 .required {
     color: red;
 }
 
-
- h1 {
+h1 {
     text-align: center;
     margin-bottom: 30px;
     color: #041b34;
 }
-
 .forn {
     max-width: 500px;
     margin: 0 auto;
-    background-color: #679b9b;
+    background-color: #FCAF67;
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
@@ -47,7 +62,7 @@ label {
 
 input[type="text"],
 input[type="date"],
-input[type="password"],
+input[type="password"],input[type="email"],
 input[type="file"] {
     width: 100%;
     padding: 10px;
@@ -68,7 +83,7 @@ input[type="checkbox"] {
 }
 
 .boton {
-    background-color: #3f30ac;
+    background-color: #731c02;
     color: #fff;
     border: none;
     padding: 10px 20px;
@@ -77,12 +92,9 @@ input[type="checkbox"] {
     display: inline-block;
 
 }
-
 .boton[type="reset"] {
-    background-color: #3f30ac;
+    background-color: #8b3629;
     margin-left: 10px;
-    
-    
 }
 
 .form-group {
@@ -94,136 +106,13 @@ input[type="checkbox"] {
     margin-bottom: 0;
 }
 
-/*responsiv*/
-/*CELULARES */
 @media(min-width:376px){
-    .burger-menu button{
-        display:none;
-    }
-    .searchBar{
-        width: 50%;
-        height: 30px;
-    }
-    #boton-buscador{
-        width: 10%;
-    }
-    .navBar{
-        display:flex;
-        justify-content: space-between;
-        padding: 5px;
-    } 
-    div ul li button{
-        font-size: 15px;
-        border-radius: 5px;
-
-    }
-    #promo{
-        background-color: red;
-        color: white;
-        
-    }
-    header nav .nav1{
-        display: flex;
-        justify-content: flex-start;
-        
-    }
-    header nav .nav2{
-        display: flex;
-        justify-content: flex-end;
-        
-    }
-    header nav ul {
-        display: flex;
-        justify-content: space-around;
-        flex-wrap: wrap;
-    }
-    header nav ul li{
-        margin:5px;
-    }
-    section.contenedor{
-        display: flex;
-        justify-content: space-around;
-    }
-    .header-full{
-        padding: 5px;
-    }
-    .sign-in{
-        display: flex;
+    .content-img{
+        width: 10vw;
     }
 }
-/*TABLETS-DESKTOP*/
 @media(min-width:768px){
-    .searchBar{
-        width: 60%;
-        height: 40px;
-    }
-    #boton-buscador{
-        width: 10%;
-    }
-    
-    .header-full{
-        display: flex;
-       justify-content: space-between;
-        width: 30%;
-        font-size: 20px;
-    }
-    header{
-        position:relative;
-        width: 100%;
-    }
     .content-img{
-        width: 10%;
-    }
-    .navBar{
-        padding: 10px;
-    }
-    div ul li button{
-        font-size: 20px;
-    }
-    main section article {
-        flex-basis: 20%;
-    }
-    main article{
-        box-shadow: 0px 0px 10px rgb(100, 100, 100);
-    }
-    .content{
-        display: flex; 
-        justify-content:space-around; 
-        display: 10px;
-    }
-    .sec-info{
-        padding: 10px;
-    }
-    .info{
-        display: flex;
-        margin:5px;
-    }
-    .logo-msje{
-        font-size: 80px;
-    }
-    #input-correo{
-        width: 50%;  
-        height: 30px;
-    }
-    #boton-suscribite{
-        border-radius: 5px;
-        height: 30px;
-    }
-    footer{
-        display: flex;
-        flex-wrap: wrap;
-        align-items: center;
-        justify-content: center;
-        padding:50px 50px 0px 50px;
-    }
-    footer section {
-        flex-basis: 33%;
-    
-    }
-    .sec4-footer{
-        position: relative;
-        text-align: left;
-        margin-left: 10px;
-        padding: 10px;
+        width: 8vw;
     }
 }
