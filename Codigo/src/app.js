@@ -22,3 +22,5 @@ app.use('/',rutasMain)
 app.use('/producto',rutasProducto)
 
 app.get ('/carrito',rutasCarrito)
+
+app.get('/create', rutasProducto)

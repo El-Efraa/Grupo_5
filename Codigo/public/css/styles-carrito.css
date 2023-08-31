@@ -2,8 +2,7 @@
     padding: 0;
     margin: 0;
     box-sizing: border-box;
-    font-family: 'Oswald', sans-serif;
-    font-family: 'Roboto', sans-serif; 
+    font-family: "Montserrat", sans-serif;
 }
 
 body{
@@ -354,8 +353,8 @@ div .cantidades-m{
 
 @media (min-width: 769px){
     main{
-        padding: 50px;
-        padding-top: 190px;
+        padding: 5%;
+        padding-top: 20%;
         position: relative;
         z-index: -1;
     }
