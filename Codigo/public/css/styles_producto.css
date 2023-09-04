@@ -3,10 +3,10 @@
     margin: 0;
 }
 
-header {
+/* header {
     background-color: aquamarine;
     padding: 15px 0;
-}
+} */
 
 main {
     background-color: #e0e0e0;
@@ -122,6 +122,12 @@ main {
 }
 
 @media (min-width: 769px) {
+    main {
+        padding-top: 23%;
+        position: relative;
+        z-index: -1;
+    }
+
     .caja-grande {
         display: flex;
         flex-wrap: wrap;
@@ -169,5 +175,7 @@ main {
 }
 
 @media (min-width: 1100px) {
-
+    main {
+        padding-top: 20%;
+    }
 }

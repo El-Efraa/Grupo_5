@@ -5,6 +5,9 @@ let controller={
     create: (req, res)=>{
         return  res.render('products/form-creacion-de-producto')
      },
+   edit: (req, res) => {
+      return res.render('products/form-editar-producto')
+   }
      
 }
 

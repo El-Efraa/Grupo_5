@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head')%>
+
+    
+    <link rel="stylesheet" href="/css/styles-create.css">
+    <link rel="stylesheet" href="/css/styles_home.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header')%>
+
+    <div class="container">
+
+        <h2 class="titular">Creación de producto</h2>
+
+        <form action="" method="POST">
+
+            <label class="categorias">Nombre del producto:</label>
+            <input class="input" type="text" name="name">
+            
+            <label class="categorias">Imagen:</label>
+            <input class="image" type="file" name="image">
+
+            <label class="categorias">Categoría: </label>
+            <select name="category">
+                <option value="1">Regional</option>
+                <option value="2">Fresco</option>
+                <option value="3">Congelados</option>
+            </select>
+
+            <label class="categorias">Precio: </label>
+            <input class="input" type="text" name="price">
+
+            <label class="categorias">Descripción:</label>
+            <textarea name="category" cols="40" rows="5"></textarea>
+
+            <label class="categorias">Receta</label>
+            <textarea name="recipe" cols="40" rows="5"></textarea>
+
+            <button class="button-create" type="submit"> Crear producto </button>
+
+        </form>
+    </div>
+
+
+    <%- include('../partials/footer')%>    
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>
+    
+</body>
+</html>
