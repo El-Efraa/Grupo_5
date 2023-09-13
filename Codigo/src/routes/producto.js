@@ -3,6 +3,7 @@ const app = express();
 const router =express.Router();
 const productoController=require("../controllers/productoController")
 
+router.get('/', productoController.index)
 
 router.get ('/regionales',productoController.regionales)
 
