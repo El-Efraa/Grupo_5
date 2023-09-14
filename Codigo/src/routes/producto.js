@@ -8,8 +8,8 @@ router.get('/', productoController.index)
 
 router.get ('/create', productoController.create)
 
-router.get('/:id/detail',productoController.show)
+router.get('/detail/:id',productoController.detalle)
 
-router.get ('/:id/edit', productoController.edit);
+router.get ('/edit/:id', productoController.edit);
 
 module.exports=router;
