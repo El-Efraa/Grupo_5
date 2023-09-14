@@ -14,33 +14,36 @@
 
     <div class="container">
 
-        <h2 class="titular">Edición de producto</h2>
+        <h2 class="titular">Edición del producto: <%= comida.id %></h2>
 
-        <form action="" method="POST">
+        <form action="/productos/edit/<%=comida.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+
+            <input class="image" type="number" name="id" value="<%= comida.id %>"  hidden>
 
             <label class="categorias">Nombre del producto:</label>
-            <input class="input" type="text" name="name">
+            <input class="input" type="text" name="name" value="<%= comida.name %>">
             
+            <label class="categorias">Descripción:</label>
+            <textarea name="description" cols="40" rows="5" ><%= comida.description%></textarea>
+
             <label class="categorias">Imagen:</label>
             <input class="image" type="file" name="image">
+            <input class="image" type="hidden" name="oldImage" value="<%= comida.image%>" hidden>
 
             <label class="categorias">Categoría: </label>
             <select name="category">
-                <option value="1">Regional</option>
-                <option value="2">Fresco</option>
-                <option value="3">Congelados</option>
+                <option value="regionales">Regional</option>
+                <option value="frescos">Fresco</option>
+                <option value="congelados">Congelados</option>
             </select>
 
-            <label class="categorias">Precio: </label>
-            <input class="input" type="text" name="price">
-
-            <label class="categorias">Descripción:</label>
-            <textarea name="category" cols="40" rows="5"></textarea>
-
             <label class="categorias">Receta</label>
-            <textarea name="recipe" cols="40" rows="5"></textarea>
+            <textarea name="ingredients" cols="40" rows="5"><%= comida.ingredients %></textarea>
+            <label class="categorias">Precio: </label>
+            <input class="input" type="number" name="price" value="<%=comida.price%>">
 
-            <button class="button-create" type="submit"> Crear producto </button>
+
+            <button class="button-create" type="submit"> Editar </button>
 
         </form>
     </div>

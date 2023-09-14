@@ -30,7 +30,22 @@ let controller={
         return  res.render('products/form-creacion-de-producto')
    },
    edit: (req, res) => {
-      return res.render('products/form-editar-producto')
+      let comida= products.find(comida => comida.id == req.params.id)
+      return res.render('products/form-editar-producto',{comida})
+   },
+   update: (req,res)=>{
+      req.body.id= parseInt(req.params.id);
+      req.body.price= parseInt(req.body.price);
+      req.body.image= req.file ? req.file.filename : req.body.oldImage;
+      let productosUpdate= products.map(comida =>{
+         if(comida.id == req.body.id){
+            return comida=req.body;
+         }
+         return comida;
+      })
+      let comidaActualizar= JSON.stringify(productosUpdate,null,2);
+      fs.writeFileSync(productsFilePath,comidaActualizar);
+      res.redirect('/productos')
    }
      
 }

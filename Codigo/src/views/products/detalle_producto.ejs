@@ -19,11 +19,11 @@
         </div>
 
         <div class="caja-grande">
-            <img src="<%= products.image %>" alt="img-del-producto">
+            <img src="/img/<%= products.image %>" alt="img-del-producto">
 
             <div class="detalle-de-compra">
                 <h2> <%= products.name %> </h2>
-                <p class="description"> $ <%= products.description %></p>
+                <p class="description"> <%= products.description %></p>
                 <p class="precio"> $ <%= products.price %></p>
                 <p class="promo"> <%= products.category %></p>
                 <p id="receta"> <a href="#">¿Como preparar?</a> </p>
