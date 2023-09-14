@@ -16,11 +16,11 @@ const uploadFile= multer({storage});
 
 router.get('/', productoController.index)
 
-router.get ('/regionales',productoController.regionales)
-
 router.get ('/create', productoController.create)
 router.post('/create',uploadFile.single('image'), productoController.store)
 
-router.get ('/edit', productoController.edit);
+router.get('/detail/:id',productoController.detalle)
+
+router.get ('/edit/:id', productoController.edit);
 
 module.exports=router;
