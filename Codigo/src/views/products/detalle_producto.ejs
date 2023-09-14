@@ -3,7 +3,7 @@
 <head>
     <%- include('../partials/head')%>
 
-    <link rel="stylesheet" href="/css/styles_producto.css">
+    <link rel="stylesheet" href="/css/detalle_producto.css">
 </head>
 <body>
 
@@ -13,19 +13,18 @@
         <div class="navegacion">
             <p> <a href="/"> Inicio </a> </p>
             <p class="flecha"> > </p>
-            <p> <a href="#"> <%= comida.category %> </a> </p>
+            <p> <a href="#"> <%= products.category%> </a> </p>
             <p class="flecha"> > </p>
-            <p> <a href="#"><%= comida.name %> </a> </p>
+            <p> <a href="#"> <%= products.name %> </a> </p>
         </div>
 
         <div class="caja-grande">
-            <img src="<%= comida.image %>" alt="img-del-producto">
+            <img src="<%= products.image %>" alt="img-del-producto">
 
             <div class="detalle-de-compra">
-                <h2> <%= comida.name %> </h2>
-                <p class="description"> <%= comida.description %> </p>
-                <p class="precio"> <%= comida.price %> </p>
-                <p class="promo"> Llevando 7 platos: $12345</p>
+                <h2> <%= products.name %> </h2>
+                <p class="precio"> $ <%= products.price %></p>
+                <p class="promo"> <%= products.category %></p>
                 <p id="receta"> <a href="#">¿Como preparar?</a> </p>
                     
                 <div class="contenedor1">
@@ -54,7 +53,7 @@
 
         <section class="seccion2">
             <h3> Ingredientes </h3>
-            <p> <%= comida.ingredients %> </p>
+            <p> <%= products.ingredients %> </p>
 
             <p> Tiempo de Preparación: 3hs 1/2 a 4hs</p>
         </section>

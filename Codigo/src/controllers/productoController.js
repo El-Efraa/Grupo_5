@@ -9,15 +9,23 @@ let controller={
       return res. render('products/products_list', {products: products})
       
    },
-   show: (req,res) =>{
-      let comidaAux;
-      products.forEach(comida =>{
-         if(req.params.id==comida.id){
-            comidaAux=comida;
+   detalle: (req, res) => {
+      idProducto = req.params.id;
+
+      let detalleProducto
+
+      for(let i = 0; i < products.length; i++){
+         if (idProducto == products[i].id){
+            detalleProducto = products[i]
          }
-      });
-      return res.render('products/producto',{comida:comidaAux})
+      }
+
+      res.render('products/detalle_producto', {products: detalleProducto})
+
    },
+   /* regionales:(req, res)=>{
+       return  res.render('products/detalle_producto')
+   }, */
    create: (req, res)=>{
         return  res.render('products/form-creacion-de-producto')
    },
