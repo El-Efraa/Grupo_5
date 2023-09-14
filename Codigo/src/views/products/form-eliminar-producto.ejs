@@ -1,0 +1,72 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head')%>
+
+    
+    <link rel="stylesheet" href="/css/styles-create.css">
+    <link rel="stylesheet" href="/css/styles_home.css">
+</head>
+
+<body>
+
+    <%- include('../partials/header')%>
+
+    <div class="container">
+
+        <h2 class="titular">Edición del producto: <%= comida.id %></h2>
+
+        <form id="miformulario" action="/productos/delete/<%=comida.id%>?_method=DELETE" method="POST" enctype="multipart/form-data">
+
+            <input class="image" type="number" name="id" value="<%= comida.id %>"  hidden>
+
+            <label class="categorias">Nombre del producto:</label>
+            <input class="input" type="text" name="name" value="<%= comida.name %>">
+            
+            <label class="categorias">Descripción:</label>
+            <textarea name="description" cols="40" rows="5" ><%= comida.description%></textarea>
+
+            <label class="categorias">Imagen:</label>
+            <input class="image" type="file" name="image">
+            <input class="image" type="hidden" name="oldImage" value="<%= comida.image%>" hidden>
+
+            <label class="categorias">Categoría: </label>
+            <select name="category">
+                <option value="regionales">Regional</option>
+                <option value="frescos">Fresco</option>
+                <option value="congelados">Congelados</option>
+            </select>
+
+            <label class="categorias">Receta</label>
+            <textarea name="ingredients" cols="40" rows="5"><%= comida.ingredients %></textarea>
+            <label class="categorias">Precio: </label>
+            <input class="input" type="number" name="price" value="<%=comida.price%>">
+
+            <input type="button"class="button-create" value="Eliminar" id="enviar">
+       
+        </form>
+    </div>
+
+
+    <%- include('../partials/footer')%>    
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>
+    <script>
+        function pregunta() {
+          if (confirm('¿Estas seguro que desea ELIMINAR este producto?')) {
+            document.getElementById('miformulario').submit();
+          }
+        }
+    
+        document.addEventListener('DOMContentLoaded', function() {
+          document.getElementById('enviar').addEventListener('click', function(e) {
+            e.preventDefault();
+            pregunta()
+          });
+        });
+      </script>
+</body>
+</html>

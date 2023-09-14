@@ -76,6 +76,17 @@ let controller={
       let comidaActualizar= JSON.stringify(productosUpdate,null,2);
       fs.writeFileSync(productsFilePath,comidaActualizar);
       res.redirect('/productos')
+   },
+   mostrarEliminar: (req, res) => {
+      let comida= products.find(comida => comida.id == req.params.id)
+      return res.render('products/form-eliminar-producto',{comida})
+   },
+   destroy:(req,res) =>{
+      
+      const productosFinal = products.filter(comida => comida.id != req.params.id)
+      let productosGuardar = JSON.stringify(productosFinal,null,2)
+      fs.writeFileSync(productsFilePath,productosGuardar);
+      res.redirect('/productos')
    }
      
 }

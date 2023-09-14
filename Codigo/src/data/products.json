@@ -6,7 +6,7 @@
     "oldImage": "1694695536767_img_.jpg",
     "category": "regionales",
     "ingredients": "Cras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.",
-    "price": 19128,
+    "price": 2500,
     "image": "1694695536767_img_.jpg"
   },
   {
@@ -14,7 +14,7 @@
     "name": "Papas con Cheddar",
     "description": "Riki riki",
     "oldImage": "1694696336441_img_.png",
-    "category": "regionales",
+    "category": "frescos",
     "ingredients": "sadad",
     "price": 1200,
     "image": "1694696336441_img_.png"
@@ -28,32 +28,6 @@
     "ingredients": "Recado de empanadas",
     "price": 2000,
     "image": "1694696727349_img_.jpg"
-  },
-  {
-    "id": 4,
-    "name": "Foil Tomato",
-    "category": "regionales",
-    "price": 613.59,
-    "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
-    "ingredients": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\r\n\r\nMaecenas ut massa quis augue luctus ticidunt. Nulla mollis molestie lorem. Quisque ut erat."
-  },
-  {
-    "id": 5,
-    "name": "Cheese - Le Cheve Noir",
-    "description": "Maecenas leo odio, condimentum id, luctus nec, molestie sed, justo. Pellentesque viverra pede ac diam. Cras pellentesque volutpat dui.\n\nMaecenas tristique, est et tempus semper, est quam pharetra magna, ac consequat metus sapien ut nunc. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Mauris viverra diam vitae quam. Suspendisse potenti.",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAIZSURBVDjLpZPPS1RRGIafe+feSccfacxACUFYDGaKlEmrqFVEi6Bdy7YmLqL6A1oEtQiCglZBtYhKKqiEFiGRUERQthhEjKi0UNSbkk73zjnfd1pMM2VpBB64i8OFh/flOa/nnGMtx7tzoq3g1HnqHKoOVUXUIaqoOkTK9+PXJtpXAgSq6vV0dyALBuOKWJdgBVSUb0lAfWMDz1++XjVBIOKMiebC8x2P8DxwDqxV5qOY6aklLtOHFf0HQNUPvVpMSfB9D3WOg0MH8iqKqPJeF8k113G9d+vMCrVygRXFqvI1igkCv/xThJ1dbdgFQ5qI2CzheakVawXWKsYIM9NF/JSHqqMkvitFkde7Z5I6r4i1isukqQnWka1t5uRjrdYKrIjGkDo1eWi7U0fFxuh4RN/Y7zaKWdElxs7mZ0OdwIpUABoOjxTYlGvk/2y0YIxg7XgZ0H/jczvAzf58YqK59LH2e2wJN5Cx8MnAlZ4L7M5+5NWld1hRMnWGIFisVvArOio2Utmj3He7iC1kgSdf9rNoNhNqhBXhyMAoSRIj+gegYqOplKGrYZ6p5jzWv8tAoZuGW6cxpgVrlcGHbxgcfotIeQJBFfDTRseO9XTW91HDDCPfz5Ekt2lt2kZwsRz7zIP53LKH9CuBaAwcvjqFF87Sum8je+nkw7MJCF6QJFKNvQpA08MjBUQVEcfToeWjqnx/rXGtc/4BfOeC6F88S7oAAAAASUVORK5CYII=",
-    "category": "frescos",
-    "ingredients": "Duis aliquam convallis nunc. Proin at turpis a pede posuere nonummy. Integer non velit.\n\nDonec diam neque, vestibulum eget, vulputate ut, ultrices vel, augue. Vestibulum ante ipsum primis in faucibus orci luctus et ultrices posuere cubilia Curae; Donec pharetra, magna vestibulum aliquet ultrices, erat tortor sollicitudin mi, sit amet lobortis sapien sapien non mi. Integer ac neque.",
-    "price": 3173.96
-  },
-  {
-    "id": 6,
-    "name": "Wine - Clavet Saint Emilion",
-    "description": "Curabitur in libero ut massa volutpat convallis. Morbi odio odio, elementum eu, interdum eu, tincidunt in, leo. Maecenas pulvinar lobortis est.",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAALISURBVBgZfcFLbFRVHMDh37mPeXQ6M8VaGSvYilRgqmLSKErcSdSVaGIQoytkx0pDQjRx5Up3btSY+IjGFRhWJCQaNYZEQA1YMGWqlXYs6XPK3LnzuI9zzt8aazQG+T4lItzMK8/uHbuzMnhkqNz/mGDMStD+cnZh9YO3Pz8/xTolIvyfNw7tO7T9js2vj+24e3TzsICUWF3qUb9aW7g0t/Tmldnld5SI8F8vPzXhjG0f+WR8pHywujXj3rLN4A7WsEmOYP5FbMZn5soP5uTX3x/0uIFto8PvP/LAxAvjlSYqvkBad6Cvn05q+Tj+jLzOs3/Lk+79u5ZecriB4YHC8zsv/Y4+eQ1ty9jsKK35A9Rr47iOQNLDj0KGSvmqN33qwYu5UrWqlMPfstmCLwnYjEen+AS1qXOtUt+kL5Vd+RNzeyiYhOcGariKoqfE2bn10Y98pRQI64SL3x5m9fE99PuWsLnGYmO6P1hzVd9glR4lHGmDsoB4HloibJKNF9/FJC44JbxNBS78eBbfRty3e4J779nr+K5DLpzhWOMcI7dvIfTz/Lpy/ZRHqhyxCSbJIFawvToT1Tad5QZ6eZFoZgqfv0TA7gLQmuS7a3ed/+Ls9KseSnJW9+gsLBMvzWCTLm62zMjTH6JQzP/yEznTJe/n0CYldgq0vjrKiW9+PnD89OU5j9TBy9/G0MOvARZEEBuiW2ew0VXKuQ6NxSZtkyKqy6axo/zp+OnLc6zzSEXERNjuJGICxITYaBbEIjYi4/SoVBLEtBHTJT9QZpV/eMSIWI1NVxAdICZAbAyiQWLEdhHTweoQMSEoxb95JCIKg+g1RDcR3URMgOgAMQGiQ8S0ENNBbISN66yL2OBJYq/rbqMvbWeK2KIj4oMtgtyKmBhIECcGEpRjMFEkktiYDZ5E8Vu/vffMQwj7UBS5GQHUmQQrn7LhDzEafwIN5+bTAAAAAElFTkSuQmCC",
-    "category": "regionales",
-    "ingredients": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
-    "price": 1683.33
   },
   {
     "id": 7,
@@ -81,15 +55,6 @@
     "category": "congelados",
     "ingredients": "Proin eu mi. Nulla ac enim. In tempor, turpis nec euismod scelerisque, quam turpis adipiscing lorem, vitae mattis nibh ligula nec sem.",
     "price": 244.18
-  },
-  {
-    "id": 10,
-    "name": "Cauliflower",
-    "description": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAHsSURBVDjLtZPpTlpRFIV5Dt7AOESr1kYNThGnSomIihPoNVi5Qp3RgBgvEERpRW1BRBAcMEDUtIkdjKk4otK0Jdr2vgxZ3kA0MYoaG3+cX2evb529zt4sAKz/OawnASgCBNm5LaE7vjVDutkA4mMdLV4TkvcCuvba2Iqd1pDhWA33mQU+2oXVv07YfpoxuNWFuqVXoeqFCnZcgJwRm04p+Gk3Fs9t8PyZx/K5Hfbf03CGLRj62g2+rSR0K0D+vZXUB1Xw/ou5usJWjAaU0Gz3w/rjHey/ZjDLvKTD34KSyXzyBkC2JaYd4feMqyNa3OQTREQePlXjrqSq5ssj5hMjTMd66ALDKDLm0jcA0s+NID6JIFmvQaNXANEKX3l5x7NyqTcb7Zg8GYtCOLoXuPcbha6XV0VlU4WUzE9gPKjF2CGFbE3G3QAmafDnShETF3iKTZyIblcNza4Syi/deD6USscFCJwV6Fwn8NonQak5Hy1L9TAcjkJ/oAG1p0a1hYdnfcnkrQCBoxyyNYLp1YCJoB7GIwqGgxGod/oZsQoNDiHSepNCceeAN8uF1CvGxJE25rofc+3blKPqQ2VUnKxIYN85yty3eWh216LeKUTOSCayVGlIH0g5S+1JJB+8Cxxt1rWkH7WNTNIPAlwA9Gm7OcXUHxUAAAAASUVORK5CYII=",
-    "category": "congelados",
-    "ingredients": "Quisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
-    "price": 653.47
   },
   {
     "id": 11,
@@ -171,15 +136,6 @@
     "category": "frescos",
     "ingredients": "In congue. Etiam justo. Etiam pretium iaculis justo.\n\nIn hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.",
     "price": 2080.64
-  },
-  {
-    "id": 20,
-    "name": "Flower - Daisies",
-    "description": "Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.\n\nCurabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAMZSURBVBgZBcFLaFxVHMDh3zn33Dt38poknTSJTVva1LaKxpQ07UJLKlQRTYVUcKNCwWUtCuJWXLkQxIVCl1kIIaCCG0GwXdgkamJS0hLHWs2znbym05m8JjP3nnv+fp8SEQBe+fT21XRT6h2t6ANCQAGgAFEgDuvcfLkot9R26ZOxG4MRgBIRAF7/fGLs2+t9z2itmgU8BAAARACEwm7MyHSZ9ZVaJTd3v3X8xmDNAABoT50KjNf81yaeVgoUiINEHNYK+3HCxacbOX/SMOkKdeJOlwY++KnFAAAotdQ0/PuEV4qeUE0snvg0+Yfp6XqD+rAdjQIcnU0Bg/2d/BKspxfW6oeViHDlm9euvvTsueGXT14Ev5WNSsjufo2NJzkWV6c4f+x9WjPddDc7GtMeKd9QqUa8+9WM9f5sGLsw0Nv33atnLnmSbqa8H7ARBcwXfKCF57sCbt0d5anMc1RshpVywmIx4njW5/vJtUh3tmc/7j/WG/yjEwqR5b8tw9/5mIe1efIHbpNvzHO64yCTuR9IBR5h4BEGPoIGpdGHs50XSiZiubKK5xqYXdwlCUvsHv2NOTPN1KMchw50UCwv4BtN4HmkjMYBImAC46fL1RLFxGeiuEdp2yMIY1pSLxBtHmX/8R/ICUecRPieAgFBkThIHJjt3Z3iKcKuOtvB0rrD+S0s5QP2ZqAuzNLeukZlfwctKZQojAYHhD4kVtC55fkfo60qtfI4qdQKKooIwibCjCXVPMXxTI2Zfx9wpK0XAZyAAL6nsZHFFFe3vvx58tc3L53tP1Jo81mq1YicQRpX6c4+pFaGO/kM2Z63mZuNcQDASIdPXHOY8S+mls5e7728+djMDvR56kRDiE0CGrOWuwtFVosHeevyZ6TSGURABO5tWsQJcdViAKa/nr137sPR6nbhQfrm8ijOWYyfhvoXOdTzHnPlOlTZ4gREK7RTGKOcTZw1AAAublv/aGgouxdLvYhoBBwAkEk7AEQg7SuUwvme2kmsyysRAaD/2s1rNpYhpdQZQeoAABAQQBAAEACqzrk7Gkb+B+5ReIstDYkxAAAAAElFTkSuQmCC",
-    "category": "congelados",
-    "ingredients": "Duis consequat dui nec nisi volutpat eleifend. Donec ut dolor. Morbi vel lectus in quam fringilla rhoncus.\n\nMauris enim leo, rhoncus sed, vestibulum sit amet, cursus id, turpis. Integer aliquet, massa id lobortis convallis, tortor risus dapibus augue, vel accumsan tellus nisi eu orci. Mauris lacinia sapien quis libero.\n\nNullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.",
-    "price": 3132.19
   },
   {
     "id": 21,
@@ -345,14 +301,5 @@
     "category": "frescos",
     "ingredients": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.\n\nCras non velit nec nisi vulputate nonummy. Maecenas tincidunt lacus at velit. Vivamus vel nulla eget eros elementum pellentesque.\n\nQuisque porta volutpat erat. Quisque erat eros, viverra eget, congue eget, semper rutrum, nulla. Nunc purus.",
     "price": 2439.96
-  },
-  {
-    "id": 40,
-    "name": "Melon - Watermelon Yellow",
-    "description": "Proin leo odio, porttitor id, consequat in, consequat ut, nulla. Sed accumsan felis. Ut at dolor quis odio consequat varius.\n\nInteger ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.",
-    "image": "data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAKhSURBVDjLjZLNTxNBGIf37/Bf8CI3DxwQo8aPA3g1XDTxwAFIJMWIIiJCUCQaZT1ICQYCISWRbyMgHwUUpJXyIQVa+kFpoWVpu922u9vt7s+ZgRCJGJ3kyUxm5n3edyYvB4A7jZaR4IW2iTDaJyMwj4Zu/+3eqZsNlq1nlpkwfGEFoaiKoQUBzy2erv8S1HS6JocXIkjIBtQsoBEUzcDMzyiedLi8jR+3z5wqeDu4fY4fCqh2twSJBEsKEIpnGSmVyIhkM5QGPxxEXY+/8ITgVa//XvvELu63Lh9iXoKpZQnl7x0oe/cDxW9seNi2RNZ2lBI6rWFUdfp4JuAHA/rQwgF2SSYa/K9BJfR5I4sx1Hb7de61xelTMjrEVJZlpYNfO0nJVAY3B2R2VsLbIaU19M0GcLHC4uUqzStGgmyYWlaPBQcJFVFJZXM4JsO3J2HVG2NnhY+tKG5ewcaOiILGOYMr4x3kg3T02UVUmB3sEg2OEeJJIiKSvWga7mAChgEUNcyheSwOIalQAbi7TTYmWAnq6LeJaO53s+AYCRZTGQYVhoQ0ars20DoVxydnFgfSkeBW3TwTOPd0rIZ0fF4UUPnBieqO9RM8aHNi3iNj0pVlHAsKHs0ywXpYh8OvYuD7PpkVJvsdutc9G4F1U8FX75HgJRFcNllJp+lYDqgsO724tqv/IaDQCnpJghmXAiFBK5gHl1s6bqRIz445BKztqPAKBrz7BjwEF8FN2IqQdYRUSZ5p9ykYIK0e2JdQ8OKbweUUtXuikqLvCCkjntIgyhppZQ1JRQMVU9IEmZI5RBBl3bYRkfNNli3ubGHTRM6d3tj5stFMbsW4llc5peVXWbVL1VbtSs20drVuWrtGuF5/yI366czVp1+SeeU9fhr7C4feT2DQtSX8AAAAAElFTkSuQmCC",
-    "category": "regionales",
-    "ingredients": "Nullam sit amet turpis elementum ligula vehicula consequat. Morbi a ipsum. Integer a nibh.\n\nIn quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.",
-    "price": 1298.76
   }
 ]

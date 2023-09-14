@@ -24,4 +24,7 @@ router.get('/detail/:id',productoController.detalle)
 router.get('/edit/:id', productoController.edit);
 router.put('/edit/:id',uploadFile.single('image'), productoController.update);
 
+router.get('/delete/:id', productoController.mostrarEliminar);
+router.delete('/delete/:id',productoController.destroy);
+
 module.exports=router;
