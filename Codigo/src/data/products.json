@@ -13,10 +13,10 @@
     "id": 2,
     "name": "Papas con Cheddar",
     "description": "Riki riki",
-    "oldImage": "",
+    "oldImage": "1694696336441_img_.png",
     "category": "regionales",
     "ingredients": "sadad",
-    "price": 5232,
+    "price": 1200,
     "image": "1694696336441_img_.png"
   },
   {
@@ -30,12 +30,12 @@
     "image": "1694696727349_img_.jpg"
   },
   {
+    "id": 4,
     "name": "Foil Tomato",
     "category": "regionales",
-    "price": "613.59",
+    "price": 613.59,
     "description": "Nulla ut erat id mauris vulputate elementum. Nullam varius. Nulla facilisi.",
-    "ingredients": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\r\n\r\nMaecenas ut massa quis augue luctus ticidunt. Nulla mollis molestie lorem. Quisque ut erat.",
-    "id": "4"
+    "ingredients": "Suspendisse potenti. In eleifend quam a odio. In hac habitasse platea dictumst.\r\n\r\nMaecenas ut massa quis augue luctus ticidunt. Nulla mollis molestie lorem. Quisque ut erat."
   },
   {
     "id": 5,
