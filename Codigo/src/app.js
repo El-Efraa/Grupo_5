@@ -12,6 +12,8 @@ app.set('view engine','ejs');
 app.set('views','src/views')
 
 app.use(express.static(publicPath))
+app.use(express.urlencoded({extended: false}))
+app.use(express.json())
 
 app.listen(3000, () =>{
     console.log("Servidor corriendo en el puerto 3000")
