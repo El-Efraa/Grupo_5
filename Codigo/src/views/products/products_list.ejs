@@ -20,7 +20,7 @@
 		<% for (let i = 0; i < products.length; i++) { %>
 		<div class="first-container">
 			
-			<a href="/products/detail/¿?">
+			<a href="/productos/<%=products[i].id%>/detail">
 				<figure class="box_image">
 					<img src="<%= products[i].image %>" alt="imagen de producto">
 				</figure>

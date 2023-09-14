@@ -13,17 +13,18 @@
         <div class="navegacion">
             <p> <a href="/"> Inicio </a> </p>
             <p class="flecha"> > </p>
-            <p> <a href="#"> Comidas Regionales </a> </p>
+            <p> <a href="#"> <%= comida.category %> </a> </p>
             <p class="flecha"> > </p>
-            <p> <a href="#"> Locro </a> </p>
+            <p> <a href="#"><%= comida.name %> </a> </p>
         </div>
 
         <div class="caja-grande">
-            <img src="/img/Locro.jpg" alt="img-del-producto">
+            <img src="<%= comida.image %>" alt="img-del-producto">
 
             <div class="detalle-de-compra">
-                <h2> LOCRO </h2>
-                <p class="precio"> $2000 </p>
+                <h2> <%= comida.name %> </h2>
+                <p class="description"> <%= comida.description %> </p>
+                <p class="precio"> <%= comida.price %> </p>
                 <p class="promo"> Llevando 7 platos: $12345</p>
                 <p id="receta"> <a href="#">¿Como preparar?</a> </p>
                     
@@ -53,7 +54,7 @@
 
         <section class="seccion2">
             <h3> Ingredientes </h3>
-            <p> Porotos blancos, Maíz blanco, Chorizo colorado, Chorizo criollo, Cuerito de cerdo, Pechito de cerdo, Falda,Panceta, Cebollas, Cebollas de verdeo, Puerro, Calabaza, Morrón rojo, Condimentos: sal, pimienta, comino, pimentón, ají molido, orégano </p>
+            <p> <%= comida.ingredients %> </p>
 
             <p> Tiempo de Preparación: 3hs 1/2 a 4hs</p>
         </section>

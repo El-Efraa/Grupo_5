@@ -9,12 +9,18 @@ let controller={
       return res. render('products/products_list', {products: products})
       
    },
-    regionales:(req, res)=>{
-       return  res.render('products/producto')
-    },
-    create: (req, res)=>{
+   show: (req,res) =>{
+      let comidaAux;
+      products.forEach(comida =>{
+         if(req.params.id==comida.id){
+            comidaAux=comida;
+         }
+      });
+      return res.render('products/producto',{comida:comidaAux})
+   },
+   create: (req, res)=>{
         return  res.render('products/form-creacion-de-producto')
-     },
+   },
    edit: (req, res) => {
       return res.render('products/form-editar-producto')
    }

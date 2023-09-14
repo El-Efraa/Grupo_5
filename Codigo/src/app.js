@@ -19,6 +19,6 @@ app.listen(3000, () =>{
 
 app.use('/',rutasMain)
 //app.use('/user',rutasUsuario)
-app.use('/producto',rutasProducto)
+app.use('/productos',rutasProducto)
 
 app.get ('/carrito',rutasCarrito)
