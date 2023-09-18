@@ -1,0 +1,142 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head')%>
+    <link rel="stylesheet" href="/css/detalle-producto.css">
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
+rel="stylesheet" />
+    
+</head>
+<body>
+    
+    <%- include('../partials/header')%> 
+
+    <main>
+
+        <div class="box">
+            <nav class="navegacion">
+                <ul class="sub-navegacion">
+                    <li> <a href="/"> Inicio </a></li>
+                    <li> <i class="fa-solid fa-angle-right"></i> </li>
+                    <li> <a href="#"> <%= products.category%>  </a></li>
+                    <li> <i class="fa-solid fa-angle-right"></i> </li>
+                    <li> <%= products.name %> </li>
+                </ul>
+            </nav>
+
+            <div class="main-container">
+
+                <section class="box-image">
+                    <figure>
+                        <img src="/img/<%= products.image %>" alt="img-del-producto">
+                    </figure>
+                </section>
+
+                <section class="container-second">
+
+                    <article class="title-name-product">
+                        <h2> <%= products.name %> </h2>
+                        <p> Categoría: <a href="/"> <%= products.category %> </a> </p>
+                    </article>
+
+                    <article class="price-and-discount-box">
+                        <!-- <div>
+                            <span>  $ </span>
+                            <span> 9999</span>
+                            <span> / </span>
+                            <span> 50% </span>
+                        </div> -->
+                        <p class="price"> $ <%= products.price %></p>
+                        <p class="barra price"> / </p>
+                        <p class="discount"> 20% OFF</p>
+
+                    </article>
+
+                    <article class="info-box">
+
+                        <div class="info-nutricional">
+                            <h3> Descripcion </h3>
+                            <p> <%= products.description %> </p>
+                        </div>
+
+                        <div class="ingredients">
+                            <h3> Ingredientes </h3>
+                            <p> <%= products.ingredients %> </p>
+                        </div>
+
+                        <div class="receta">
+                            <p><a href="#"> Conocer receta </a></p>
+                        </div>
+
+                    </article>
+
+                    <article class="form-compra">
+
+                        <!-- <div> 
+                            <p>Cantidad</p>
+                        </div> -->
+
+                        <div class="flex-de-boton-de-compra">
+
+                            <div class="signo-menos">
+                                <button type="button"> <i class="fa-solid fa-minus"></i> </button>
+                            </div>
+
+                            <div class="input-de-cantidad">
+                                <label for="cantidad"></label>
+                                <input type="number" name="cantidad" id="cantidad" placeholder="1">
+                            </div>
+
+                            <div class="signo-mas">
+                                <button type="button"> <i class="fa-solid fa-plus"></i> </button>
+                            </div>
+
+                            <div class="boton-añadir-carrito">
+                                <a href="#"><button type="button">
+                                    AÑADIR <i class="fa-solid fa-cart-plus fa-bounce"></i> </button>
+                                </a>
+                            </div>
+
+                        </div>
+
+                    </article>
+
+                </section>
+
+                <section class="mas-info-box">
+                    
+                    <div class="titulo-mas-info">
+                        <h3> Informacion Nutricional </h3>
+                    </div>
+
+                    <div class="text-mas-info">
+                        <p> Lorem ipsum, dolor sit amet consectetur adipisicing elit. Nisi placeat ea sequi eveniet, itaque adipisci dolore quo? Porro dignissimos ipsam reprehenderit aliquam voluptatem, fugit id, modi consequuntur nesciunt laborum in?</p>
+                    </div>
+
+                </section>
+
+                <!-- <section>
+
+                    <div>tarjetas de envio</div>
+                    <div></div>
+                    <div></div>
+
+                </section> -->
+
+            </div>
+        </div>
+
+    </main>
+
+    <%- include('../partials/footer')%>   
+
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>  
+
+
+</body>
+</html>

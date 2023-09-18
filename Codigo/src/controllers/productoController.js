@@ -20,7 +20,7 @@ let controller={
          }
       }
 
-      res.render('products/detalle_producto', {products: detalleProducto})
+      res.render('products/detalle-producto', {products: detalleProducto})
 
    },
    /* regionales:(req, res)=>{
