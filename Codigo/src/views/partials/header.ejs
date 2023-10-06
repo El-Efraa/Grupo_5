@@ -13,17 +13,30 @@
                     <input type="text" id="fname" name="fname" placeholder="Buscar platos">    
                     <button id="boton-buscador"> <i class="fas fa-search"></i></i></button>
                 </div>
+                <% if(locals.isLogged) { %> 
                 <div class="header-full">
+                    <div class="sign-in">
+                            <a href="">Hola <%= locals.userLogged.firstName %> ! </a>
+                    </div>
+                    <div class="location">
+                        <i class="fas fa-map-marker-alt"> Ubicacion</i>
+                    </div>
                     <div clase="carrito">
                         <a href="/carrito"> <i class="fas fa-shopping-cart"></i></a>
                     </div>
-                    <div class="location">
-                            <i class="fas fa-map-marker-alt"> Ubicacion</i>
+                </div> 
+                <% } else { %>
+                <div class="header-full">
+                    <div class="sign-in">
+                        <a href="user/login"><i class="fas fa-sign-in-alt">Registrarse</i> </a>
                     </div>
                     <div class="sign-in">
-                            <a href="/login"><i class="fas fa-sign-in-alt"> Inicio de Sesion</i> </a>
+                            
+                            <a href="user/login"><i class="fas fa-user-circle"> Inicio de Sesion</i> </a>
                     </div>
-                </div>          
+                </div> 
+
+                <% } %>             
         </section> 
         <nav class="navBar">
             <div class="nav1">

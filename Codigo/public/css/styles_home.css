@@ -183,7 +183,6 @@ div.redes-sociales a i{
 }
 .location{
     display: flex;
-    order:-2;
 }
 .sign-in{
     display: flex;
