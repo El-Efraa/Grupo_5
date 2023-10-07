@@ -1,13 +1,24 @@
 const express = require('express')
 const router = express.Router();
 const path = require('path');
+const multer= require('multer');
 const usuariosController=require('../controllers/usuariosController.js')
 const gestMid=require('../../middlewares/guestMiddleware.js')
 
 const {check} = require('express-validator');
 
+const storage= multer.diskStorage({
+    destination: function(req, file, cb){
+        cb(null, path.resolve(__dirname,'../../public/img/usuarios'))
+    },
+    filename: function(req, file, cb){
+        cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`)
+    }
+});
+const uploadFile= multer({storage});
 
-//router.get('register',gestMid,usuariosController.register)
+router.get('/register',gestMid,usuariosController.register)
+router.post('/register',uploadFile.single('foto_usuario'), usuariosController.processRegister)
 //formulario de login
 router.get ('/login',gestMid,usuariosController.login)
 //procesamiento del login

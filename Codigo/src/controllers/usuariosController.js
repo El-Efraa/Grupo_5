@@ -43,7 +43,48 @@ processLogin: function(req,res){
 },
 logout: (req,res)=>{
     req.session.destroy();
-}
+},
+register: (req, res) => {
+    return  res.render('registro')
+},
+processRegister: (req, res) => {
 
+    if(req.body.contrasenia===req.body.confirmar_contrasenia){
+       idNuevoUsuario= 0;
+    for(let i=0; i<usuarios.length; i++){
+       if(idNuevoUsuario<usuarios[i].id){
+          idNuevoUsuario++
+       }
+    }
+
+    idNuevoUsuario= idNuevoUsuario+1
+
+      let password= req.body.contrasenia
+
+      let passEncriptada= bcrypt.hashSync(password, 10)
+
+      let nuevoUsuario= {
+         id: idNuevoUsuario, 
+         firstName: req.body.nombre,
+         lastName: req.body.apellido,
+         nombre_usuario: req.body.nombre_usuario,
+         fecha_nacimiento: req.body.fecha_nacimiento,
+         domicilio: req.body.domicilio,
+         foto_usuario: req.body.foto_usuario,
+         email: req.body.correo_electronico,
+         password: passEncriptada,
+      }
+
+      usuarios.push(nuevoUsuario);
+
+      fs.writeFileSync(productsFilePath, JSON.stringify(usuarios, null, " "))
+
+      console.log(nuevoUsuario) 
+
+      res.redirect('/')
+    } else {
+        res.render('registro')
+    }
+    }
 }
 module.exports=controller;
