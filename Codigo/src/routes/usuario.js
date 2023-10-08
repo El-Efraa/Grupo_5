@@ -4,7 +4,7 @@ const path = require('path');
 const multer= require('multer');
 const usuariosController=require('../controllers/usuariosController.js')
 const gestMid=require('../../middlewares/guestMiddleware.js')
-
+const authMid=require('../../middlewares/authMiddleware.js')
 const {check} = require('express-validator');
 
 const storage= multer.diskStorage({
@@ -20,7 +20,8 @@ const uploadFile= multer({storage});
 router.get('/register',gestMid,usuariosController.register)
 router.post('/register',uploadFile.single('foto_usuario'), usuariosController.processRegister)
 //formulario de login
-router.get ('/login',gestMid,usuariosController.login)
+router.get ('/login',gestMid,usuariosController.login);
+router.get('/profile',authMid,usuariosController.profile);
 //procesamiento del login
 router.post('/login',[
     check('email').isEmail(),

@@ -15,9 +15,25 @@
                 </div>
                 <% if(locals.isLogged) { %> 
                 <div class="header-full">
-                    <div class="sign-in">
-                            <a href="">Hola <%= locals.userLogged.firstName %> ! </a>
-                    </div>
+                        <div class="sign-in">
+                            <ul class="list">
+                                <li class="list_item">
+                                    <div class="list__button list__button--click">
+                                        
+                                        <a href="#" class="menu-link"><%= locals.userLogged.firstName %><img src="/img/svg/arrow.svg" class="list_arrow"> </a>
+                                        
+                                    </div>
+                                    <ul class="list__show">
+                                        <li class="list__inside">
+                                            <a href="/user/profile" class="menu-link menu-link--inside">Mi perfil </a> 
+                                        </li>
+                                        <li class="list__inside">
+                                            <a href="/user/logout" class="menu-link menu-link--inside">Cerrar Sesión </a> 
+                                        </li>
+                                    </ul>
+                                </li>
+                            </ul>
+                        </div>
                     <div class="location">
                         <i class="fas fa-map-marker-alt"> Ubicacion</i>
                     </div>
@@ -28,12 +44,13 @@
                 <% } else { %>
                 <div class="header-full">
                     <div class="sign-in">
-                        <a href="user/register"><i class="fas fa-sign-in-alt">Registrarse</i> </a>
+                            
+                        <a href="user/login"><i class="fas fa-user-circle"> Inicio de Sesion</i> </a>
                     </div>
                     <div class="sign-in">
-                            
-                            <a href="user/login"><i class="fas fa-user-circle"> Inicio de Sesion</i> </a>
+                        <a href="user/register"><i class="fas fa-sign-in-alt">Registrarse</i> </a>
                     </div>
+              
                 </div> 
 
                 <% } %>             
@@ -57,3 +74,6 @@
             </div>
         </nav>
     </header>
+<script src="/js/header.js">
+
+</script>

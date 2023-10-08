@@ -1,0 +1,28 @@
+*{
+    box-sizing: border-box; 
+    margin:0;
+    padding:0;  
+    font-family: "Montserrat", sans-serif;
+}
+
+.searchBar{
+    display: none;
+}
+header{
+    position:relative;
+}
+.contenedor{
+    justify-content: space-between;
+    width: auto;
+}
+.content-img{
+    margin-right: auto;
+    margin-left: 10px;
+}
+.content__perfil{
+   padding: 50px;
+   text-align: left;
+}
+h1{
+    margin:20px;
+}

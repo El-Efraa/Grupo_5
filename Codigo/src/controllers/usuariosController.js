@@ -19,8 +19,9 @@ processLogin: function(req,res){
     if(errors.isEmpty()){  
         for(let i=0;i<usuarios.length;i++){
             if(usuarios[i].email == req.body.email){
-                if(bcrypt.compare(req.body.password,usuarios[i].password)){
+                if(bcrypt.compareSync(req.body.password,usuarios[i].password)){
                     usuarioLogueado= usuarios[i];
+                    delete usuarioLogueado.password;
                     break;
                 }
 
@@ -33,7 +34,7 @@ processLogin: function(req,res){
         }
         req.session.usuarioLogueado=usuarioLogueado;
         if(req.body.recordarUser){
-            res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*3})
+            res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*2})
         }
         res.redirect('/')
     }else{
@@ -42,7 +43,9 @@ processLogin: function(req,res){
     
 },
 logout: (req,res)=>{
+    res.clearCookie('userEmail')
     req.session.destroy();
+    res.redirect("/");
 },
 register: (req, res) => {
     return  res.render('registro')
@@ -67,7 +70,6 @@ processRegister: (req, res) => {
          id: idNuevoUsuario, 
          firstName: req.body.nombre,
          lastName: req.body.apellido,
-         nombre_usuario: req.body.nombre_usuario,
          fecha_nacimiento: req.body.fecha_nacimiento,
          domicilio: req.body.domicilio,
          foto_usuario: req.body.foto_usuario,
@@ -85,6 +87,12 @@ processRegister: (req, res) => {
     } else {
         res.render('registro')
     }
+    },
+    profile:(req,res)=>{
+        return res.render('usuarios/perfil',{
+            user: req.session.usuarioLogueado
+        })
     }
+
 }
 module.exports=controller;

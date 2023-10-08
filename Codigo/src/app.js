@@ -20,7 +20,6 @@ app.use(express.static(publicPath));
 app.use(express.urlencoded({extended:false}));
 app.use(express.json());
 app.use(methodOverride('_method'));
-app.use(cookie());
 
 app.listen(3000, () =>{
     console.log("Servidor corriendo en el puerto 3000")
@@ -29,7 +28,7 @@ app.use(session({secret:"Nuestro msj secreto",
                 resave:false,
                 saveUninitialized:false
 }))
-
+app.use(cookie());
 app.use(userLoggedMid);
 app.use('/',rutasMain)
 app.use('/user',rutasUsuario)

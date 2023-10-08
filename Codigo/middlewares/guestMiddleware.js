@@ -1,6 +1,6 @@
 function guestLog(req,res,next){
     if(req.session.usuarioLogueado){
-        res.redirect('/')
+        return res.redirect('/user/profile')
     }
     next()
 
