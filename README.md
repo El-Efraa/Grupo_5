@@ -7,7 +7,6 @@ Nuestro objetivo es poder ofrecerles algo rico para comer con nuestros platos e 
 - Damaris Aizama
 - Efrain Gregorio 
 - Facundo Valverdi
-- Brenda Tinte
 
 # Sitios de referencia:
 
