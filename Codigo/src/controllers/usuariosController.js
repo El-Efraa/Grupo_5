@@ -1,7 +1,6 @@
 const fs = require('fs');
 const path = require('path');
 const bcrypt = require('bcrypt');
-
 let {check, validationResult, body} = require("express-validator")
 
 const productsFilePath = path.join(__dirname, '../data/users.json');
@@ -72,7 +71,7 @@ processRegister: (req, res) => {
          lastName: req.body.apellido,
          fecha_nacimiento: req.body.fecha_nacimiento,
          domicilio: req.body.domicilio,
-         foto_usuario: req.body.foto_usuario,
+         foto_usuario: req.file.filename,
          email: req.body.correo_electronico,
          password: passEncriptada,
       }

@@ -385,5 +385,24 @@
   "domicilio": "Belisario Ruiz",
   "email": "facu.valverdi14@gmail.com",
   "password": "$2b$10$mVSzdFZGuRzVcmMbKoPHz.AnfPCCswNgHMUdDGhvTXQ3XSxnPkLrC"
+ },
+ {
+  "id": 44,
+  "firstName": "Facundo",
+  "lastName": "Valverdi",
+  "fecha_nacimiento": "1999-02-01",
+  "domicilio": "Belisario Ruiz",
+  "email": "facu.valverdi14@gmail.com",
+  "password": "$2b$10$wIq/IfN5i3WZ4t/Cm11V/uggSXvct.uPxwvx4FWud5hHUoF2Dl2ae"
+ },
+ {
+  "id": 45,
+  "firstName": "Susana",
+  "lastName": "Sosa",
+  "fecha_nacimiento": "1999-01-01",
+  "domicilio": "Las tomas",
+  "foto_usuario": "1697335378424_img_.png",
+  "email": "susana@gmail.com",
+  "password": "$2b$10$3.q.Ksz8HEXlKNuypDAG4u7RaneiMsQhmnU/V5r/ekfLl/y7fBdzO"
  }
 ]

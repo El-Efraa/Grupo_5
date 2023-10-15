@@ -19,7 +19,9 @@
                             <ul class="list">
                                 <li class="list_item">
                                     <div class="list__button list__button--click">
-                                        
+                                       <div class="img__profile">
+                                            <img src="/img/usuarios/<%=locals.userLogged.foto_usuario%>" id="foto_usuario">
+                                       </div> 
                                         <a href="#" class="menu-link"><%= locals.userLogged.firstName %><img src="/img/svg/arrow.svg" class="list_arrow"> </a>
                                         
                                     </div>
@@ -50,9 +52,10 @@
                     <div class="sign-in">
                         <a href="user/register"><i class="fas fa-sign-in-alt">Registrarse</i> </a>
                     </div>
-              
+                    <div clase="carrito">
+                        <a href="/carrito"> <i class="fas fa-shopping-cart"></i></a>
+                    </div>
                 </div> 
-
                 <% } %>             
         </section> 
         <nav class="navBar">
