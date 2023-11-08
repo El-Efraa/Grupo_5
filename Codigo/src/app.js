@@ -6,6 +6,7 @@ const userLoggedMid =require('../middlewares/loggMiddleware.js')
 const methodOverride = require ('method-override');
 const cookie = require('cookie-parser');
 
+
 let rutasUsuario= require("./routes/usuario.js")
 let rutasProducto=require("./routes/producto.js")
 let rutasMain=require("./routes/main.js")

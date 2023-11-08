@@ -3,9 +3,11 @@ USE db_comidasRegionales;
 CREATE TABLE Recetas (
     id_receta int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     descripcion varchar(500) NOT NULL,
-    ingredientes varchar(255)
+    ingredientes varchar(255),
+    tiempo_preparacion time,
+    dificultad varchar(50)
 );
-CREATE TABLE Categoria_plato (
+CREATE TABLE Categoria_platos (
     id_categoria int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     nombre_cat varchar(100) NOT NULL,
     descripcion varchar(255)
@@ -24,7 +26,7 @@ CREATE TABLE descuentos(
     porcentaje real not null,
     estado boolean not null
 );
-CREATE TABLE usuarios(
+CREATE TABLE Usuarios(
 	id_usuario int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     DNI int UNSIGNED NOT NULL,
     Nombre TEXT NOT NULL,
@@ -47,9 +49,9 @@ CREATE TABLE Platos (
     categoria_id int  UNSIGNED ,
 	PRIMARY KEY(id_plato),
 	FOREIGN KEY(receta_id) REFERENCES recetas(id_receta),
-	FOREIGN KEY(categoria_id) REFERENCES categoria_plato(id_categoria)
+	FOREIGN KEY(categoria_id) REFERENCES categoria_platos(id_categoria)
 );
-CREATE TABLE Carrito (
+CREATE TABLE Carritos (
     id_carrito int UNSIGNED AUTO_INCREMENT,
     cantidad int NOT NULL,
     importe real NOT NULL,
@@ -59,7 +61,7 @@ CREATE TABLE Carrito (
 	FOREIGN KEY(plato_id) REFERENCES platos(id_plato),
 	FOREIGN KEY(usuario_id) REFERENCES usuarios(id_usuario)
 );
-CREATE TABLE Venta(
+CREATE TABLE Ventas(
 	id_venta int UNSIGNED PRIMARY KEY AUTO_INCREMENT,
     detalle_carrito varchar(500) NOT NULL,
     fecha_venta date NOT NULL,
@@ -68,6 +70,6 @@ CREATE TABLE Venta(
     total_venta real NOT NULL,
     carrito_id int UNSIGNED ,
     descuento_id int UNSIGNED ,
-	FOREIGN KEY(carrito_id) REFERENCES carrito(id_carrito),
+	FOREIGN KEY(carrito_id) REFERENCES carritos(id_carrito),
 	FOREIGN KEY(descuento_id) REFERENCES descuentos(id_descuento)
 );
