@@ -1,23 +1,29 @@
-//const Plato = require('../models/Plato');
+const Plato = require('../models/Plato');
 
 module.exports=(sequelize,DataTypes)=>{
     const Receta = sequelize.define("Receta",{
                 id_receta:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    primarykey:true,
+                    allowNull: false
                 },
                 descripcion:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING(500),
+                    allowNull: false
                 },
                 ingredientes:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING,
+                    allowNull: false
+                }, 
+                tiempo_preparacion:{
+                    type:DataTypes.TIME,
+                    allowNull: false
                 },
                 dificultad:{
-                    type:DataTypes.STRING
+                    type:DataTypes.TEXT
                 },
-                tiempo_preparacion:{
-                    type:DataTypes.TIME
-                }
+               
             },
                 // Timestamps
                // createdAt:{ type:DataTypes.DATE},
@@ -28,10 +34,10 @@ module.exports=(sequelize,DataTypes)=>{
                 }         
 
     );
-    Receta.associate = function(modelos){
-        Receta.hasOne(modelos.Plato,{
+    Receta.associate = function(models){
+        Receta.hasOne(models.Plato,{
             as:'recetas_plato',
-            foreignKey:'id_receta'
+            foreignKey:' receta_id'
 
         })
     }

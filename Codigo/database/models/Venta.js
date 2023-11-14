@@ -1,33 +1,44 @@
-//const Carrito = require('../models/Carrito.js');
-//const Descuento = require('../models/Descuento');
-
 
 module.exports=(sequelize,DataTypes)=>{
     const Venta = sequelize.define("Venta",{
                 id_venta:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    allowNull: false,
+                    primarykey:true
                 },
                 detalle:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING,
+                    allowNull: false
                 },
                 fecha:{
-                    type:DataTypes.DATE
+                    type:DataTypes.DATE,
+                    allowNull: false
                 },
                 subtotal:{
-                    type:DataTypes.REAL
+                    type:DataTypes.REAL,
+                    allowNull: false
                 },
                 total:{
-                    type:DataTypes.REAL
+                    type:DataTypes.REAL,
+                    allowNull: false
                 },
                 descuento:{
                     type:DataTypes.REAL
                 },
                 // Timestamps
-                createdAt:{ type:DataTypes.DATE},
-                updatedAt: {type: DataTypes.DATE}},
+                createdAt:{ 
+                    type:DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                },
+                updatedAt: {
+                    type: DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                }},
                 {
-                    //tablename:'Venta'
+                    //tablename:'ventas'
                     timestamps:true
                 }         
 
@@ -35,13 +46,13 @@ module.exports=(sequelize,DataTypes)=>{
     Venta.associate=function(modelos){
         Venta.hasOne(modelos.Carrito,{
             as:'venta_carrito',
-            foreignKey:'id_carrito'
+            foreignKey:'carrito_id'
         })
     }
     Venta.associate=function(modelos){
             Venta.hasMany(modelos.Descuento,{
                 as:'venta_descuento',
-                foreignKey:'id_descuento'
+                foreignKey:'descuento_id'
             })
     }
     return Venta;

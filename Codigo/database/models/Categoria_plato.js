@@ -1,13 +1,15 @@
-//const Plato = require('../models/Plato');
 
 module.exports=(sequelize,DataTypes)=>{
     const Categoria_plato = sequelize.define("Categoria_plato",{
                 id_categoria:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    allowNull: false,
+                    primarykey:true
                 },
                 nombre:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING(100),
+                    allowNull: false
                 },
                 descripcion:{
                     type:DataTypes.STRING
@@ -16,7 +18,7 @@ module.exports=(sequelize,DataTypes)=>{
                // createdAt:{ type:DataTypes.DATE},
                 //updatedAt: {type: DataTypes.DATE}},
                 {
-                    //tablename:'Categoria_plato'
+                    //tablename:'Categoria_platos'
                     timestamps:false
                 }         
 
@@ -25,7 +27,7 @@ module.exports=(sequelize,DataTypes)=>{
     Categoria_plato.associate = function(modelos){
         Categoria_plato.hasMany(modelos.Plato,{
             as:'cat_plato',
-            foreignKey:'id_categoria'
+            foreignKey:'categoria_id'
         })
     }
     return Categoria_plato;

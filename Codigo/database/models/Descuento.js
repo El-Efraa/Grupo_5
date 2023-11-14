@@ -1,16 +1,20 @@
-//const Venta = require('../models/Venta.js');
 
 module.exports=(sequelize,DataTypes)=>{
     const Descuento = sequelize.define("Descuento",{
                 id_descuento:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    allowNull: false,
+                    primarykey:true
+
                 },
                 codigo:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING(100),
+                    allowNull: false
                 },
                 cantidad_productos:{
-                    type:DataTypes.INTEGER
+                    type:DataTypes.INTEGER,
+                    allowNull: false
                 },
                 fecha_inicio:{
                     type:DataTypes.DATE
@@ -19,16 +23,26 @@ module.exports=(sequelize,DataTypes)=>{
                     type:DataTypes.DATE
                 },
                 porcentaje:{
-                    type:DataTypes.REAL
+                    type:DataTypes.REAL,
+                    allowNull: false
                 },
                 estado:{
-                    type:DataTypes.BOOLEAN
+                    type:DataTypes.STRING(10),
+                    allowNull: false
                 },
                 // Timestamps
-                createdAt:{ type:DataTypes.DATE},
-                updatedAt: {type: DataTypes.DATE}},
+                createdAt:{ 
+                    type:DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                },
+                updatedAt: {
+                    type: DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                }},
                 {
-                    //tablename:'Descuento'
+                    //tablename:'descuentos'
                     timestamps:true
                 }         
 
@@ -36,7 +50,7 @@ module.exports=(sequelize,DataTypes)=>{
     Descuento.associate=function(modelos){
         Descuento.belongsTo(modelos.Venta,{
             as:'descuento_venta',
-            foreignKey:'id_descuento'
+            foreignKey:'descuento_id'
         })
     }
     return Venta;

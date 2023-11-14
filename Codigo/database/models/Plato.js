@@ -1,29 +1,39 @@
-//const Carrito = require('../models/Carrito');
-//const Categoria_plato = require('../models/Categoria_plato');
-//const Receta = require('../models/Receta');
-
 module.exports=(sequelize,DataTypes)=>{
 
     const Plato = sequelize.define("Plato",{
                 id_plato:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    allowNull: false,
+                    primarykey:true
                 },
                 nombre:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING,
+                    allowNull: false
                 },
                 descripcion:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING,
+                    allowNull: false
                 },
                 imagen:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING,
+                    allowNull: false
                 },
                 precio:{
-                    type:DataTypes.REAL
+                    type:DataTypes.REAL,
+                    allowNull: false
                 },
                 // Timestamps
-                createdAt:{ type:DataTypes.DATE},
-                updatedAt: {type: DataTypes.DATE}},
+                createdAt:{ 
+                    type:DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                },
+                updatedAt: {
+                    type: DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                }},
                 {
                     //tablename:'platos'
                     timestamps:true
@@ -33,19 +43,19 @@ module.exports=(sequelize,DataTypes)=>{
     Plato.associate = function(modelos){
         Plato.belongsTo(modelos.Receta,{
             as:'plato_receta',
-            foreignKey:'id_receta'
+            foreignKey:'receta_id'
         })
     }
     Plato.associate = function(modelos){
         Plato.belongsTo(modelos.Categoria_plato,{
             as:'plato_cat',
-            foreignKey:'id_categoria'
+            foreignKey:'categoria_id'
         })
     }
     Plato.associate=function(modelos){
         Plato.belongsTo(modelos.Carrito,{
             as:'plato_carrito',
-            foreignKey:'id_plato'
+            foreignKey:'plato_id'
         })
     }
 

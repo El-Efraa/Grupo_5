@@ -1,39 +1,53 @@
-//const Carrito = require('../models/Carrito');
-//const Tipo_Usuario = require('../models/Tipo_Usuario');
-
 module.exports=(sequelize,DataTypes)=>{
     const Usuario = sequelize.define("Usuario",{
                 id_usuario:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    allowNull: false,
+                    primarykey:true
                 },
                 DNI:{
-                    type:DataTypes.INTEGER
+                    type:DataTypes.INTEGER,
+                    allowNull: false
                 },
                 nombre:{
-                    type:DataTypes.STRING
+                    type:DataTypes.TEXT,
+                    allowNull: false
                 },
                 apellido:{
-                    type:DataTypes.STRING
+                    type:DataTypes.TEXT,
+                    allowNull: false
                 },
                 fecha_nacimiento:{
                     type:DataTypes.DATE
                 },
                 direccion:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING,
+                    allowNull: false
                 },
                 foto_usuario:{
                     type:DataTypes.STRING
                 },
                 email:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING,
+                    unique: true,
+                    allowNull: false
                 },
-                password:{
-                   type:DataTypes.STRING 
+                contraseña:{
+                   type:DataTypes.STRING(50),
+                   allowNull: false
                 },
                 // Timestamps
-                createdAt:{ type:DataTypes.DATE},
-                updatedAt: {type: DataTypes.DATE}},
+                createdAt:{ 
+                    type:DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                },
+                updatedAt: {
+                    type: DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                }},
                 {
                     //tablename:'usuarios'
                     timestamps:true
@@ -43,13 +57,13 @@ module.exports=(sequelize,DataTypes)=>{
     Usuario.associate = function(modelos){
         Usuario.belongsTo(modelos.Tipo_Usuario,{
             as:'usuario_tipo',
-            foreignKey:'id_tipo'
+            foreignKey:'tipo_usuario'
         })
     }
     Usuario.associate=function(modelos){
         Usuario.hasMany(modelos.Carrito,{
             as:'usuario_carrito',
-            foreignKey:'id_usuario'
+            foreignKey:'usuario_id'
         })
     }
     return Usuario;

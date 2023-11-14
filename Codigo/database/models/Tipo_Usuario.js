@@ -1,15 +1,17 @@
 
-//const Usuario = require('../models/Usuario');
 module.exports=(sequelize,DataTypes)=>{
     const Tipo_Usuario = sequelize.define("Tipo_Usuario",{
                 id_tipo:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    allowNull: false,
+                    primarykey:true
                 },
                 tipo:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING(100),
+                    allowNull: false
                 },
-                descripcion_privilegios:{
+                descripcion:{
                     type:DataTypes.STRING
                 }},
                 // Timestamps
@@ -23,8 +25,8 @@ module.exports=(sequelize,DataTypes)=>{
     );
     Tipo_Usuario.associate = function(modelos){
         Tipo_Usuario.hasMany(modelos.Usuario,{
-            as:'tipo_usuario',
-            foreignKey:'id_tipo'
+            as:'tipo_user',
+            foreignKey:'tipo_usuario'
         })
     }
     return Tipo_Usuario;

@@ -1,24 +1,34 @@
-//const Usuario = require('../models/Usuario.js');
-//const Plato = require('../models/Plato.js');
-//const Venta = require('../models/Venta.js');
 
 module.exports=(sequelize,DataTypes)=>{
     const Carrito = sequelize.define("Carrito",{
                 id_carrito:{
                     type:DataTypes.INTEGER,
-                    autoIncrement: true
+                    autoIncrement: true,
+                    allowNull: false,
+                    primarykey:true
                 },
                 cantidad:{
-                    type:DataTypes.INTEGER
+                    type:DataTypes.INTEGER,
+                    allowNull: false
+                    
                 },
                 importe:{
-                    type:DataTypes.REAL
+                    type:DataTypes.REAL,
+                    allowNull: false
                 },
                 // Timestamps
-                createdAt:{ type:DataTypes.DATE},
-                updatedAt: {type: DataTypes.DATE}},
+                createdAt:{ 
+                    type:DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                },
+                updatedAt: {
+                    type: DataTypes.DATE,
+                    defaultValue: DataTypes.NOW,
+                    allowNull: false
+                }},
                 {
-                    //tablename:'Carrito'
+                    //tablename:'carritos'
                     timestamps:true
                 }         
 
@@ -26,19 +36,19 @@ module.exports=(sequelize,DataTypes)=>{
     Carrito.associate=function(modelos){
         Carrito.hasMany(modelos.Plato,{
             as:'carrito_plato',
-            foreignKey:'id_plato'
+            foreignKey:'plato_id'
         })
     }
     Carrito.associate=function(modelos){
         Carrito.belongsTo(modelos.Usuario,{
             as:'carrito_usuario',
-            foreignKey:'id_usuario'
+            foreignKey:'usuario_id'
         })
     }
     Carrito.associate=function(modelos){
         Carrito.belongsTo(modelos.Venta,{
             as:'carrito_venta',
-            foreignKey:'id_carrito'
+            foreignKey:'carrito_id'
         })
     }
     return Carrito;
