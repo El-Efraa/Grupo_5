@@ -4,30 +4,46 @@ const path = require('path');
 const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const db = require('../../database/models')
+
 let controller={
    index: (req, res) => {
-      return res. render('products/products_list', {products: products})
+      db.Plato.findAll({
+         include: [{association: 'plato_cat'}]
+      })
+         .then(products => {
+            return res. render('products/products_list', {products: products})
+         })
+      
       
    },
    detalle: (req, res) => {
-      idProducto = req.params.id;
+      db.Plato.findByPk(req.params.id, {
+         include: [{association: 'plato_cat'},{association: 'plato_receta'}]
+      })
+      .then(products => {
+         idProducto = req.params.id;
 
-      let detalleProducto
+      /*let detalleProducto
 
       for(let i = 0; i < products.length; i++){
          if (idProducto == products[i].id){
             detalleProducto = products[i]
          }
-      }
+      }*/
 
-      res.render('products/detalle-producto', {products: detalleProducto})
-
+      res.render('products/detalle-producto', {products: products})
+      })
+      
    },
    /* regionales:(req, res)=>{
        return  res.render('products/detalle_producto')
    }, */
    create: (req, res)=>{
-        return  res.render('products/form-creacion-de-producto')
+      db.Plato.findAll().then(products => {
+         return  res.render('products/form-creacion-de-producto')
+      })
+        
      },
     store: (req, res)=> {
 

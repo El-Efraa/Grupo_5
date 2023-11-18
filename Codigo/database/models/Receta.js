@@ -5,7 +5,7 @@ module.exports=(sequelize,DataTypes)=>{
                 id_receta:{
                     type:DataTypes.INTEGER,
                     autoIncrement: true,
-                    primarykey:true,
+                    primaryKey: true,
                     allowNull: false
                 },
                 descripcion:{
@@ -34,10 +34,10 @@ module.exports=(sequelize,DataTypes)=>{
                 }         
 
     );
-    Receta.associate = function(models){
-        Receta.hasOne(models.Plato,{
+    Receta.associate = function(modelos){
+        Receta.hasOne(modelos.Plato,{
             as:'recetas_plato',
-            foreignKey:' receta_id'
+            foreignKey:'receta_id'
 
         })
     }

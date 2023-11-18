@@ -3,9 +3,9 @@ module.exports=(sequelize,DataTypes)=>{
     const Carrito = sequelize.define("Carrito",{
                 id_carrito:{
                     type:DataTypes.INTEGER,
+                    primaryKey: true,
                     autoIncrement: true,
-                    allowNull: false,
-                    primarykey:true
+                    allowNull: false
                 },
                 cantidad:{
                     type:DataTypes.INTEGER,
@@ -28,7 +28,7 @@ module.exports=(sequelize,DataTypes)=>{
                     allowNull: false
                 }},
                 {
-                    //tablename:'carritos'
+                    tablename:'Carritos',
                     timestamps:true
                 }         
 

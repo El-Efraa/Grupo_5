@@ -3,9 +3,10 @@ module.exports=(sequelize,DataTypes)=>{
     const Categoria_plato = sequelize.define("Categoria_plato",{
                 id_categoria:{
                     type:DataTypes.INTEGER,
+                    primaryKey: true,
                     autoIncrement: true,
                     allowNull: false,
-                    primarykey:true
+                    
                 },
                 nombre:{
                     type:DataTypes.STRING(100),

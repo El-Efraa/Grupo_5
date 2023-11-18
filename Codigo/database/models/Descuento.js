@@ -5,7 +5,7 @@ module.exports=(sequelize,DataTypes)=>{
                     type:DataTypes.INTEGER,
                     autoIncrement: true,
                     allowNull: false,
-                    primarykey:true
+                    primaryKey: true
 
                 },
                 codigo:{
@@ -53,6 +53,6 @@ module.exports=(sequelize,DataTypes)=>{
             foreignKey:'descuento_id'
         })
     }
-    return Venta;
+    return Descuento;
 
 }
