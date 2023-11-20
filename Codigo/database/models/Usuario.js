@@ -37,19 +37,16 @@ module.exports=(sequelize,DataTypes)=>{
                    type:DataTypes.STRING(50),
                    allowNull: false
                 },
-                // Timestamps
-                createdAt:{ 
-                    type:DataTypes.DATE,
-                    defaultValue: DataTypes.NOW,
-                    allowNull: false
-                },
-                updatedAt: {
-                    type: DataTypes.DATE,
-                    defaultValue: DataTypes.NOW,
-                    allowNull: false
+                tipo_usuario:{
+                    type: DataTypes.INTEGER.UNSIGNED,
+                    foreignKey: true,
+                    references: {
+                        model: 'Tipo_usuario',
+                        key: 'id_tipo'
+                    }
                 }},
                 {
-                    //tablename:'usuarios'
+                    tableName:'usuarios',
                     timestamps:true
                 }         
 
@@ -59,8 +56,6 @@ module.exports=(sequelize,DataTypes)=>{
             as:'usuario_tipo',
             foreignKey:'tipo_usuario'
         })
-    }
-    Usuario.associate=function(modelos){
         Usuario.hasMany(modelos.Carrito,{
             as:'usuario_carrito',
             foreignKey:'usuario_id'

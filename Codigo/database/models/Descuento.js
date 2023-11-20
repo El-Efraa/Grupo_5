@@ -48,7 +48,7 @@ module.exports=(sequelize,DataTypes)=>{
 
     );
     Descuento.associate=function(modelos){
-        Descuento.belongsTo(modelos.Venta,{
+        Descuento.hasOne(modelos.Venta,{
             as:'descuento_venta',
             foreignKey:'descuento_id'
         })

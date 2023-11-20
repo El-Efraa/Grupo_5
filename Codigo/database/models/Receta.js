@@ -3,7 +3,7 @@ const Plato = require('../models/Plato');
 module.exports=(sequelize,DataTypes)=>{
     const Receta = sequelize.define("Receta",{
                 id_receta:{
-                    type:DataTypes.INTEGER,
+                    type:DataTypes.INTEGER.UNSIGNED,
                     autoIncrement: true,
                     primaryKey: true,
                     allowNull: false
@@ -25,11 +25,8 @@ module.exports=(sequelize,DataTypes)=>{
                 },
                
             },
-                // Timestamps
-               // createdAt:{ type:DataTypes.DATE},
-                //updatedAt: {type: DataTypes.DATE}},
-                {
-                    //tablename:'recetas'
+                {   
+                    tableName:'recetas',
                     timestamps:false
                 }         
 
@@ -37,8 +34,7 @@ module.exports=(sequelize,DataTypes)=>{
     Receta.associate = function(modelos){
         Receta.hasOne(modelos.Plato,{
             as:'recetas_plato',
-            foreignKey:'receta_id'
-
+            foreignKey:'receta_id',
         })
     }
     return Receta;

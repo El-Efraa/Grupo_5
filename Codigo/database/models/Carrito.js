@@ -16,37 +16,40 @@ module.exports=(sequelize,DataTypes)=>{
                     type:DataTypes.REAL,
                     allowNull: false
                 },
-                // Timestamps
-                createdAt:{ 
-                    type:DataTypes.DATE,
-                    defaultValue: DataTypes.NOW,
-                    allowNull: false
+                plato_id:{
+                    type: DataTypes.INTEGER.UNSIGNED,
+                    foreignKey: true,
+                    references: {
+                        model: 'Plato',
+                        key: 'id_plato'
+                    }
                 },
-                updatedAt: {
-                    type: DataTypes.DATE,
-                    defaultValue: DataTypes.NOW,
-                    allowNull: false
+                usuario_id:{
+                    type: DataTypes.INTEGER.UNSIGNED,
+                    foreignKey: true,
+                    references: {
+                        model: 'Usuario',
+                        key: 'id_usuario'
+                    }
                 }},
                 {
-                    tablename:'Carritos',
-                    timestamps:true
+                    tableName:'carritos',
+                    timestamps:true,
+                    createdAt: 'created_at',
+                    updatedAt: 'updated_at'
                 }         
 
     );
-    Carrito.associate=function(modelos){
-        Carrito.hasMany(modelos.Plato,{
-            as:'carrito_plato',
-            foreignKey:'plato_id'
-        })
-    }
     Carrito.associate=function(modelos){
         Carrito.belongsTo(modelos.Usuario,{
             as:'carrito_usuario',
             foreignKey:'usuario_id'
         })
-    }
-    Carrito.associate=function(modelos){
-        Carrito.belongsTo(modelos.Venta,{
+        Carrito.belongsTo(modelos.Plato,{
+            as:'carrito_plato',
+            foreignKey:'plato_id'
+        })
+        Carrito.hasOne(modelos.Venta,{
             as:'carrito_venta',
             foreignKey:'carrito_id'
         })

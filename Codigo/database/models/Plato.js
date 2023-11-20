@@ -4,7 +4,7 @@ module.exports=(sequelize,DataTypes)=>{
 
     const Plato = sequelize.define("Plato",{
                 id_plato:{
-                    type:DataTypes.INTEGER,
+                    type:DataTypes.INTEGER.UNSIGNED,
                     autoIncrement: true,
                     allowNull: false,
                     primaryKey: true
@@ -37,23 +37,23 @@ module.exports=(sequelize,DataTypes)=>{
                     allowNull: false
                 }*/
                 receta_id:{
-                    type: DataTypes.INTEGER,
+                    type: DataTypes.INTEGER.UNSIGNED,
                     foreignKey: true,
                     references: {
-                        model: 'recetas',
+                        model: 'Receta',
                         key: 'id_receta'
                     }
                 },
                 categoria_id:{
-                    type: DataTypes.INTEGER,
+                    type: DataTypes.INTEGER.UNSIGNED,
                     foreignKey: true,
                     references: {
-                        model: 'categoria_platos',
+                        model: 'Categoria_plato',
                         key: 'id_categoria'
                     }
                 }},
                 {
-                    tablename:'Platos',
+                    tableName:'platos',
                     timestamps: true,
                     createdAt: 'created_at',
                     updatedAt: 'updated_at'
@@ -66,21 +66,18 @@ module.exports=(sequelize,DataTypes)=>{
             foreignKey:'receta_id',
             foreignKeyConstraint: true
         })
-    }
-    Plato.associate = function(modelos){
         Plato.belongsTo(modelos.Categoria_plato,{
             as:'plato_cat',
             foreignKey:'categoria_id',
             foreignKeyConstraint: true
         })
-    }
-    /*Plato.associate=function(modelos){
-        Plato.belongsTo(modelos.Carrito,{
+        Plato.hasMany(modelos.Carrito,{
             as:'plato_carrito',
-            //foreignKey:'plato_id',
-            //foreignKeyConstraint: true
+            foreignKey:'plato_id',
+            foreignKeyConstraint: true
         })
-    }*/
+    }
+
 
     return Plato;
 

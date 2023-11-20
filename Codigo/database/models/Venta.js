@@ -26,35 +26,42 @@ module.exports=(sequelize,DataTypes)=>{
                 descuento:{
                     type:DataTypes.REAL
                 },
-                // Timestamps
-                createdAt:{ 
-                    type:DataTypes.DATE,
-                    defaultValue: DataTypes.NOW,
-                    allowNull: false
+                carrito_id:{
+                    type: DataTypes.INTEGER.UNSIGNED,
+                    foreignKey: true,
+                    references: {
+                        model: 'Carrito',
+                        key: 'id_carrito'
+                    }
                 },
-                updatedAt: {
-                    type: DataTypes.DATE,
-                    defaultValue: DataTypes.NOW,
-                    allowNull: false
-                }},
+                descuento_id:{
+                    type: DataTypes.INTEGER.UNSIGNED,
+                    foreignKey: true,
+                    references: {
+                        model: 'Descuento',
+                        key: 'id_descuento'
+                    }
+                }
+                },
                 {
-                    //tablename:'ventas'
-                    timestamps:true
+                    tableName:'ventas',
+                    timestamps:true,
+                    createdAt: 'created_at',
+                    updatedAt: 'updated_at'
                 }         
 
     );
     Venta.associate=function(modelos){
-        Venta.hasOne(modelos.Carrito,{
+        Venta.belongsTo(modelos.Carrito,{
             as:'venta_carrito',
             foreignKey:'carrito_id'
         })
+        Venta.belongsTo(modelos.Descuento,{
+            as:'venta_descuento',
+            foreignKey:'descuento_id'
+        })
     }
-    Venta.associate=function(modelos){
-            Venta.hasMany(modelos.Descuento,{
-                as:'venta_descuento',
-                foreignKey:'descuento_id'
-            })
-    }
+   
     return Venta;
 
 }
