@@ -27,4 +27,6 @@ router.put('/edit/:id',uploadFile.single('image'), productoController.update);
 router.get('/delete/:id', productoController.mostrarEliminar);
 router.delete('/delete/:id',productoController.destroy);
 
+router.post('/search', productoController.search)
+
 module.exports=router;

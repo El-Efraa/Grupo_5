@@ -9,10 +9,10 @@
                 <div class="content-img" >
                     <a href="/"><img src="/img/logo.jpeg" alt="logo-comercio"id="logo"> </a>        
                 </div>
-                <div class="searchBar"> 
+                <form class="searchBar" action="/productos/search" method="POST"> 
                     <input type="text" id="fname" name="fname" placeholder="Buscar platos">    
-                    <button id="boton-buscador"> <i class="fas fa-search"></i></i></button>
-                </div>
+                    <button id="boton-buscador" type="submit"> <i class="fas fa-search"></i></i></button>
+                </form>
                 <% if(locals.isLogged) { %> 
                 <div class="header-full">
                         <div class="sign-in">

@@ -5,7 +5,8 @@ module.exports={
     "database": "db_comidasRegionales",
     "host": "127.0.0.1",
     "dialect": "mysql",
-    "port": 3306
+    //"port": 3306
+    "port": 3307
   },
   "test": {
     "username": "root",

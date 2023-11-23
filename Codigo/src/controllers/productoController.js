@@ -5,6 +5,7 @@ const productsFilePath = path.join(__dirname, '../data/products.json');
 const products = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
 const db = require('../../database/models')
+const { Op } = require('sequelize')
 
 let controller={
    index: (req, res) => {
@@ -22,9 +23,9 @@ let controller={
          include: [{association: 'plato_cat'},{association: 'plato_receta'}]
       })
       .then(products => {
-         idProducto = req.params.id;
+         /*idProducto = req.params.id;
 
-      /*let detalleProducto
+      let detalleProducto
 
       for(let i = 0; i < products.length; i++){
          if (idProducto == products[i].id){
@@ -40,14 +41,28 @@ let controller={
        return  res.render('products/detalle_producto')
    }, */
    create: (req, res)=>{
-      db.Plato.findAll().then(products => {
-         return  res.render('products/form-creacion-de-producto')
+      db.Categoria_plato.findAll().then(categorias => {
+         return  res.render('products/form-creacion-de-producto', {categorias: categorias})
       })
         
      },
     store: (req, res)=> {
+      db.Plato.create(
+         {include: [{association: 'plato_cat'},{association: 'plato_receta'}]},
+         {
+         nombre: req.body.name,
+         descripcion: req.body.description,
+         imagen: req.body.image,
+         precio: req.body.price,
+         receta_id: req.body.ingredients,
+         categoria_id: req.body.category
+      }).then(()=>{
+         res.redirect('/productos')
+      }
+         
+      )
 
-      idNuevoProducto= 0;
+      /*idNuevoProducto= 0;
       for(let i=0; i<products.length; i++){
          if(idNuevoProducto<products[i].id){
             idNuevoProducto++
@@ -70,9 +85,9 @@ let controller={
 
       fs.writeFileSync(productsFilePath, JSON.stringify(products, null, " "))
 
-      console.log(products)
+      console.log(products)*/
 
-      res.redirect('/producto')
+      
 
     },
    edit: (req, res) => {
@@ -80,7 +95,10 @@ let controller={
       return res.render('products/form-editar-producto',{comida})
    },
    update: (req,res)=>{
-      req.body.id= parseInt(req.params.id);
+      db.Plato.findByPk(req.params.id, {
+         
+      })
+      /*req.body.id= parseInt(req.params.id);
       req.body.price= parseInt(req.body.price);
       req.body.image= req.file ? req.file.filename : req.body.oldImage;
       let productosUpdate= products.map(comida =>{
@@ -90,10 +108,13 @@ let controller={
          return comida;
       })
       let comidaActualizar= JSON.stringify(productosUpdate,null,2);
-      fs.writeFileSync(productsFilePath,comidaActualizar);
+      fs.writeFileSync(productsFilePath,comidaActualizar);*/
       res.redirect('/productos')
    },
    mostrarEliminar: (req, res) => {
+      db.Plato.findByPk(req.params.id, {
+         include: [{association: 'plato_cat'},{association: 'plato_receta'}]
+      })
       let comida= products.find(comida => comida.id == req.params.id)
       return res.render('products/form-eliminar-producto',{comida})
    },
@@ -103,6 +124,22 @@ let controller={
       let productosGuardar = JSON.stringify(productosFinal,null,2)
       fs.writeFileSync(productsFilePath,productosGuardar);
       res.redirect('/productos')
+   },
+   search: (req,res) => {
+      let plato = req.body.fname
+
+      db.Plato.findAll(
+         {
+            include: [{association: 'plato_cat'},{association: 'plato_receta'}],
+            where: {
+            nombre: {
+               [Op.like]: `%${plato}%`
+            }
+         }
+      }).then( plat => {
+         return res.render('products/productos-encontrados', {plat: plat})}
+         //return res.json(plat)}
+      )
    }
      
 }

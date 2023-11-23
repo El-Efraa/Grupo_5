@@ -10,7 +10,7 @@ module.exports=(sequelize,DataTypes)=>{
                     primaryKey: true
                 },
                 nombre:{
-                    type:DataTypes.STRING,
+                    type:DataTypes.STRING(255),
                     allowNull: false
                 },
                 descripcion:{
@@ -42,7 +42,7 @@ module.exports=(sequelize,DataTypes)=>{
                     references: {
                         model: 'Receta',
                         key: 'id_receta'
-                    }
+                    }, 
                 },
                 categoria_id:{
                     type: DataTypes.INTEGER.UNSIGNED,
@@ -50,7 +50,8 @@ module.exports=(sequelize,DataTypes)=>{
                     references: {
                         model: 'Categoria_plato',
                         key: 'id_categoria'
-                    }
+                    },
+                    allowNull: false
                 }},
                 {
                     tableName:'platos',

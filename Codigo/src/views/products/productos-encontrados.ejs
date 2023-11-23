@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head') %>
+    <link rel="stylesheet" href="/css/product_list.css">
+    <title> Listado de Productos </title>
+</head>
+<body>
+    
+	<%- include('../partials/header') %>
+
+    <main>
+
+    <div class="all-products">
+		
+		<div class="titulo">
+			<h2>Todos los productos</h2>
+		</div>
+
+		<%if(plat !== null){ %>
+
+		
+
+		<% for (let i = 0; i < plat.length; i++) { %>
+		<div class="first-container">
+			
+			<a href="/productos/detail/<%=plat[i].id_plato%>">
+				<figure class="box_image">
+					<img src="/img/<%= plat[i].imagen %>" alt="imagen de producto">
+				</figure>
+            </a>
+
+			<article class="data-container">
+                <a href="/productos/detail/<%=plat[i].id_plato%>">
+					<h2> <%= plat[i].nombre %> </h2>
+                </a>
+
+				<p class="price"> <%= plat[i].precio %> </p>
+				<p class="category"> <%= plat[i].plato_cat.nombre %> </p>
+			</article>
+		
+	    </div>
+        <% } %>
+		
+		<% } if(plat.nombre==null){ %>
+
+			<div class="titulo">
+			<h4>Producto no encontrado</h4>
+		    </div>
+
+		<% } %>
+
+	</div>
+
+    </main>
+
+	<%- include('../partials/footer') %>
+
+	<section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>
+
+</body>
+</html>
