@@ -1,14 +1,14 @@
 module.exports=(sequelize,DataTypes)=>{
     const Usuario = sequelize.define("Usuario",{
                 id_usuario:{
-                    type:DataTypes.INTEGER,
+                    type:DataTypes.INTEGER.UNSIGNED,
                     autoIncrement: true,
                     allowNull: false,
-                    primarykey:true
+                    primaryKey:true
                 },
                 DNI:{
-                    type:DataTypes.INTEGER,
-                    allowNull: false
+                    type:DataTypes.INTEGER.UNSIGNED,
+                    allowNull: true
                 },
                 nombre:{
                     type:DataTypes.TEXT,
@@ -37,8 +37,16 @@ module.exports=(sequelize,DataTypes)=>{
                    type:DataTypes.STRING(50),
                    allowNull: false
                 },
+                tipo_usuario: {
+                    type: DataTypes.INTEGER.UNSIGNED,
+                    foreignKey: true,
+                    references: {
+                        model: 'Tipo_Usuario',
+                        key: 'id_tipo'
+                    }
+                },
                 // Timestamps
-                createdAt:{ 
+                /* createdAt:{ 
                     type:DataTypes.DATE,
                     defaultValue: DataTypes.NOW,
                     allowNull: false
@@ -47,10 +55,13 @@ module.exports=(sequelize,DataTypes)=>{
                     type: DataTypes.DATE,
                     defaultValue: DataTypes.NOW,
                     allowNull: false
-                }},
+                } */
+            },
                 {
                     //tablename:'usuarios'
-                    timestamps:true
+                    timestamps: true,
+                    createdAt: 'created_at',
+                    updatedAt: 'updated_at'
                 }         
 
     );

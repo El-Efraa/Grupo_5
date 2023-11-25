@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <%- include('../partials/head')%>
+    <link rel="stylesheet" href="/css/detalle-user.css">
+</head>
+<body>
+    <%- include('../partials/header')%>
+
+    <main>
+
+        <div class="box-foto-usuario">
+            <img src="<%= user.foto_usuario %>" alt="foto_usuario">
+        </div>
+        
+        <div>
+            <ul>
+                <li> Nombre: <%= user.nombre %> </li>
+
+                <li> Apellido: <%= user.apellido %> </li>
+
+                <li> DNI: <%= user.DNI %> </li>
+
+                <li> Fecha de nacimiento: <%= user.fecha_nacimiento %> </li>
+
+                <li> Dirección: <%= user.direccion %> </li>
+
+                <li> Email: <%= user.email %> </li>
+
+            </ul>   
+            
+        </div>
+
+        <a href="/user/editar/<%= user.id_usuario %>"> <button type="button" class="button-editar"> Editar </button> </a>
+
+
+    </main>
+
+
+
+
+
+    <%- include('../partials/footer')%>    
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>
+    
+</body>
+</html>

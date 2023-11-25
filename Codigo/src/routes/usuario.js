@@ -6,6 +6,7 @@ const usuariosController=require('../controllers/usuariosController.js')
 const gestMid=require('../../middlewares/guestMiddleware.js')
 const authMid=require('../../middlewares/authMiddleware.js')
 const {check} = require('express-validator');
+const { userInfo } = require('os');
 
 const storage= multer.diskStorage({
     destination: function(req, file, cb){
@@ -18,7 +19,8 @@ const storage= multer.diskStorage({
 const uploadFile= multer({storage});
 
 router.get('/register',gestMid,usuariosController.register)
-router.post('/register',uploadFile.single('foto_usuario'), usuariosController.processRegister)
+router.post('/create',uploadFile.single('foto_usuario'), usuariosController.createUser);
+// router.post('/register',uploadFile.single('foto_usuario'), usuariosController.processRegister)
 //formulario de login
 router.get ('/login',gestMid,usuariosController.login);
 router.get('/profile',authMid,usuariosController.profile);
@@ -29,4 +31,15 @@ router.post('/login',[
 ],usuariosController.processLogin)
 //salir de Session
 router.get('/logout',usuariosController.logout)
+
+router.get('/detail/:id', usuariosController.detail);
+
+router.get('/editar/:id', usuariosController.edit);
+router.post('/editar/:id', usuariosController.update);
+
+router.get('/', usuariosController.list);
+
+
+
+
 module.exports=router;

@@ -5,7 +5,7 @@ module.exports=(sequelize,DataTypes)=>{
                     type:DataTypes.INTEGER,
                     autoIncrement: true,
                     allowNull: false,
-                    primarykey:true
+                    primaryKey:true
                 },
                 cantidad:{
                     type:DataTypes.INTEGER,

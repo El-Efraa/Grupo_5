@@ -6,6 +6,8 @@ let {check, validationResult, body} = require("express-validator")
 const productsFilePath = path.join(__dirname, '../data/users.json');
 const usuarios = JSON.parse(fs.readFileSync(productsFilePath, 'utf-8'));
 
+const db = require('../../database/models')
+
 
 let controller ={
 
@@ -47,9 +49,13 @@ logout: (req,res)=>{
     res.redirect("/");
 },
 register: (req, res) => {
-    return  res.render('registro')
+    db.Tipo_Usuario.findAll()
+        .then(function(tipos) {
+            return  res.render('registro', {tipos: tipos})
+        })
+    
 },
-processRegister: (req, res) => {
+/* processRegister: (req, res) => {
 
     if(req.body.contrasenia===req.body.confirmar_contrasenia){
        idNuevoUsuario= 0;
@@ -86,12 +92,107 @@ processRegister: (req, res) => {
     } else {
         res.render('registro')
     }
-    },
+    }, */
     profile:(req,res)=>{
         return res.render('usuarios/perfil',{
             user: req.session.usuarioLogueado
         })
+    },
+    createUser: (req, res) => {
+        if(req.body.contrasenia===req.body.confirmar_contrasenia){
+            let password= req.body.contrasenia
+
+            let passEncriptada= bcrypt.hashSync(password, 10)
+            
+            let usuarioData = {
+                DNI: req.body.dni,
+                nombre: req.body.nombre,
+                apellido: req.body.apellido,
+                fecha_nacimiento: req.body.fecha_nacimiento,
+                direccion: req.body.domicilio,
+                foto_usuario: req.body.foto_usuario,
+                email: req.body.correo_electronico,
+                contraseña: passEncriptada,
+                tipo_usuario: req.body.tipo_usuario.id 
+            }
+            // console.log(req.body)
+
+            db.Usuario.create(usuarioData)
+                .then(function(resultado) {
+                    console.log(resultado)
+                    res.redirect('/')
+                })
+
+        } else {
+            res.render('registro')
+        }
+    
+    },
+    list: (req, res) => {
+        db.Usuario.findAll()
+            .then(function(usuarios) {
+                res.render('usuarios/lista_usuarios', {usuarios: usuarios})
+            })
+    },
+    detail: (req, res) => {
+        db.Usuario.findByPk(req.params.id)
+            .then(user => {
+                res.render('usuarios/detalle-user', {user: user})
+            })
+    },
+    edit: (req, res) => {
+        db.Usuario.findByPk(req.params.id)
+            .then(user => {
+                res.render('usuarios/editar-user', {user: user})
+            })
+    },
+    update: (req, res) => {
+        // db.Usuario.findByPk(req.params.id)
+        //     .then(user => {
+        //         if(bcrypt.compareSync(req.body.contrasenia, user.contraseña)){
+        //             if(req.body.nueva_contrasenia === req.body.confirmar_contrasenia){
+        //                 let password = req.body.nueva_contrasenia
+        //                 let passEncriptada = bcrypt.hashSync(password, 10);
+
+        //                 let usuarioActualizado = {
+        //                     nombre: req.body.nombre,
+        //                     apellido: req.body.apellido,
+        //                     DNI: req.body.dni,
+        //                     fecha_nacimiento: req.body.fecha_nacimiento,
+        //                     direccion: req.body.domicilio,
+        //                     email: req.body.correo_electronico,
+        //                     contraseña: passEncriptada 
+        //                 }
+
+        //                 db.Usuario.update(usuarioActualizado, {
+        //                     where: {
+        //                         id_usuario: req.params.id
+        //                     }
+        //                 })
+
+        //                 res.redirect('/user/detail/' + req.params.id)
+        //             }
+        //         } else {
+        //             console.log('error')
+        //         }
+        //     })
+
+        db.Usuario.update({
+            nombre: req.body.nombre,
+            apellido: req.body.apellido,
+            DNI: req.body.dni,
+            fecha_nacimiento: req.body.fecha_nacimiento,
+            direccion: req.body.domicilio,
+            email: req.body.correo_electronico,
+            
+        }, {
+            where : {
+                id_usuario: req.params.id
+            }
+        })
+        res.redirect('/user/detail/' + req.params.id)
     }
+
 
 }
 module.exports=controller;

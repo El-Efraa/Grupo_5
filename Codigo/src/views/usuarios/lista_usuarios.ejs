@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+
+    <%- include('../partials/head')%>
+    <link rel="stylesheet" href="/css/users_list.css">
+    
+</head>
+<body>
+    
+    <%- include('../partials/header')%>
+
+    <main>
+
+        <h1> Lista de Usuarios </h1>
+
+        <ul>
+            
+            <% for (let i = 0; i < usuarios.length; i++) { %>
+                <li class="box-user">
+                    <div>
+                        <img src="<%= usuarios[i].foto_usuario %>" alt="foto_usuario">
+                    </div>
+                    
+                    <div>
+                        <div>
+                            <%= usuarios[i].nombre %>
+                            <%= usuarios[i].apellido %>
+                        </div>
+                        <div>
+                            <%= usuarios[i].email %>
+                        </div>
+                    </div>
+
+                    <a href="/user/detail/<%= usuarios[i].id_usuario %>"> <button type="button"> Ver Detalle </button> </a>
+
+
+                </li>
+                
+            <% } %>
+
+        </ul>
+
+    </main>
+
+
+    <%- include('../partials/footer')%>    
+    <section class="sec4-footer">    
+        <div class="copyrgight">
+            <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
+        </div>
+    </section>
+
+</body>
+</html>

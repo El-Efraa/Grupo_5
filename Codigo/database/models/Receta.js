@@ -5,7 +5,7 @@ module.exports=(sequelize,DataTypes)=>{
                 id_receta:{
                     type:DataTypes.INTEGER,
                     autoIncrement: true,
-                    primarykey:true,
+                    primaryKey:true,
                     allowNull: false
                 },
                 descripcion:{
