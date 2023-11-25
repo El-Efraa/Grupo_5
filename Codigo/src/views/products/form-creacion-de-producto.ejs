@@ -16,7 +16,7 @@
 
     <h2 class="titular">Creación de producto</h2>
 
-    <form action="/producto/create" method="POST">
+    <form action="/productos/create" method="POST">
         <label class="categorias">Nombre del producto:</label>
         <input class="input" type="text" name="name" id="name">
         
@@ -24,9 +24,11 @@
         <input class="image" type="file" name="image">
         <label class="categorias">Categoría: </label>
         <select name="category">
-            <option value="regionales">Regional</option>
-            <option value="frescos">Fresco</option>
-            <option value="congelados">Congelado</option>
+            <% for(let i=0; i<categorias.length; i++){ %>
+                <option value="categorias[i].id_categoria" >
+                    <%= categorias[i].nombre %>
+                </option>
+            <% } %>
         </select>
         <label class="categorias">Precio: </label>
         <input class="input" type="text" name="price">

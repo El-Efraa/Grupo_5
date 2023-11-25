@@ -4,7 +4,7 @@ module.exports=(sequelize,DataTypes)=>{
                     type:DataTypes.INTEGER.UNSIGNED,
                     autoIncrement: true,
                     allowNull: false,
-                    primaryKey:true
+                    primaryKey: true
                 },
                 DNI:{
                     type:DataTypes.INTEGER.UNSIGNED,
@@ -70,8 +70,6 @@ module.exports=(sequelize,DataTypes)=>{
             as:'usuario_tipo',
             foreignKey:'tipo_usuario'
         })
-    }
-    Usuario.associate=function(modelos){
         Usuario.hasMany(modelos.Carrito,{
             as:'usuario_carrito',
             foreignKey:'usuario_id'

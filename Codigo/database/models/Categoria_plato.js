@@ -2,17 +2,18 @@
 module.exports=(sequelize,DataTypes)=>{
     const Categoria_plato = sequelize.define("Categoria_plato",{
                 id_categoria:{
-                    type:DataTypes.INTEGER,
+                    type:DataTypes.INTEGER.UNSIGNED,
+                    primaryKey: true,
                     autoIncrement: true,
                     allowNull: false,
-                    primaryKey:true
+                    
                 },
                 nombre:{
                     type:DataTypes.STRING(100),
                     allowNull: false
                 },
                 descripcion:{
-                    type:DataTypes.STRING
+                    type:DataTypes.STRING(255)
                 }},
                 // Timestamps
                // createdAt:{ type:DataTypes.DATE},
@@ -27,7 +28,8 @@ module.exports=(sequelize,DataTypes)=>{
     Categoria_plato.associate = function(modelos){
         Categoria_plato.hasMany(modelos.Plato,{
             as:'cat_plato',
-            foreignKey:'categoria_id'
+            foreignKey:'categoria_id',
+            foreignKeyConstraint: true
         })
     }
     return Categoria_plato;

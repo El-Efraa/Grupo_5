@@ -52,6 +52,15 @@ main {
     font-size: 14px;
 }
 
+.boton-product-create{
+    font-size: 15px;
+    border-radius: 5px;
+    background-color: #D53E0F;
+    color:white;
+    padding: 5px;
+    margin-left: 40px;
+}
+
 @media (min-width:376px) {
     .all-products {
         padding: 4% 1% 0;

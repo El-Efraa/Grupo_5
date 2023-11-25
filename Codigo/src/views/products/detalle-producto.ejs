@@ -19,9 +19,9 @@ rel="stylesheet" />
                 <ul class="sub-navegacion">
                     <li> <a href="/"> Inicio </a></li>
                     <li> <i class="fa-solid fa-angle-right"></i> </li>
-                    <li> <a href="#"> <%= products.category%>  </a></li>
+                    <li> <a href="#"> <%= products.plato_cat.nombre %>  </a></li>
                     <li> <i class="fa-solid fa-angle-right"></i> </li>
-                    <li> <%= products.name %> </li>
+                    <li> <%= products.nombre %> </li>
                 </ul>
             </nav>
 
@@ -29,15 +29,15 @@ rel="stylesheet" />
 
                 <section class="box-image">
                     <figure>
-                        <img src="/img/<%= products.image %>" alt="img-del-producto">
+                        <img src="<%= products.imagen %>" alt="img-del-producto">
                     </figure>
                 </section>
 
                 <section class="container-second">
 
                     <article class="title-name-product">
-                        <h2> <%= products.name %> </h2>
-                        <p> Categoría: <a href="/"> <%= products.category %> </a> </p>
+                        <h2> <%= products.nombre %> </h2>
+                        <p> Categoría: <a href="/"> <%= products.plato_cat.nombre %> </a> </p>
                     </article>
 
                     <article class="price-and-discount-box">
@@ -47,7 +47,7 @@ rel="stylesheet" />
                             <span> / </span>
                             <span> 50% </span>
                         </div> -->
-                        <p class="price"> $ <%= products.price %></p>
+                        <p class="price"> $ <%= products.precio %></p>
                         <p class="barra price"> / </p>
                         <p class="discount"> 20% OFF</p>
 
@@ -57,16 +57,16 @@ rel="stylesheet" />
 
                         <div class="info-nutricional">
                             <h3> Descripcion </h3>
-                            <p> <%= products.description %> </p>
+                            <p> <%= products.descripcion %> </p>
                         </div>
 
                         <div class="ingredients">
                             <h3> Ingredientes </h3>
-                            <p> <%= products.ingredients %> </p>
+                            <p> <%= products.plato_receta.ingredientes %> </p>
                         </div>
 
                         <div class="receta">
-                            <p><a href="#"> Conocer receta </a></p>
+                            <p><a href="/recetas/<%= //products.plato_receta.id_receta %>"> Conocer receta </a></p>
                         </div>
 
                     </article>
