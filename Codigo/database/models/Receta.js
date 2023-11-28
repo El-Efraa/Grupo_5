@@ -14,11 +14,11 @@ module.exports=(sequelize,DataTypes)=>{
                 },
                 ingredientes:{
                     type:DataTypes.STRING,
-                    allowNull: false
+                    //allowNull: false
                 }, 
                 tiempo_preparacion:{
                     type:DataTypes.TIME,
-                    allowNull: false
+                    //allowNull: false
                 },
                 dificultad:{
                     type:DataTypes.TEXT

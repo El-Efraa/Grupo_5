@@ -25,7 +25,7 @@
         <label class="categorias">Categoría: </label>
         <select name="category">
             <% for(let i=0; i<categorias.length; i++){ %>
-                <option value="categorias[i].id_categoria" >
+                <option value="<%=categorias[i].id_categoria%>" >
                     <%= categorias[i].nombre %>
                 </option>
             <% } %>

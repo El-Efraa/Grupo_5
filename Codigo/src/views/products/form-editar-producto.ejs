@@ -14,33 +14,35 @@
 
     <div class="container">
 
-        <h2 class="titular">Edición del producto: <%= comida.id %></h2>
+        <h2 class="titular">Edición del producto: <%= comida.id_plato %></h2>
 
-        <form action="/productos/edit/<%=comida.id%>?_method=PUT" method="POST" enctype="multipart/form-data">
+        <form action="/productos/edit/<%=comida.id_plato%>?_method=PUT" method="POST" enctype="multipart/form-data">
 
-            <input class="image" type="number" name="id" value="<%= comida.id %>"  hidden>
+            <input class="image" type="number" name="id" value="<%= comida.id_plato %>"  hidden>
 
             <label class="categorias">Nombre del producto:</label>
-            <input class="input" type="text" name="name" value="<%= comida.name %>">
+            <input class="input" type="text" name="name" value="<%= comida.nombre %>">
             
             <label class="categorias">Descripción:</label>
-            <textarea name="description" cols="40" rows="5" ><%= comida.description%></textarea>
+            <textarea name="description" cols="40" rows="5" ><%= comida.descripcion%></textarea>
 
             <label class="categorias">Imagen:</label>
             <input class="image" type="file" name="image">
-            <input class="image" type="hidden" name="oldImage" value="<%= comida.image%>" hidden>
+            <input class="image" type="hidden" name="oldImage" value="<%= comida.imagen%>" hidden>
 
             <label class="categorias">Categoría: </label>
             <select name="category">
-                <option value="regionales">Regional</option>
-                <option value="frescos">Fresco</option>
-                <option value="congelados">Congelados</option>
+                    <!-- revisar, si se pudiera editar la categoria, tendria que ir distinto--> 
+                    <option value="<%=comida.plato_cat.nombre%>" >
+                        <%= comida.plato_cat.nombre %>
+                    </option>
+               
             </select>
 
             <label class="categorias">Receta</label>
-            <textarea name="ingredients" cols="40" rows="5"><%= comida.ingredients %></textarea>
+            <textarea name="ingredients" cols="40" rows="5"><%= comida.plato_receta.descripcion %></textarea>
             <label class="categorias">Precio: </label>
-            <input class="input" type="number" name="price" value="<%=comida.price%>">
+            <input class="input" type="number" name="price" value="<%=comida.precio%>">
 
 
             <button class="button-create" type="submit"> Editar </button>

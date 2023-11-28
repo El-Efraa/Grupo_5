@@ -2,6 +2,8 @@ const express = require ('express');
 const path = require('path');
 const router =express.Router();
 const multer= require('multer');
+const gestMid=require('../../middlewares/guestMiddleware.js')
+const authMid=require('../../middlewares/authMiddleware.js')
 const productoController=require("../controllers/productoController")
 
 const storage= multer.diskStorage({
@@ -16,16 +18,16 @@ const uploadFile= multer({storage});
 
 router.get('/', productoController.index)
 
-router.get ('/create', productoController.create)
-router.post('/create',uploadFile.single('image'), productoController.store)
+router.get ('/create',authMid, productoController.create)
+router.post('/create',authMid,uploadFile.single('image'), productoController.store)
 
-router.get('/detail/:id',productoController.detalle)
+router.get('/detail/:id',authMid,productoController.detalle)
 
-router.get('/edit/:id', productoController.edit);
-router.put('/edit/:id',uploadFile.single('image'), productoController.update);
+router.get('/edit/:id',authMid, productoController.edit);
+router.put('/edit/:id',authMid,uploadFile.single('image'), productoController.update);
 
-router.get('/delete/:id', productoController.mostrarEliminar);
-router.delete('/delete/:id',productoController.destroy);
+router.get('/delete/:id',authMid, productoController.mostrarEliminar);
+router.delete('/delete/:id',authMid,productoController.destroy);
 
 router.post('/search', productoController.search)
 
