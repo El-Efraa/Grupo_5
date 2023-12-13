@@ -3,6 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer= require('multer');
 const usuariosController=require('../controllers/usuariosController.js')
+const usuariosAPIController=require('../controllers/usuariosAPIController.js')
 const gestMid=require('../../middlewares/guestMiddleware.js')
 const authMid=require('../../middlewares/authMiddleware.js')
 const {check} = require('express-validator');
@@ -18,6 +19,8 @@ const storage= multer.diskStorage({
 });
 const uploadFile= multer({storage});
 
+//RUTAS
+router.get('/', usuariosController.list);
 router.get('/register',gestMid,usuariosController.register)
 router.post('/create',uploadFile.single('foto_usuario'), usuariosController.createUser);
 // router.post('/register',uploadFile.single('foto_usuario'), usuariosController.processRegister)
@@ -32,14 +35,15 @@ router.post('/login',[
 //salir de Session
 router.get('/logout',usuariosController.logout)
 
-router.get('/detail/:id', usuariosController.detail);
+router.get('/detail/:id',authMid, usuariosController.detail);
 
-router.get('/editar/:id', usuariosController.edit);
-router.post('/editar/:id', usuariosController.update);
-
-router.get('/', usuariosController.list);
+router.get('/editar/:id',authMid, usuariosController.edit);
+router.post('/editar/:id',authMid, usuariosController.update);
 
 
+//API
+router.get('/api',usuariosAPIController.listado)
+router.get('/api/:id',usuariosAPIController.detalle)
 
 
 module.exports=router;

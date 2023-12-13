@@ -41,7 +41,7 @@ module.exports=(sequelize,DataTypes)=>{
 
     );
     Carrito.associate=function(modelos){
-        Carrito.hasMany(modelos.Usuario,{
+        Carrito.belongsTo(modelos.Usuario,{
             as:'carrito_usuario',
             foreignKey:'usuario_id'
         })
