@@ -12,14 +12,26 @@
     <main>
 
     <div class="all-products">
+
+
 		
+
+
+		<%if(plat){ %>
+
+			<% if(plat==""){ %>
+
+			<div class="titulo">
+			<h4>Producto no encontrado</h4>
+		    </div>
+
+		<% } else { %>
+
+
 		<div class="titulo">
 			<h2>Todos los productos</h2>
 		</div>
 
-		<%if(plat !== null){ %>
-
-		
 
 		<% for (let i = 0; i < plat.length; i++) { %>
 		<div class="first-container">
@@ -41,13 +53,9 @@
 		
 	    </div>
         <% } %>
+
+		<% } %>
 		
-		<% } if(plat.nombre==null){ %>
-
-			<div class="titulo">
-			<h4>Producto no encontrado</h4>
-		    </div>
-
 		<% } %>
 
 	</div>
