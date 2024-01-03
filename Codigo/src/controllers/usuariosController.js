@@ -18,6 +18,31 @@ processLogin: function(req,res){
     let errors= validationResult(req);
     let usuarioLogueado;
     if(errors.isEmpty()){  
+        db.Usuario.findAll()
+        .then(function(usuario){
+            for(let i=0;i<usuario.length;i++){
+                if(usuario[i].email == req.body.email){
+                    if(bcrypt.compareSync(req.body.password,usuario[i].contraseña)){
+                        usuarioLogueado= usuario[i];
+                        delete usuarioLogueado.contraseña;
+                        break;
+                    }
+    
+                }
+            }
+
+            if(usuarioLogueado == undefined){
+                return res.render('login',{errors: [
+                    {msg:'Credenciales invalidas!!!'}
+                ]})
+            }
+            req.session.usuarioLogueado=usuarioLogueado;
+            if(req.body.recordarUser){
+                res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*2})
+            }
+            res.redirect('/')
+        })
+        /*
         for(let i=0;i<usuarios.length;i++){
             if(usuarios[i].email == req.body.email){
                 if(bcrypt.compareSync(req.body.password,usuarios[i].password)){
@@ -33,11 +58,8 @@ processLogin: function(req,res){
                     {msg:'Credenciales invalidas!!!'}
                 ]})
         }
-        req.session.usuarioLogueado=usuarioLogueado;
-        if(req.body.recordarUser){
-            res.cookie('userEmail',req.body.email,{maxAge:(1000*60)*2})
-        }
-        res.redirect('/')
+        */
+       
     }else{
         return res.render('login',{errors:errors.errors});
     }
@@ -102,7 +124,7 @@ register: (req, res) => {
         if(req.body.contrasenia===req.body.confirmar_contrasenia){
             let password= req.body.contrasenia
 
-            let passEncriptada= bcrypt.hashSync(password, 10)
+            let passEncriptada= bcrypt.hashSync(password, 4)
             
             let usuarioData = {
                 DNI: req.body.dni,
@@ -110,7 +132,7 @@ register: (req, res) => {
                 apellido: req.body.apellido,
                 fecha_nacimiento: req.body.fecha_nacimiento,
                 direccion: req.body.domicilio,
-                foto_usuario: req.body.foto_usuario,
+                foto_usuario: req.file.filename,
                 email: req.body.correo_electronico,
                 contraseña: passEncriptada,
                 tipo_usuario: req.body.tipo_usuario.id 
@@ -119,7 +141,6 @@ register: (req, res) => {
 
             db.Usuario.create(usuarioData)
                 .then(function(resultado) {
-                    console.log(resultado)
                     res.redirect('/')
                 })
 

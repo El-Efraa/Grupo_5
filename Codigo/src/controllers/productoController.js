@@ -56,7 +56,7 @@ let controller={
          {  
          nombre: req.body.name,
          descripcion: req.body.description,
-         imagen: req.body.image,
+         imagen: req.body.imagen,
          precio: req.body.price,
          categoria_id: req.body.category,
          receta_id: receta.id_receta

@@ -8,7 +8,7 @@ const productoController=require("../controllers/productoController")
 
 const storage= multer.diskStorage({
     destination: function(req, file, cb){
-        cb(null, path.resolve(__dirname,'../../public/img'))
+        cb(null, path.resolve(__dirname,'../../public/img/productos'))
     },
     filename: function(req, file, cb){
         cb(null, `${Date.now()}_img_${path.extname(file.originalname)}`)
@@ -19,7 +19,7 @@ const uploadFile= multer({storage});
 router.get('/', productoController.index)
 
 router.get ('/create',authMid, productoController.create)
-router.post('/create',authMid,uploadFile.single('image'), productoController.store)
+router.post('/create',authMid,uploadFile.single('imagen'), productoController.store)
 
 router.get('/detail/:id',authMid,productoController.detalle)
 

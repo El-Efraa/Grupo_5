@@ -37,7 +37,7 @@ CREATE TABLE Usuarios(
     direccion VARCHAR(255) NOT NULL,
     foto_usuario VARCHAR(255),
     email varchar(50) NOT NULL UNIQUE,
-    contraseña varchar(50) NOT NULL,
+    contraseña varchar(60) NOT NULL,
     created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     tipo_usuario int UNSIGNED,
