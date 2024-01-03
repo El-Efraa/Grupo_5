@@ -19,12 +19,12 @@ const uploadFile= multer({storage});
 router.get('/', productoController.index)
 
 router.get ('/create',authMid, productoController.create)
-router.post('/create',authMid,uploadFile.single('imagen'), productoController.store)
+router.post('/create',uploadFile.single('imagen'), productoController.store)
 
 router.get('/detail/:id',authMid,productoController.detalle)
 
 router.get('/edit/:id',authMid, productoController.edit);
-router.put('/edit/:id',authMid,uploadFile.single('image'), productoController.update);
+router.put('/edit/:id',authMid,uploadFile.single('imagen'), productoController.update);
 
 router.get('/delete/:id',authMid, productoController.mostrarEliminar);
 router.delete('/delete/:id',authMid,productoController.destroy);

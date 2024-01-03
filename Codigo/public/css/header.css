@@ -28,6 +28,7 @@
 .list_arrow{
     transform:var(--transform);
     transition: transform .3s;
+    height: 30px;
     display: block;
 }
 .list__show{
@@ -40,6 +41,7 @@
     width: max-content;
     transform: translateY(100%);
     background-color: #fa9b42;
+    font-size: 15px;
 }
 .menu-link--inside{
     padding: 20px 100px 20px 10px;

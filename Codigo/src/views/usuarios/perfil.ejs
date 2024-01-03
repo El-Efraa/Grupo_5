@@ -11,13 +11,21 @@
     <%- include('../partials/header')%>
     <main>
         <section class="content__perfil">
-            <h1>Hola <%= user.firstName %> !!</h1>
-            <div class="list__button list__button--click">
-                <img src="/img/usuarios/<%=user.foto_usuario %>">                                
-                <br>
-                <br>
-                <p> <%= user.email%></p>        
+            <h1>Hola <%= user.nombre %> !!</h1>
+            
+            <div class="detalleDatosPersonales">
+                <h3>Datos Personales</h3>
+                <div class="content_img_perfil" id="imagenPerfil">
+                    <img src="/img/usuarios/<%=user.foto_usuario %>">                                
+                </div>
+                <p>DNI: <%= user.DNI%></p>
+                <p>Email: <%= user.email%></p>
+                <p>Direccion: <%= user.direccion%></p>
+                <div class="pencil--verde">
+                    <a href="/user/editar/<%=user.id_usuario%>"><i class="fas fa-pencil-alt "style="color: #39b54a;" ></i> </a>
+                </div>
             </div>
+            
         </section>
     </main>
     <%- include('../partials/footer')%>    

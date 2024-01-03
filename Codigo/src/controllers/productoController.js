@@ -47,6 +47,7 @@ let controller={
         
      },
     store: (req, res)=> {
+      var imagenPlato= req.file.filename
       db.Receta.create(
          {
             descripcion:req.body.ingredients
@@ -56,7 +57,7 @@ let controller={
          {  
          nombre: req.body.name,
          descripcion: req.body.description,
-         imagen: req.body.imagen,
+         imagen: imagenPlato,
          precio: req.body.price,
          categoria_id: req.body.category,
          receta_id: receta.id_receta

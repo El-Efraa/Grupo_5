@@ -22,12 +22,15 @@
                                        <div class="img__profile">
                                             <img src="/img/usuarios/<%=locals.userLogged.foto_usuario%>" id="foto_usuario">
                                        </div> 
-                                        <a href="#" class="menu-link"><%= locals.userLogged.firstName %><img src="/img/svg/arrow.svg" class="list_arrow"> </a>
+                                        <a href="#" class="menu-link"><%= locals.userLogged.nombre %><img src="/img/svg/arrow.svg" class="list_arrow"> </a>
                                         
                                     </div>
                                     <ul class="list__show">
                                         <li class="list__inside">
                                             <a href="/user/profile" class="menu-link menu-link--inside">Mi perfil </a> 
+                                        </li>
+                                        <li class="list__inside">
+                                            <a href="/productos/create" class="menu-link menu-link--inside">Crear producto </a> 
                                         </li>
                                         <li class="list__inside">
                                             <a href="/user/logout" class="menu-link menu-link--inside">Cerrar Sesión </a> 

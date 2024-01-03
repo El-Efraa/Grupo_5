@@ -19,9 +19,36 @@ header{
     margin-right: auto;
     margin-left: 10px;
 }
+#imagenPerfil{
+    margin: auto;
+    width: 620px; 
+    padding: 20px;
+}
 .content__perfil{
-   padding: 50px;
+   padding: 40px;
    text-align: left;
+}
+.detalleDatosPersonales{
+    border: inset #fa9b42;
+}
+.detalleDatosPersonales > .pencil--verde{
+    display: block;
+    font-size: 18px;
+    padding: 5px;
+    width: 30px;
+    height: 30px;
+    border: 1px solid #39b54a;
+    background-color: #FFF;
+    border-radius: 30%;
+    position: absolute;
+    right: 30px;
+    bottom: 240px;
+}
+.pencil--verde i{
+    transition: transform 0.5s;
+}
+.pencil--verde i:hover{
+    transform: rotateZ(-90deg);
 }
 h1{
     margin:20px;
