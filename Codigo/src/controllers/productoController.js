@@ -175,6 +175,8 @@ let controller={
       res.redirect('/productos') */
    },
    search: (req,res) => {
+
+      //PEDIDO CON GET
       let plato = req.body.fname
 
       db.Plato.findAll(
