@@ -12,6 +12,14 @@
 
 }
 
+.box-img {
+    width: 100px;
+}
+
+.box-img img {
+    width: 100%;
+}
+
 
 @media(min-width:480px){
 

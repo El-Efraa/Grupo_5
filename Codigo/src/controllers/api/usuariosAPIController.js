@@ -1,4 +1,4 @@
-const db = require('../../database/models')
+const db = require('../../../database/models')
 
 let controller={
     //API Usuarios
@@ -8,9 +8,13 @@ let controller={
             .then((usuarios) => {
                 usuarios.forEach((usuario)=>aux.push({
                         id:usuario.id_usuario,
+                        dni: usuario.DNI,
                         name:usuario.nombre,
+                        apellido: usuario.apellido,
                         email:usuario.email,
-                        detail:"www.localhost:3000/user/detail/"+usuario.id_usuario})
+                        direccion: usuario.direccion,
+                        image: usuario.foto_usuario,
+                        detail:"www.localhost:3002/user/detail/"+usuario.id_usuario})
                     );
                 return res.status(200).json({
                     count: usuarios.length,
@@ -31,7 +35,7 @@ let controller={
                     direccion: usuario.direccion,
                     email: usuario.email,
                     imagen:usuario.foto_usuario,
-                    link_detalle: "www.localhost:3000/user/detail/"+usuario.id_usuario,
+                    link_detalle: "www.localhost:3002/user/detail/"+usuario.id_usuario,
                     status: 200
                 })
             })

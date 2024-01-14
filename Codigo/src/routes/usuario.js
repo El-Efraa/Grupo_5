@@ -3,7 +3,7 @@ const router = express.Router();
 const path = require('path');
 const multer= require('multer');
 const usuariosController=require('../controllers/usuariosController.js')
-const usuariosAPIController=require('../controllers/usuariosAPIController.js')
+// const usuariosAPIController=require('../controllers/api/usuariosAPIController.js')
 const gestMid=require('../../middlewares/guestMiddleware.js')
 const authMid=require('../../middlewares/authMiddleware.js')
 const {check} = require('express-validator');
@@ -42,8 +42,8 @@ router.post('/editar/:id',authMid, usuariosController.update);
 
 
 //API
-router.get('/api',usuariosAPIController.listado)
-router.get('/api/:id',usuariosAPIController.detalle)
+// router.get('/api',usuariosAPIController.listado)
+// router.get('/api/:id',usuariosAPIController.detalle)
 
 
 module.exports=router;

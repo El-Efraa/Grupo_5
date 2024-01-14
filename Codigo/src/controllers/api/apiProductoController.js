@@ -34,12 +34,14 @@ let controller={
                id: plat.id_plato,
                name: plat.nombre,
                description: plat.descripcion,
+               imagen: plat.imagen,
+               precio: plat.precio,
                category: [{
                   id: plat.categoria_id,
                   nombre: plat.plato_cat.nombre,
                   descripcion: plat.plato_cat.descripcion
                }],
-               detail: "www.localhost:3000/productos/detail/"+plat.id_plato
+               detail: "http://localhost:3002/productos/detail/"+plat.id_plato
          }))  
          
          
