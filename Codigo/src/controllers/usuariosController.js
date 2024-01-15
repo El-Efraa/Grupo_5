@@ -17,6 +17,7 @@ login:(req, res) => {
 processLogin: function(req,res){
     let errors= validationResult(req);
     let usuarioLogueado;
+    console.log(errors.isEmpty());
     if(errors.isEmpty()){  
         db.Usuario.findAll()
         .then(function(usuario){
@@ -74,7 +75,6 @@ register: (req, res) => {
  
     return  res.render('registro')
     
-    
 },
 /* processRegister: (req, res) => {
 
@@ -120,7 +120,12 @@ register: (req, res) => {
         })
     },
     createUser: (req, res) => {
-        if(req.body.contrasenia===req.body.confirmar_contrasenia){
+        let errors=validationResult(req);
+        console.log(errors.isEmpty());
+        console.log(req.body, req.file);
+        if(errors.isEmpty()){
+            
+           if(req.body.contrasenia===req.body.confirmar_contrasenia){
             let password= req.body.contrasenia
 
             let passEncriptada= bcrypt.hashSync(password, 4)
@@ -138,16 +143,19 @@ register: (req, res) => {
                 tipo_usuario: 2
             }
 
-
             console.log(req.body)
 
             db.Usuario.create(usuarioData)
                 .then(function(resultado) {
                     res.redirect('/')
                 })
-
-        } else {
+                console.log(usuarioData) 
+        }else {
             res.render('registro')
+
+        } 
+        }else{
+            res.send(errors.array())
         }
     
     },

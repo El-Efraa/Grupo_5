@@ -4,38 +4,60 @@
     <%- include('../partials/head')%>
     <title>Crear producto</title>
     <link rel="stylesheet" href="/css/styles-create.css">
-    <link rel="stylesheet" href="/css/styles_home.css">
+    
 </head>
 
 <body>
 
-    <%- include('../partials/header')%>
+    <header>
+        <section class="contenedor">
+                <div class="content-img" >
+                    <a href="/"><img src="/img/logo.jpeg" alt="logo-comercio"id="logo"> </a>        
+                </div>
+                <div class="info">
+                        <i class="fas fa-info-circle" id="info-icon"></i>
+                </div>       
+        </section> 
+    </header>
 
 
     <div class="container">
 
-    <h2 class="titular">Creación de producto</h2>
+    <h2 class="titular">CREACIÓN DE PRODUCTO</h2>
 
-    <form action="/productos/create" method="POST" enctype="multipart/form-data">
-        <label class="categorias">Nombre del producto:</label>
-        <input class="input" type="text" name="name" id="name">
+    <form action="/productos/create" method="POST" enctype="multipart/form-data" id="formulario">
+        <label for="name" class="categorias">Nombre del producto: <span class="required">*</span><i id="iconoName" class="fa-regular"></i></label>
+        <input class="input" type="text" name="name" id="name" autocomplete="off">
+        <p class="msg" id="msgName">Debe tener mas de 3 letras. Solo puede contener letras y espacios.</p>
         
-        <label class="categorias">Imagen:</label>
-        <input type="file" name="imagen" id="imagen" accept="image/*">
-        <label class="categorias">Categoría: </label>
-        <select name="category">
+        <label for="category" class="categorias" style="padding-top: 50 ;">Categoría: <span class="required">*</span><i id="iconoCategory" class="fa-regular"></i></label>
+        <select class="select" name="category" id="category" required>
             <% for(let i=0; i<categorias.length; i++){ %>
                 <option value="<%=categorias[i].id_categoria%>" >
                     <%= categorias[i].nombre %>
                 </option>
             <% } %>
         </select>
-        <label class="categorias">Precio: </label>
-        <input class="input" type="text" name="price">
-        <label class="categorias">Descripción:</label>
-        <textarea name="description" cols="40" rows="5"></textarea>
-        <label class="categorias">Receta</label>
-        <textarea name="ingredients" cols="40" rows="5"></textarea>
+        <p class="msg" id="msgCategory"></p>
+
+        <label for="price" class="categorias">Precio: <span class="required">*</span><i id="iconoPrice" class="fa-regular"></i></label>
+        <input class="input" type="number" name="price" id="price">
+        <p class="msg" id="msgPrice">Debe contener entre 4 y 6 digitos</p>
+
+        <label for="description" class="categorias">Descripción: <span class="required">*</span><i id="iconoDescription" class="fa-regular"></i></label>
+        <textarea name="description" id="description" name="description" cols="40" rows="5"></textarea>
+        <p class="msg" id="msg"></p>
+
+        <label for="ingredients" class="categorias">Receta: <span class="required">*</span><i id="iconoIngredients" class="fa-regular"></i></label>
+        <textarea name="ingredients" id="ingredients" name="ingredients" cols="40" rows="5" autoco></textarea>
+        <p class="msg" id="msgIngredients">Debe rellenar correctamente este campo</p>
+
+        <label for="imagen" class="categorias">Imagen: <span class="required">*</span><i id="iconoImagen" class="fa-regular"></i></label><br>
+        <input class="input" type="file" name="imagen" id="imagen" style="padding: 10px; background-color: white;" accept="image/*"><br>
+        <p class="msg" id="msgImagen">Formato no permitido</p>
+        <div id="preview" class="preview">
+            <center><img id="imgPreview"></center>
+        </div>
 
 <button class="button-create" type="submit"> Crear producto </button>
 
@@ -47,5 +69,10 @@
             <p>Copyright © 1999-2020 ComidasRegionales NOA S.R.L.</p>
         </div>
     </section>
+
+    <script src="https://kit.fontawesome.com/77caedd56f.js" crossorigin="anonymous"></script>
+
+    <script src="/js/validations/validationCreateProducts.js"></script>
+
 </body>
 </html>

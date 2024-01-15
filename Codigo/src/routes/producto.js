@@ -18,7 +18,7 @@ const uploadFile= multer({storage});
 
 router.get('/', productoController.index)
 
-router.get ('/create',authMid, productoController.create)
+router.get ('/create', productoController.create)
 router.post('/create',uploadFile.single('imagen'), productoController.store)
 
 router.get('/detail/:id',authMid,productoController.detalle)

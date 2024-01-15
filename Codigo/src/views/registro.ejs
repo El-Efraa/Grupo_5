@@ -23,38 +23,72 @@
         </section> 
     </header>
     <main>
-        <h1>Registro de Usuario</h1>
-        <form class="forn" action="/user/create" method="POST" enctype="multipart/form-data">
-            <label for="nombre">Nombre:<span class="required">*</span></label>
-            <input type="text" id="nombre" name="nombre" required><br>
-
-            <label for="apellido">Apellido:<span class="required">*</span></label>
-            <input type="text" id="apellido" name="apellido" required><br>
-
-            <label for="dni"> D.N.I: <span class="required">*</span></label>
-            <input type="number" id="dni" name="dni" required><br>
-
-            <label for="fecha_nacimiento">Fecha de nacimiento:</label>
-            <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br>
-
-            <label for="domicilio">Domicilio:<span class="required">*</span></label>
-            <input type="text" id="domicilio" name="domicilio" required><br>
-
-            <label for="foto_usuario">Foto de usuario: <span class="required">*</span></label>
-            <input type="file" id="foto_usuario" name="foto_usuario" accept="image/*" ><br>
         
-            <label for="correo_electronico">Correo electrónico:<span class="required">*</span></label>
-            <input type="email" id="correo_electronico" name="correo_electronico" required><br>
+        <form class="forn" id="formulario" action="/user/create" method="POST" enctype="multipart/form-data">
 
-            <label for="contrasenia">Contraseña:<span class="required">*</span></label>
-            <input type="password" id="contrasenia" name="contrasenia" required><br>
+            <h2>Registro de Usuario</h2>
 
-            <label for="confirmar_contrasenia">Confirmar contraseña:<span class="required">*</span></label>
-            <input type="password" id="confirmar_contrasenia" name="confirmar_contrasenia" required><br>
+            <div class="inputs-container">
+                <label for="nombre">Nombre:<span class="required">*</span><i id="iconoNombre" class="fa-regular"></i></label>
+                <input type="text" id="nombre" name="nombre" required ><br>
+                <p class="msg" id="msgNombre">El nombre debe tener mas de 3 letras. Solo puede contener letras y espacios.</p>
 
-            <button class="boton" type="submit">Enviar</button>
-            <button class="boton" type="reset">Borrar</button>
+                <label for="apellido">Apellido:<span class="required">*</span><i id="iconoApellido" class="fa-regular"></i></label>
+                <input type="text" id="apellido" name="apellido" required><br>
+                <p class="msg" id="msgApellido">El apellido deber tener mas de 3 letras. Solo puede contener letras y espacios</p>
+
+                <label for="dni"> D.N.I: <span class="required">*</span><i id="iconoDni" class="fa-regular"></i></label>
+                <input type="number" id="dni" name="dni" required><br>
+                <p class="msg" id="msgDni">El DNI debe tener 8 digitos</p>
+
+                <label for="fecha_nacimiento">Fecha de nacimiento: <span class="required">*</span><i id="iconoFecha" class="fa-regular"></i></label>
+                <input type="date" id="fecha_nacimiento" name="fecha_nacimiento"><br>
+                <p class="msg" id="msgFecha">Debe ser mayor de edad para crear un usuario</p>
+
+                <label for="domicilio">Domicilio:<span class="required">*</span><i id="iconoDomicilio" class="fa-regular"></i></label>
+                <input type="text" id="domicilio" name="domicilio" required><br>
+                <p class="msg" id="msgDomicilio">Caracter inválido</p>
+        
+                <label for="correo_electronico">Correo electrónico:<span class="required">*</span><i id="iconoCorreo" class="fa-regular"></i></label>
+                <input type="email" id="correo_electronico" name="correo_electronico" required><br>
+                
+                <p class="msg" id="msgCorreo">Ingrese un correo electrónico válido</p>
+                <p class="msg" id="msgCorreoExistente">Este correo ya está registrado</p>
+
+                <div class="contraseñas">
+                <label for="contrasenia">Contraseña:<span class="required">*</span><i id="iconoContrasenia" class="fa-regular"></i></label>
+                <input type="password" id="contrasenia" name="contrasenia" required><br>
+                <p class="msg" id="msgContrasenia">Debe introducir una contraseña valida entre 8 y 16 digitos</p>
+
+                <label for="confirmar_contrasenia">Confirmar contraseña:<span class="required">*</span><i id="iconoConfirmar" class="fa-regular"></i></label>
+                <input type="password" id="confirmar_contrasenia" name="confirmar_contrasenia" required><br>
+                <p class="msg" id="msgConfirmar">Las contraseñas deben ser iguales</p>
+                </div>
+
+                <label for="foto_usuario">Foto de usuario: <span class="required">*</span><i id="iconoFoto" class="fa-regular"></i></label>
+                <input type="file" id="foto_usuario" name="foto_usuario" accept="image/*" >
+                <p class="msg" id="msgFoto">Formato no permitido</p>
+                <div id="preview" class="preview">
+                    <center><img id="imgPreview"></center>
+                </div>
+
+                <div class="buttons">
+                <button class="boton" type="submit">Enviar</button>
+                <button class="boton" type="reset">Borrar</button>
+
+                
+            </div>
+                
+            </div>
+            
+            <p class="msg" id="msgFormIncorrecto">Rellene el formulario correctamente</p>
+
         </form>
     </main>
+
+    <script src="https://kit.fontawesome.com/77caedd56f.js" crossorigin="anonymous"></script>
+    <script src="/js/validations/validationRegister.js">
+        
+    </script>
 </body>
 </html>

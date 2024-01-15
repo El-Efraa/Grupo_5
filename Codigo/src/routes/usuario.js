@@ -6,7 +6,7 @@ const usuariosController=require('../controllers/usuariosController.js')
 // const usuariosAPIController=require('../controllers/api/usuariosAPIController.js')
 const gestMid=require('../../middlewares/guestMiddleware.js')
 const authMid=require('../../middlewares/authMiddleware.js')
-const {check} = require('express-validator');
+const {body, check} = require('express-validator');
 const { userInfo } = require('os');
 
 const storage= multer.diskStorage({
@@ -19,10 +19,29 @@ const storage= multer.diskStorage({
 });
 const uploadFile= multer({storage});
 
+const validations= 
 //RUTAS
 router.get('/', usuariosController.list);
 router.get('/register',gestMid,usuariosController.register)
-router.post('/create',uploadFile.single('foto_usuario'), usuariosController.createUser);
+router.post('/create' /*[
+    check('nombre').isLength({min:3}),
+    check('apellido').notEmpty(),
+    check('dni').notEmpty().isLength({min:8}),
+    check('fecha_nacimiento').notEmpty(),
+    check('domicilio').notEmpty(),
+    check('correo_electronico').notEmpty().isEmail(),
+    check('contrasenia').notEmpty().isLength({min:8}),
+    check('confirmar_comtrasenia').isLength({min:8}),
+    check('foto_usuario').custom((value, { req }) => {
+        let file = req.file;
+        
+        let extensiones = ['.png', '.jpg', '.gif', '.svg'] 
+        if(file){
+           let fileExtension = path.extname(file.originalname); 
+           extensiones.includes(fileExtension) 
+        }
+    })
+]*/,uploadFile.single('foto_usuario'), usuariosController.createUser);
 // router.post('/register',uploadFile.single('foto_usuario'), usuariosController.processRegister)
 //formulario de login
 router.get ('/login',gestMid,usuariosController.login);

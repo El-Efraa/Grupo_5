@@ -14,12 +14,17 @@ header{
 }
 
 .titular{
-    margin-bottom: 40px;
+    background-color: #731c025c;
+    padding: 10px;
+    padding-left: 15px;
+    border-radius: 10px;
+    color: white;
+    margin-bottom: 25px;
 }
 
 .container{
     width: 90%;
-    margin: 30% auto;
+    margin: 10% auto;
     padding: 5%;
     background-color: #ffaa5b7a;
     border-radius: 20px;
@@ -31,12 +36,14 @@ header{
     width: 100%;
     
 }
-.input{
+
+input, select, textarea {
     width: 100%;
-    margin: 20px 0 40px;
-    padding: 5px;
-    border: none;
-    border-radius: 5px;
+    margin: 10px 0 20px;
+    padding: 10px;
+    border: 1px solid #ccc;
+    border-radius: 4px;
+    box-sizing: border-box;
 }
 
 .image{
@@ -48,32 +55,97 @@ header{
     border-radius: 5px;
 }
 
- select{
-    margin: 20px 0 40px;
-    padding: 5px 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
- }
-
- textarea{
-    margin: 20px 0 40px;
-    padding: 5px 10px;
-    width: 100%;
-    border: none;
-    border-radius: 5px;
- }
+ 
 
  .button-create{
-    padding: 5px;
+    position: absolute;
+    bottom: 0;
+    right: 0;
+    padding: 5px 10px;
     border-radius: 7px;
     border: none;
-    background-color: #f74200a6;
+    background-color: #7e0306d1;
     color: white;
+    text-align: left;
  }
 
+label{
+    font-size: 16px;
+    font-weight: bold;
+    position: relative;
+    display: inline-block;
+}
 
- @media (min-width: 361px){
+form{
+    position: relative;
+}
+
+div.preview{
+    width: 100%;
+    height: 118px 
+}
+ 
+#imgPreview{
+    width:70%;
+    height: 100%;
+}
+
+.input_correcto {
+    border: 3px solid green;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+.input_incorrecto {
+    border: 3px solid red;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+label i {
+    display: none;
+}
+
+i.fa-circle-check{
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    color: green;
+}
+
+i.fa-circle-xmark{
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    color: red
+}
+
+p.msg{
+    display: none;
+}
+
+p.activo {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin: -5px 5px 15px;
+    color: #e60000;
+}
+
+center{
+    height: 90%;
+}
+
+
+
+
+@media (min-width: 361px){
     .container{
         padding: 5% 10%;
     }
@@ -81,10 +153,14 @@ header{
 
  @media (min-width: 769px){
     .container{
-        padding: 5%
+        padding: 3%;
+        width: 75%;
     }
     form{
     column-count: 2;
     column-gap: 40px;
+    }
+    header{
+        position: relative;
     }
  }

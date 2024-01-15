@@ -38,13 +38,16 @@ main {
     color: red;
 }
 
-h1 {
+h2 {
     text-align: center;
-    margin-bottom: 30px;
-    color: #041b34;
+    margin-bottom: 20px;
+    color: white;
+    background-color: #731c025c;
+    padding: 10px;
+    border-radius: 10px;
 }
 .forn {
-    max-width: 500px;
+    width: 100%;
     margin: 0 auto;
     background-color: #FCAF67;
     padding: 20px;
@@ -58,6 +61,7 @@ label {
     display: block;
     font-weight: bold;
     margin-bottom: 5px;
+    position: relative;
 }
 
 input[type="text"], input[type="number"],
@@ -75,6 +79,16 @@ input[type="file"] {
 input[type="radio"],
 input[type="checkbox"] {
     margin-right: 5px;
+}
+
+div.preview{
+    width: 100%;
+    height: 204px;
+}
+
+#imgPreview{
+    width: 100%;
+    height: 90%;
 }
 
 .categories-label {
@@ -106,13 +120,94 @@ input[type="checkbox"] {
     margin-bottom: 0;
 }
 
+input.input_correcto {
+    border: 3px solid green;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+input.input_incorrecto {
+    border: 3px solid red;
+    width: 100%;
+    padding: 10px;
+    border-radius: 4px;
+    margin-bottom: 15px;
+    box-sizing: border-box;
+}
+
+label i {
+    display: none;
+}
+
+i.fa-circle-check{
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    color: green;
+}
+
+i.fa-circle-xmark{
+    display: inline-block;
+    position: absolute;
+    right: 3px;
+    color: red
+}
+
+p.msg{
+    display: none;
+}
+
+p.activo {
+    display: block;
+    font-size: 13px;
+    font-weight: bold;
+    margin: -5px 5px 15px;
+    color: #e60000;
+}
+
+center{
+    height: 90%;
+}
+
 @media(min-width:376px){
     .content-img{
         width: 10vw;
+    }
+    .forn{
+        width: 70%;
     }
 }
 @media(min-width:768px){
     .content-img{
         width: 8vw;
+    }
+    .inputs-container{
+        height: auto;
+        position: relative;
+        column-count: 2;
+        column-gap: 40px;
+    }
+    input[type= 'file']{
+        padding: 8px;
+    }
+    .buttons{
+        position: absolute;
+        bottom: 5px;
+        right: 0px;  
+    }
+    .forn{
+        padding: 2% 3%;
+        width: 70%;
+        padding-bottom: 2%;
+    }
+    .tipo_usuario {
+        margin-bottom: 10px;
+    }
+    .contraseñas{
+        margin-top: 30px;
+        margin-bottom: 10px;
     }
 }
