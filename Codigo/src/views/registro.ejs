@@ -40,21 +40,11 @@
             <label for="domicilio">Domicilio:<span class="required">*</span></label>
             <input type="text" id="domicilio" name="domicilio" required><br>
 
-            <label for="foto_usuario">Foto de usuario:</label>
+            <label for="foto_usuario">Foto de usuario: <span class="required">*</span></label>
             <input type="file" id="foto_usuario" name="foto_usuario" accept="image/*" ><br>
         
             <label for="correo_electronico">Correo electrónico:<span class="required">*</span></label>
             <input type="email" id="correo_electronico" name="correo_electronico" required><br>
-
-            <label for="tipo_usuario"> Tipo de Usuario: </label>
-            <select name="tipo_usuario" id="tipo_usuario">
-                <% for (let i = 0; i < tipos.length; i++) { %>
-                    <option value="<% tipos[i].id_tipo %>">
-                        <% tipos[i].id_tipo %>
-                        <%= tipos[i].tipo %>
-                    </option>
-                <% } %>
-            </select>
 
             <label for="contrasenia">Contraseña:<span class="required">*</span></label>
             <input type="password" id="contrasenia" name="contrasenia" required><br>

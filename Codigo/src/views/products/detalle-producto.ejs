@@ -6,7 +6,7 @@
     <link rel="stylesheet" href="/css/detalle-producto.css">
     <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css"
 rel="stylesheet" />
-    
+  
 </head>
 <body>
     
@@ -80,16 +80,16 @@ rel="stylesheet" />
                         <div class="flex-de-boton-de-compra">
 
                             <div class="signo-menos">
-                                <button type="button"> <i class="fa-solid fa-minus"></i> </button>
+                                <button type="button" id="menos"> <i class="fa-solid fa-minus"></i> </button>
                             </div>
 
                             <div class="input-de-cantidad">
-                                <label for="cantidad"></label>
-                                <input type="number" name="cantidad" id="cantidad" placeholder="1">
+                                <input type="number" name="cantidad" id="cantidad" value="1"
+                                min="1">
                             </div>
 
                             <div class="signo-mas">
-                                <button type="button"> <i class="fa-solid fa-plus"></i> </button>
+                                <button type="button" id="mas"> <i class="fa-solid fa-plus"></i> </button>
                             </div>
 
                             <div class="boton-añadir-carrito">
@@ -137,6 +137,7 @@ rel="stylesheet" />
         </div>
     </section>  
 
-
+    <script type="text/javascript" src="/js/detalle.js"> </script>
 </body>
+
 </html>

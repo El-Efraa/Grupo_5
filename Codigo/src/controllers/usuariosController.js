@@ -71,10 +71,9 @@ logout: (req,res)=>{
     res.redirect("/");
 },
 register: (req, res) => {
-    db.Tipo_Usuario.findAll()
-        .then(function(tipos) {
-            return  res.render('registro', {tipos: tipos})
-        })
+ 
+    return  res.render('registro')
+    
     
 },
 /* processRegister: (req, res) => {
@@ -126,6 +125,7 @@ register: (req, res) => {
 
             let passEncriptada= bcrypt.hashSync(password, 4)
             
+
             let usuarioData = {
                 DNI: req.body.dni,
                 nombre: req.body.nombre,
@@ -135,9 +135,11 @@ register: (req, res) => {
                 foto_usuario: req.file.filename,
                 email: req.body.correo_electronico,
                 contraseña: passEncriptada,
-                tipo_usuario: req.body.tipo_usuario.id 
+                tipo_usuario: 2
             }
-            // console.log(req.body)
+
+
+            console.log(req.body)
 
             db.Usuario.create(usuarioData)
                 .then(function(resultado) {

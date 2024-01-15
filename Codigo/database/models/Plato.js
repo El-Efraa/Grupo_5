@@ -72,9 +72,11 @@ module.exports=(sequelize,DataTypes)=>{
             foreignKey:'categoria_id',
             foreignKeyConstraint: true
         })
-        Plato.hasMany(modelos.Carrito,{
-            as:'plato_carrito',
+        Plato.belongsToMany(modelos.Carrito,{
+            as:'platos_carritos',
+            through:'art_carrito',
             foreignKey:'plato_id',
+            otherKey:'carrito_id',
             foreignKeyConstraint: true
         })
     }

@@ -1,4 +1,3 @@
-
 module.exports=(sequelize,DataTypes)=>{
     const Carrito = sequelize.define("Carrito",{
                 id_carrito:{
@@ -6,23 +5,6 @@ module.exports=(sequelize,DataTypes)=>{
                     primaryKey: true,
                     autoIncrement: true,
                     allowNull: false
-                },
-                cantidad:{
-                    type:DataTypes.INTEGER,
-                    allowNull: false
-                    
-                },
-                importe:{
-                    type:DataTypes.REAL,
-                    allowNull: false
-                },
-                plato_id:{
-                    type: DataTypes.INTEGER.UNSIGNED,
-                    foreignKey: true,
-                    references: {
-                        model: 'Plato',
-                        key: 'id_plato'
-                    }
                 },
                 usuario_id:{
                     type: DataTypes.INTEGER.UNSIGNED,
@@ -45,13 +27,17 @@ module.exports=(sequelize,DataTypes)=>{
             as:'carrito_usuario',
             foreignKey:'usuario_id'
         })
-        Carrito.belongsTo(modelos.Plato,{
-            as:'carrito_plato',
-            foreignKey:'plato_id'
-        })
         Carrito.hasOne(modelos.Venta,{
             as:'carrito_venta',
             foreignKey:'carrito_id'
+        })
+        //CAMBIAR LA RELACION MUCHOS A MUCHOS POR LA TABLA INTERMEDIA
+        Carrito.belongsToMany(modelos.Plato,{
+            as:'carrito_Platos',
+            through:'art_carrito',
+            foreignKey:'carrito_id',
+            otherKey:'plato_id',
+            foreignKeyConstraint: true
         })
     }
     return Carrito;

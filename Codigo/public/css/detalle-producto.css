@@ -154,6 +154,12 @@ main {
     height: 35px;
     padding: 0 4px;
 }
+input[type=number]::-webkit-inner-spin-button, 
+input[type=number]::-webkit-outer-spin-button { 
+  -webkit-appearance: none; 
+  margin: 0; 
+}
+input[type=number] {appearance:textfield;}
 
 .signo-mas button, .signo-menos button {
     width: 100%;

@@ -58,14 +58,19 @@ CREATE TABLE Platos (
 );
 CREATE TABLE Carritos (
     id_carrito int UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
-    cantidad int NOT NULL,
-    importe real NOT NULL,
 	created_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
     updated_at TIMESTAMP DEFAULT CURRENT_TIMESTAMP,
-    plato_id int UNSIGNED ,
     usuario_id int  UNSIGNED ,
-	FOREIGN KEY(plato_id) REFERENCES platos(id_plato),
 	FOREIGN KEY(usuario_id) REFERENCES usuarios(id_usuario)
+);
+CREATE TABLE Art_carrito(
+		id_listado int UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,
+        cantidad int NOT NULL,
+        importe real NOT NULL,
+		plato_id int UNSIGNED ,
+        carrito_id int UNSIGNED,
+        FOREIGN KEY(plato_id) REFERENCES platos(id_plato),
+		FOREIGN KEY(carrito_id) REFERENCES carritos(id_carrito)
 );
 CREATE TABLE Ventas(
 	id_venta int UNSIGNED PRIMARY KEY AUTO_INCREMENT NOT NULL,

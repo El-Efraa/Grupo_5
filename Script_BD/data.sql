@@ -42,10 +42,8 @@ Integer ac leo. Pellentesque ultrices mattis odio. Donec vitae nisi.');
 insert into tipo_Usuarios (id_tipo, tipo, descripcion) values (1, 'administrador', 'Maecenas ut massa quis augue luctus tincidunt. Nulla mollis molestie lorem. Quisque ut erat.
 
 Curabitur gravida nisi at nibh. In hac habitasse platea dictumst. Aliquam augue quam, sollicitudin vitae, consectetuer eget, rutrum at, lorem.');
-insert into tipo_Usuarios (id_tipo, tipo, descripcion) values (2, 'invitado', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.
 
-Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.');
-insert into tipo_Usuarios (id_tipo, tipo, descripcion) values (3, 'usuario', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');  
+insert into tipo_Usuarios (id_tipo, tipo, descripcion) values (2, 'usuario', 'In hac habitasse platea dictumst. Etiam faucibus cursus urna. Ut tellus.');  
 /* TABLA DESCUENTOS   */
 SELECT * FROM db_comidasregionales. descuentos;
 
@@ -64,22 +62,22 @@ insert into descuentos (id_descuento, codigo, cantidad_productos, fecha_inicio, 
 /* TABLA USUARIOS  */
 SELECT * FROM db_comidasregionales. usuarios;
 
-insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (1, 690108128, 'Misty', 'Alster', '1977-10-1', '4th Floor', 'https://robohash.org/consequaturnullaeius.png?size=50x50&set=set1', 'malster0@nba.com','410FE', 3);
+insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (1, 690108128, 'Misty', 'Alster', '1977-10-1', '4th Floor', 'https://robohash.org/consequaturnullaeius.png?size=50x50&set=set1', 'malster0@nba.com','410FE', 2);
 insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (2, 612036689, 'Vance', 'Dalby', '1970-1-18', 'Suite 44', 'https://robohash.org/temporequiasit.png?size=50x50&set=set1', 'vdalby1@is.gd','5210pop', 1);
-insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (3, 426780270, 'Fanya', 'Lillecrap', '2020-4-1', 'Suite 49', 'https://robohash.org/minusdignissimosaccusamus.png?size=50x50&set=set1', 'flillecrap2@people.com.cn','1023pili', 3);
+insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (3, 426780270, 'Fanya', 'Lillecrap', '2020-4-1', 'Suite 49', 'https://robohash.org/minusdignissimosaccusamus.png?size=50x50&set=set1', 'flillecrap2@people.com.cn','1023pili', 2);
 insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (4, 489609528, 'Morgana', 'Treagus', '2003-2-17', 'Suite 21', 'https://robohash.org/autnumquamratione.png?size=50x50&set=set1', 'mtreagus3@google.es','10pol', 1);
 insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (5, 598391490, 'Rhys', 'Dibner', '1989-11-10', 'Apt 376', 'https://robohash.org/aautconsequatur.png?size=50x50&set=set1', 'rdibner4@vk.com','pilu11', 2);
 insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (6, 170443938, 'Rozalin', 'Izzat', '1992-7-11', 'Apt 1406', 'https://robohash.org/minimarerumquis.png?size=50x50&set=set1', 'rizzat5@hatena.ne.jp','pol2', 2);
 insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (7, 385168383, 'Janina', 'Meaders', '1999-9-9', 'Room 458', 'https://robohash.org/magnietquia.png?size=50x50&set=set1', 'jmeaders6@hhs.gov','clave2', 2);
 insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (8, 748347785, 'Donny', 'Bakes', '1965-12-3', 'Room 102', 'https://robohash.org/itaquedignissimosaccusantium.png?size=50x50&set=set1', 'dbakes7@mail.ru','sorte2', 1);
 insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (9, 719920782, 'Lock', 'Khosa', '1989-8-5', 'Apt 1984', 'https://robohash.org/nonvoluptaseligendi.png?size=50x50&set=set1', 'lkhosa8@aboutads.info','ten2', 2);
-insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (10, 930716452, 'Sandro', 'Adess', '1986-5-15', '2nd Floor', 'https://robohash.org/utfugiatrepellendus.png?size=50x50&set=set1', 'sadess9@wsj.com','labyrinth2', 3);
+insert into usuarios (id_usuario, DNI, Nombre, Apellido, Fecha_Nacimiento, Direccion, Foto_usuario, Email,Contraseña, tipo_usuario) values (10, 930716452, 'Sandro', 'Adess', '1986-5-15', '2nd Floor', 'https://robohash.org/utfugiatrepellendus.png?size=50x50&set=set1', 'sadess9@wsj.com','labyrinth2', 2);
 
 /* TABLA PLATOS  */
 SELECT * FROM db_comidasregionales.recetas;
 
 insert into platos (id_plato, nombre, descripcion, imagen, precio, receta_id, categoria_id) values (1, 'vel', 'Sed ante. Vivamus tortor. Duis mattis egestas metus.Aenean fermentum. Donec ut mauris eget massa tempor convallis. Nulla neque libero, convallis eget, eleifend luctus, ultricies eu, nibh.', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJ8SURBVDjLpZNLaFwFFIa/O8m0lTxm2hJHU61Omuk0M2o1aBOl1a3QkKXQlWRhXImCGxWkCxVCobhQcGFwJeJKKIgQQSFqrWBS0zRFE2xTOiZpHpMmITNzc+95dBHQlKTZeDYHDvwf5/GfwN35P1G/U/GDsXcnzLSoaq6q333U/XHP/QCJ7eJ3DmAU8415cs25QFS7d+tgG+D9pweWI4kqscdUogoiMr4bIHB3PrzynpspqoZuZu/YfywQE67Mja+KqKpqQkQY7P1y/7YdqClHG3KYG+aOY4Ga4Q6FlkJKXXE31qeHmfzqjNc1PkllaZggnHl1E6CKumFuzK7fYiVcQVwwdxJBHWbOS3uhK/0ED7SfIpV9hpXpPH99P3huEyDKxNIEzckUmYZWFqtLqOvmOL7BUVngZEsXTY88y/L1P9kTRDQ1P0TjwcOpYKsP3vrxdS+0FJgoj6FmmCuP2x1ea+0k3fYyG3NfUysHLExWWQ1DErVq/p4riCjqiqgiJhyOy/Q/fJz0kdOEs58TJO+QbGyCqMSn1X947o1vpuoB3vyh30WU9L40akbsMa3lefqOnCDV3ks48xmJpBCtZSkNX+J8HFEy++8KIkox04HiTK/doCtq4Pl0Jw8WTxPdHqRujxOuPsbsT79RX6tmv3j70s17jBSLICh/LIyQnVnnhSCD+qPMXf0EI6SyfIhbF0c5G4fkt4j/BUgsqBnFg0+RKc1SONnP3tIvTF24yNjQMqNDPzOUzXFbbednEhF+nxpBVKlenye69i3Z46dYXSzz9+VrXMgdsrmrl2tqurajlbfGKy8eqHW2ZepPdGTx5MavtYXFvp6B8Rv3+4W77h1o9knDsw0AAAAASUVORK5CYII=', 46145.517, 1, 4);
-insert into platos (id_plato, nombre, descripcontraseñacion, imagen, precio, receta_id, categoria_id) values (2, 'donec quis', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
+insert into platos (id_plato, nombre, descripcion, imagen, precio, receta_id, categoria_id) values (2, 'donec quis', 'Praesent id massa id nisl venenatis lacinia. Aenean sit amet justo. Morbi ut odio.
 
 Cras mi pede, malesuada in, imperdiet et, commodo vulputate, justo. In blandit ultrices enim. Lorem ipsum dolor sit amet, consectetuer adipiscing elit.', 'data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABGdBTUEAAK/INwWK6QAAABl0RVh0U29mdHdhcmUAQWRvYmUgSW1hZ2VSZWFkeXHJZTwAAAJ6SURBVDjLpZNZSNRRGMV//2XGsjFrMg2z0so2K21xIFpepYUiAsGIICLffI8eWiBBeg3qQV+KwBYKLB8qpHUmrahcKLc0QsxldNSxdPz/79LD1ChBUXTh8sG93POdc75zDa01/7NsgGvPR09rzQmpVZZSCqlAKIWUCqk0QqoZWyKFRir1uvxIbsAGUFqXHQqkpP1L57M3Pm5MMJBKpQHUdF9BKIGQAlcJXOlOVykSdye3leO6MmkGQNyHw+uO/1X3bzGBK+S0B1IqAKqDg3986HeCZPffwvJtoNT7lOZLvUdtAPEDAKBkRzo3QwMUb89InN1uGGD3spdE214xe8MRUnM2MfppNW0Pqy7YAK5UKK2xLbhdP4hlmdxpGMQwwQT8ziNiI534c7cT6WrFazikzF2Eb8HS1IQEDdiWwcHAQmpehTkQSAcgNvSMiYFW5uUUMdV3HW+ywefGNqITJsbUUL75k4FWYJtQ+yaMZcXrk1ANk/33mbdiD7EvlRieETy+FJLkMFcjRRSW3emIAwiF1hqPBfu2LGSWbbA1uZ41SfWkrtxPrPcypsfFiWYzFGzGKTjFV28WEJeIUHETLdOgrmkI1VdHpCdEet5enP4qLK9mKrqMgedv6cyrAP+qxOTiUxAi7oEJi8frELoFoTLpa7nI/HQvscgSRt+0kV1SSW7qYtp7xrBMphm4Mi5h/VIfTcEq1u0oJaknSEdNiMYHET7UvcMpPEN31Ed7zxgASmk1I0g6dK66s8CRak5mVxjnfS05+TsZCw/T9baTx1nnGb47DrQksjE6HrsHYPz6nYt3+Sc3L8+wA2tz0J6pF5OD4WP7Kpq7f5fO79DfSxjdtCtDAAAAAElFTkSuQmCC', 2401.921, 2, 9);
 insert into platos (id_plato, nombre, descripcion, imagen, precio, receta_id, categoria_id) values (3, 'donec', 'In quis justo. Maecenas rhoncus aliquam lacus. Morbi quis tortor id nulla ultrices aliquet.
@@ -100,17 +98,19 @@ insert into platos (id_plato, nombre, descripcion, imagen, precio, receta_id, ca
 /* TABLA CARRITOS */
 SELECT * FROM db_comidasregionales.carritos;
 
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (1, 83, 139890.69, 8, 4);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (2, 72, 413273.36, 1, 6);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (3, 100, 888526.9, 8, 7);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (4, 74, 70056.42, 1, 8);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (5, 57, 362121.43, 7, 9);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (6, 53, 50942.59, 8, 7);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (7, 15, 943435.79, 1, 5);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (8, 97, 461025.25, 2, 2);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (9, 86, 890971.13, 2, 7);
-insert into carritos (id_carrito, cantidad, importe, plato_id, usuario_id) values (10, 95, 327478.91, 8, 5);
+insert into carritos (id_carrito, usuario_id) values (1,  4);
+insert into carritos (id_carrito, usuario_id) values (2,6);
+insert into carritos (id_carrito, usuario_id) values (3, 7);
+insert into carritos (id_carrito, usuario_id) values (4, 8);
+insert into carritos (id_carrito, usuario_id) values (5,9);
+insert into carritos (id_carrito, usuario_id) values (6,  7);
+insert into carritos (id_carrito, usuario_id) values (7, 5);
+insert into carritos (id_carrito, usuario_id) values (8, 2);
+insert into carritos (id_carrito, usuario_id) values (9, 7);
+insert into carritos (id_carrito, usuario_id) values (10, 5);
 
+insert into art_carrito(id_listado, cantidad, importe, plato_id, carrito_id) values (1,5,785.52,1,1);
+insert into art_carrito(id_listado, cantidad, importe, plato_id, carrito_id) values (2,2,152.20,3,1);
 /* TABLA VENTAS */
 SELECT * FROM db_comidasregionales.ventas;
 
